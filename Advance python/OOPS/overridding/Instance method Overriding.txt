@@ -1,0 +1,99 @@
+Method Overriding:
+===================
+
+1. Instance Method Overriding
+
+2. Static Method Overriding
+
+3. Class Method Overriding
+
+
+Instance Method Overriding:
+==============================
+-> Child class overrides the instance method of parent class.
+
+#instance method overrriding
+class parent:
+    def m1(self,a,b):
+        print("addition is",a+b)
+    def m2(self,a,b):
+        print("multiplication",a*b)
+class child(parent):
+    def m2(self,a,b):
+        print("power=",a**b)
+obj=child()
+obj.m1(10,2)
+obj.m2(10,2)
+
+output
+-------
+addition is 12
+power= 100
+
+
+without overridding
+=====================
+class parent:
+    def m1(self,a,b):
+        print("addition is",a+b)
+    def m2(self,a,b):
+        print("multiplication",a*b)
+class child(parent):
+   '''def m2(self,a,b):
+        print("power=",a**b)'''
+obj=child()
+obj.m1(10,2)
+obj.m2(10,2)
+    
+
+output
+=======
+addition is 12
+multiplication 20
+
+
+Static method overriding
+==========================
+
+#static method overloading
+class parent:
+    def m1(a,b):
+        print("addition is",a+b)
+    def m2(a,b):
+        print("multiplication",a*b)
+class child(parent):
+    def m2(a,b):
+        print("power=",a**b)
+
+child.m1(10,2)
+child.m2(10,2)
+
+
+output
+=======
+addition is 12
+power= 100
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

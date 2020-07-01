@@ -1,0 +1,153 @@
+panda -> Pandas library is  used for data manipulation and analysis.
+        It ofeers reading and writing data structures and different format:csv,tsv,txt,xml,json,zip etc
+        datastructures and operations for manipulating numericals tables and time.
+
+
+. Pands 3 types of Datastructure
+   1. Series
+   2. DataFrame(imp)
+   3. Panel
+-> Numpy array is used for the  implemention of pandas data object.
+
+1. Series
+==========
+-> Series is a one-dimentional labeled array capable of holding any type of data.(like int,float,string,py objects etc)
+-> it is generally homogenious in nature & size is immutable(canchange).
+
+series-1
+---------
+import pandas as pd
+list_s = [1,2,-3,6.2]
+print(list_s)
+
+series1 = pd.Series(list_s)
+print(series1)
+
+0    1.0
+1    2.0
+2   -3.0
+3    6.2
+dtype: float64
+
+step-2
+------
+->index value should same as Series value
+-> We can change its data type using dtype and set name using name keyword.
+series3=pd.Series([10,20,30,],index=['a','b','c'],dtype=float,name='values')
+print(series3)
+->we can add two series with equal data values or non equal data values.
+
+Series using Dictonary
+---------
+import pandas as pd
+series2=pd.Series({'java':1000,'python':1500,'Node':2000})
+print(series2)
+
+java      1000
+python    1500
+Node      2000
+dtype: int64
+
+axes the values
+---------------
+s3=pd.Series([1,2,3,4,5])
+print(s3)
+0    1
+1    2
+2    3
+3    4
+4    5
+dtype: int64
+
+->s3[0]
+1
+->s3[0:3] #slice the value
+0    1
+1    2
+2    3
+dtype: int64
+->max(s3)
+5
+->min(s3)
+1
+->s3[s3>2]
+2    3
+3    4
+4    5
+dtype: int64
+->s4=pd.Series([1,2,3,4])
+->s3 + s4 
+0    2.0
+1    4.0
+2    6.0
+3    8.0
+4    NaN
+dtype: float64
+
+
+2. DataFrame
+============
+-> Pandas DataFrame is two=dimentional labeled datastructure,size-mutable,potentially 
+   heterogeneous tabular data structure with labeled axes(rows & colomns)
+
+-> A pandas DataFrame can be created using various input like:
+   -> List , Dictonary , Series , numpy ndarray, dataFrame.
+
+Example
+--------
+1.Creat DataFrame
+import pandas as pd
+li=[1,2,3,4,5]
+dm=pd.DataFrame(li)
+dm
+
+index
+^       0 -> label
+        -
+0	1
+1	2
+2	3
+3	4
+4	5
+
+Two-dimentional
+---------------
+ls2=[[1,2],[2,3],[4,5]]
+df1=pd.DataFrame(ls2)
+df1
+	0	1
+0	1	2
+1	2	3
+2	4	5
+
+using Dictonary
+---------------
+ls3=[{'python':2000,'numpy':230,'pandas':220}]
+df2=pd.DataFrame(ls3)
+df2
+
+	python	numpy	pandas
+0	2000	230	220
+
+indexing
+----------
+ls4=pd.DataFrame([1,2,3,4,5],index=['a','b','c','d','e'])
+ls4
+
+	0
+a	1
+b	2
+c	3
+d	4
+e	5
+
+using series
+------------
+dictr={'ID':pd.Series([1,2,3]),'SN':pd.Series([111,222,333])}
+df5=pd.DataFrame(dictr)
+df5
+
+	ID	SN
+0	1	111
+1	2	222
+2	3	333

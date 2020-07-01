@@ -1,0 +1,43 @@
+Static Variables
+-----------------
+if the Data is not changing from object to object.
+or if the data is static to all objects than we stored that static data in static variables.
+if a variable is prefixed with a class name then it called static variable.
+
+digram:"staic variable diagram"
+
+here companey_id,name,adress is static variables.
+
+->satic variables are pre fixed with class name
+
+Ex:employee.company_id
+       |          |
+   classname    static variable
+
+static variables are created when class is loadded into memory.
+Ex: When employee class is loaded then immediately static variables are created, There are companey_nmae,companey_address etc.
+
+----------------------------------------------------------------------------------------------------------------------------
+                  Instance Variable                                                 Staic Variable
+-----------------------------------------------------------------------------------------------------------------------------
+1.When data is changing from one instance to           | 1.When data is not changing from one object to another object we 
+  another instace we are use instance variable.        |    are use instance variable.
+                                                       |
+2.Instance Variable are fixed with "self".             | 2.Staic Variable are pre fixed with class name.
+                                                       |
+Ex: self.employee_id                                   | ex:employee.company_id
+                                                       |
+3.Instance Variable are created when object is created | 3.static Variable  are created when class is created.
+                                                       |
+4.Number of objects= Number of copies of instance      | 4.Number of objects= Single  copies of static variables
+  variable.                                            |  i.e Number of objectes share a single copy of static variables.
+                                                       | -> Static varibels are stored in a single copy, So the memory will be saved.
+5. Instance Variable are declared in:                  | 5. Static Variable are declared in:
+   1.Instance method                                   |      1.Outside of all Method in a class
+   2.Constructors                                      |      2.within the Constructor
+   3.Outside of the class                              |      3.within Instance Method
+                                                       |      4.within static Method
+                                                       |      5.within Class Method
+                                                       |      6.Outside of the class
+
+ 

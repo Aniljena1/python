@@ -1,0 +1,26 @@
+class product:
+    def product_details(self):
+        self.product_id=input("please enter the product id:")
+        self.product_name=input("please enter the product name:")
+        self.product_CompaneyName=input("please enter the product CompaneyName:")
+        self.product_price=float(input("please enter the product price:"))
+    def product_information_display(self):
+        print("product information")
+        print("******************")
+        print("product information:",self.product_id)      
+        print("product information:",self.product_name)
+        print("product information:",self.product_CompaneyName)
+        print("product information:",self.product_price)
+        print("******************")
+    def product_price_calculation(self):
+        stateGST=self.product_price*5/100
+        centralGST=self.product_price*6/100
+        self.product_price=self.product_price+stateGST+centralGST
+        print("TOTAL PRODUCT PRICE:",self.product_price)
+p1=product()
+p1.product_details()
+p1.product_information_display()              
+p1.product_price_calculation()
+
+output
+------

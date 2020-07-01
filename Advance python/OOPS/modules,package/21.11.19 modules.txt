@@ -1,0 +1,247 @@
+Module
+======
+module is collection of
+   i- function
+
+   ii- variables
+
+  iii- methods
+
+
+theere are two types of modules
+================================
+1.User defined module
+
+2.System defined modules
+
+System defined modules
+========================
+
+-> python provied pre-defined modules.These are called as "System Defined modules"
+
+Examples of System Define Modules:
+==================================
+
+math,functional,sys,date etc..
+
+>>>help('modules')
+
+Example
+--------
+choice() -->it  won't return randon number,It always going to return random objects from collection.
+import random 
+name=input("Enter Your Name:")
+i=["sunny","mia","Malika","malaika"]
+print("Hello!")
+print("Congracts you are Going to Marry",random.choice(i))
+
+or
+--
+generate 6 digit OTP
+
+from random import *
+for i in range(10):
+    print(randint(100000,999999))  -->674321
+
+from random import *
+for i in range(10):
+    print(chr(randint(65,65+25)),randint(0,9 ),chr(randint(65,65+25)),randint(0,9),sep='')  -->w4f4
+
+
+
+
+Example-2
+---------
+ randint() -> it alwase return int value
+from random import *
+for i in range(20):
+    print(randint(1,100)) 
+
+Example-3
+---------
+uniform()-> it returns float value between two numbers
+ from random import *
+for i in range(20):
+    print(uniform(1,10)) 
+
+Example-3
+---------
+randrange(start,stop,step) -->it returns a random number from the range
+start<=x <stop ->it generate random number in between start and stop
+start->it is optional default value 0
+step -> it optional default value will be 1
+
+randrange(10) --> generates a number from 0 to 9
+randrange(1,11) --> generates a number from 1 to 
+randrange(1,11,2) --> generates a number from 1,3,5,7,9
+
+from random import *
+for i in range(20):
+    print(randrange(1,11,2)) 
+
+
+
+
+
+working with math module
+------------------------
+defines several function for math operations
+like : sqrt(),ceil(),floor(),sin(),tan(),pow()
+
+Example:
+
+from math import *
+print(sqrt(4))
+print(ceil(10.1))  #ceil means next integer value
+print(floor(10.1)) #floor means previous value
+print(fabs(-10.6)) #it return absolute value it don't check +ve or -ve
+print(fabs(10.6))
+
+o/p
+===
+2.0
+11
+10
+10.6
+10.6
+
+
+User defined module
+====================
+
+-> Based on the requirements programmer defines new modules.
+
+  Let us define "Bank Module"
+
+ -> In this "Bank Module" let us define the following functions.
+
+  1. CustomerDetails()
+
+  2. Deposit()
+
+
+
+
+
+
+   
+Example
+-------
+
+    #savwe the file with bank name
+def CustomerDetails():
+    CustomerBankName=input("Enter Customer Bank Name:")
+    CustomerBankAddress=input("Enter Customer Bank Address:")
+    CustomerBankAccountNumber=int(input("Enter Customer Bank Account Number:"))
+    CustomerName=input("Enter Customer  Name:")
+    print("Customer Bank Name=",CustomerBankName,"Customer Bank Address=",CustomerBankAddress,"ustomer Bank Account Number=",CustomerBankAccountNumber,"Customer  Name=",CustomerName)
+
+def deposit():
+    AccountBalance=500000
+    DepositAmount=float(input("Enter Deposit Amount"))
+    AccountBalance+=DepositAmount
+    print("Account Balance=",AccountBalance)
+
+
+call-1
+-------
+import BankModule
+BankModule.CustomerDetails()
+BankModule.deposit()
+
+output
+------
+Enter Customer Bank Name:ghdf
+Enter Customer Bank Address:ddg
+Enter Customer Bank Account Number:4436
+Enter Customer  Name:kjk
+Customer Bank Name= ghdf Customer Bank Address= ddg ustomer Bank Account Number= 4436 Customer  Name= kjk
+Enter Deposit Amount56000
+Account Balance= 556000.0
+
+
+Import with alias names
+========================
+
+-> Programer can define Shortcut/alias names for biger module names. So that While calling the functions of the module, Programmer can use its "Shortcut/alias ".
+
+import BankModule as b
+b.CustomerDetails()
+b.deposit()
+
+
+
+
+
+Form ... import Statement:
+==========================
+
+If we wanat to import required functions from the module then we can use "from..import" staement.
+
+Syntax of "Form ... import" statement
+=====================================
+
+from <moduleName>import <functionName>
+
+Example
+=======
+
+call
+-----
+from BankModule import deposit,CustomerDetails
+
+
+Example
+=======
+
+from BankModule import deposit
+
+Enter Deposit Amount5000
+Account Balance= 505000.0
+>>> CustomerDetails()------------------>#error because CustomerDetails function is not define
+Traceback (most recent call last):
+  File "<pyshell#3>", line 1, in <module>
+    CustomerDetails()
+NameError: name 'CustomerDetails' is not defined
+
+
+Example
+=======
+
+def addition(a,b):
+    return a+b
+   
+    
+def Subtraction(a,b):
+    return a-b
+    
+    
+def modulation(a,b):
+    return a%b
+    
+
+def power(a,b):
+    return a**b
+
+call
+------
+from ArithmeticOperation import addition,power
+i=int(input("Enter first integer:"))
+j=int(input("Enter Second Interger:"))
+print("Addition=",addition(i,j))
+print("power=",power(i,j))
+
+
+output
+------
+Enter first integer:10
+Enter Second Interger:2
+Addition= 12
+power= 100
+
+
+
+
+
+
+

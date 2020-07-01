@@ -1,0 +1,51 @@
+Command Line Arguments:
+=======================
+Python program can take arguments(Parameters) at command prompt.
+
+Steps to open "Command Prompt"
+
+Start Menu --> type cmd and pree enter key
+
+
+
+from sys import argv
+ 
+
+1. "argv" stands for argument values.
+
+2. "argv" is pre-defined collection variable.
+
+3. "argv" is used to store "Command Line Arguments"
+
+What are "Command Line Arguments"?
+Ans: The parameters(Arguments) which are passed at "Command Prompt" Are called as "Command line Arguments".
+
+-> In argv first value is file path.
+
+
+argv=C:\Python37\python pratice>python CommandLineArguments.py
+
+->arvg stores command line arguments in the form of string.
+
+
+Ex:
+---
+from sys import argv
+print("commands line arguments are:",argv)
+args=argv[1:]#args=['10','20','30','40','50']
+sum=0
+for i in args:
+    sum=sum + int(i)
+print("SUM=",sum)
+
+execute:
+--------
+1. GO to command line
+
+2.C:\Python37\python pratice>python CommandLineArguments.py 10 20 30 40 50 60 70
+
+output
+------
+C:\Python37\python pratice>python CommandLineArguments.py 10 20 30 40 50 60 70
+commands line arguments are: ['CommandLineArguments.py', '10', '20', '30', '40', '50', '60', '70']
+SUM= 280

@@ -1,0 +1,69 @@
+                                    Logical Operator
+                                -------------------------------
+                                |            |               |
+                               and           or              not
+
+We can check multiple condition at a time by logical operators.
+ 
+ex:a=100
+   b=200 
+   c=300
+   d=400
+
+>>>a<b and c!=d
+
+and logical operators
+-----------------------
+and logical opeators check all given condition , and all condition return "true" then only final result is true.
+so all given conditin must be true then only final result is true.
+
+Truth table of and logical opeators
+-----------------------------------
+cond-1 (exp)         cond-2(exp)          result(exp)
+------               --------            -----------
+ T                       T                    T
+ T                       F                    F
+ F                       T                    F
+ F                       F                    F
+
+EXPRESSION =Varibles + Operatos
+
+Task:>>> a=100
+>>> b=200
+>>> c=300
+>>> a<b and a<c and a==c
+False
+
+or logical operators
+-----------------------
+It also checks all given condition if any one condition is true then the final result is true.Orther wise false
+
+Truth table of 'or' logical opeators
+-----------------------------------
+cond-1 (exp)         cond-2(exp)          result(exp)
+------               --------            -----------
+ T                       T                    T
+ T                       F                    F
+ F                       T                    F
+ F                       F                    F
+Task:
+>>> i=10
+>>> j=20
+>>> k=30
+>>> l=50
+>>> l==j or i<k or j==k or k!=i
+      F      T       F       T
+True
+
+
+not logical operators
+-----------------------
+not(True)=false
+not(False)=True
+Ex:>>> a=100
+>>> b=200
+>>> c=300
+>>> d=400
+>>> not (a>b or a!=b or b<c)
+False
+

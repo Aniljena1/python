@@ -1,0 +1,111 @@
+basicConfig() -->creat file with given file name 
+format-->define what type of information must be stored inside the file,
+filemode is 'w'
+exception()--> exception information bydefault return to log file.
+
+import logging
+logging.basicConfig(filename='log.txt',level=logging.DEBUG)
+print("python logging demo")
+logging.debug("debug message")
+logging.info("info mesage")
+logging.warning("warning message")
+logging.error("error message")
+logging.critical("critical message")
+
+o/p
+---
+DEBUG:root:debug message
+INFO:root:info mesage
+WARNING:root:warning message
+ERROR:root:error message
+CRITICAL:root:critical message
+
+ex-2
+====
+import logging
+logging.basicConfig(filename='log.txt',level=logging.WARNING)
+print("python logging demo")
+logging.debug("debug message")
+logging.info("info mesage")
+logging.warning("warning message")
+logging.error("error message")
+
+o/p
+----
+WARNING:root:warning message
+ERROR:root:error message
+CRITICAL:root:critical message
+
+ex-3
+====
+import logging
+logging.basicConfig(filename='log.txt',level=logging.INFO)
+logging.info("A new request came")
+try:
+    x=int(input("Enter your first number"))
+    y=int(input("Enter your second number"))
+    print(x/y)
+except ZeroDivisionError as msg:
+    print("Can't devied with zero")
+    logging.exception(msg)
+except ValueError as msg:
+    print("Enter only int value")
+    logging.exception(msg)
+logging.info("Requested processing completed")
+
+o/p
+===
+Enter your first number4
+Enter your second number2
+2.0
+>>> 
+============== RESTART: C:\Users\anil kumar jena\Desktop\pra.py ==============
+Enter your first number10
+Enter your second number0
+Can't devied with zero
+>>> 
+============== RESTART: C:\Users\anil kumar jena\Desktop\pra.py ==============
+Enter your first number10
+Enter your second numberint
+Enter only int value
+
+logfile
+=======
+INFO:root:A new request came
+INFO:root:Requested processing completed
+INFO:root:A new request came
+ERROR:root:division by zero
+Traceback (most recent call last):
+  File "C:\Users\anil kumar jena\Desktop\pra.py", line 7, in <module>
+    print(x/y)
+ZeroDivisionError: division by zero
+INFO:root:Requested processing completed
+INFO:root:A new request came
+ERROR:root:invalid literal for int() with base 10: 'int'
+Traceback (most recent call last):
+  File "C:\Users\anil kumar jena\Desktop\pra.py", line 6, in <module>
+    y=int(input("Enter your second number"))
+ValueError: invalid literal for int() with base 10: 'int'
+INFO:root:Requested processing completed
+
+    
+
+
+debugging
+assert==>debugging
+Types of assert statement:
+
+1.Simple version
+2.Augmented Version
+
+
+
+
+
+
+
+
+
+
+
+

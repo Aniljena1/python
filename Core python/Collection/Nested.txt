@@ -1,0 +1,90 @@
+Nested list
+===========
+NestedList=[100,200,300,[400,500,600],700,800,900]
+print(NestedList[3])
+print(NestedList[3][0])
+
+
+output
+-------
+[400, 500, 600]
+400
+
+
+TASk
+-----
+1.Accept Mobile Model and For every model accept the following feactures:
+        
+                i.Dispaly
+                ii.RAM
+                iii.ROM
+                iv.Camera
+                V.Battery
+                vi.processor
+                vii.NumberOfSIMslots
+                viii.Network Type
+                ix.Mobile price
+
+2.When "Mobile model" is given then its feactures should be displayed.
+
+ANS
+---
+m1={'MobileModel':
+        {'Dispaly':'Qled','RAM':'8gb','Rom':'2gb','Camera':'12mp','Battery':'6000mh','processor':'Snapdragon855+','NumberofSlimSlot':2,'NetworkType':'4g','price':'45000'}}
+print(m1['MobileModel'])
+print(m1['MobileModel'].keys())
+print(m1['MobileModel'].values())
+m1['MobileModel']['Rom']='4gb'
+print(m1['MobileModel'])
+print(len(m1['MobileModel']))
+
+output
+-------
+{'Dispaly': 'Qled', 'RAM': '8gb', 'Rom': '2gb', 'Camera': '12mp', 'Battery': '6000mh', 'processor': 'Snapdragon855+', 'NumberofSlimSlot': 2, 'NetworkType': '4g', 'price': '45000'}
+dict_keys(['Dispaly', 'RAM', 'Rom', 'Camera', 'Battery', 'processor', 'NumberofSlimSlot', 'NetworkType', 'price'])
+dict_values(['Qled', '8gb', '2gb', '12mp', '6000mh', 'Snapdragon855+', 2, '4g', '45000'])
+{'Dispaly': 'Qled', 'RAM': '8gb', 'Rom': '4gb', 'Camera': '12mp', 'Battery': '6000mh', 'processor': 'Snapdragon855+', 'NumberofSlimSlot': 2, 'NetworkType': '4g', 'price': '45000'}
+9
+
+
+
+TASk
+-----
+
+1.Create a collection to store list of mobile companynames.
+
+2. Create a collection to store list of mobile networktypes?
+
+3.Create a collection to store  mobilemodelno.price?
+
+4. Create a collection to store feactures of mobile along with modelno?
+
+5. Wap to display mobile companey names?
+
+6. Wap to display mobile companey names start with s?
+
+7. Wap to display no of mobile companey names?
+
+8. Wap to display the no of mobile network types?
+
+9. Wap to dispaly mobilemodelno.price?
+
+10. Wap to dispaly mobilemodelno whose price>1000?
+
+11. Wap to dispaly mobilemodelno whose price between 100000 and 200000?
+
+12. Wap to dispaly highest price mobilemodelno?
+
+13. Wap to dispaly least price mobilemodelno?
+
+14. Wap to dispaly mobile models having Hdrrecording feactures.
+
+15. Create a collection to store mobile modelno,screensize?
+
+16. Wap to dispaly mobile modelnos with screensize,camera?
+
+17. Wap to dispaly mobile modelnos which is havin lowest Screensize.
+
+18.Wap to dispaly mobile modelno which is having 21MP?
+
+19.Wap to dispaly mobile modelno,camera,screensize?

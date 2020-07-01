@@ -1,0 +1,74 @@
+operator overloading
+=====================
+What is the "Operator verloading"?
+Ans:Using the same operator for multiple operation.
+
+For Example:
+Using + operatornwe can perform multiple operations.
+  
+1.Arithmetic Addition
+
+    10+20
+
+2.String Concatenation
+   
+        'python' + 'Prograamming'
+
+By using + operator we can also add two objects.
+
+For example:
+  
+         object1 + object2
+-> Here adding data of object1 and object2
+
+-> Python provides system define method for operator overloding.
+
+  + ---> object.__add__(self,other)                               self -> pointing to 1st object
+  - ---> object.__sub__(self,other)                               
+  * ---> object.__mul__(self,other)                                object -> pointing to 2nd object
+  // ---> object.__floor__(self,other)
+  % ---> object.__mod__(self,other)
+  += ---> object.__iadd__(self,other)
+  -= ---> object.__isub__(self,other)
+  *= ---> object.__imul__(self,other)
+  /= ---> object.__idiv__(self,other)
+  //= ---> object.__ifloordiv__(self,other)
+  ** ---> object.__pow__(self,other)
+  **= ---> object.__ipow__(self,other)
+  < ---> object.__lt__(self,other)
+  <= ---> object.__le__(self,other)
+  > ---> object.__gt__(self,other)
+  >= ---> object.__ge__(self,other)
+  == ---> object.__eq__(self,other)
+  != ---> object.__ne__(self,other)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+TASK
+====
+
+1.Ask Librarian that: "How many books you want to place in booksrack-1:"
+
+2.Similarly, ask: " How many books you  want to place in booksrack-2:"
+
+3.Add two objects i.e. booksrack1+ boooksrack2 and dispaly total number of booksrack1 booksrack2
+
+
+class BookRack:
+    def __init__(self,books):
+        self.number_of_books=books
+    def __add__(self,other):
+        return self.number_of_books+other.number_of_books
+
+booklist1=int(input("How many books you want to add in Books rack-1:"))
+bookrack1=BookRack(booklist1)
+booklist2=int(input("How many books you want to add in Books rack-2:"))
+bookrack2=BookRack(booklist2)
+print("The Total number of Books in Book rack-1 and Books rack-2=",bookrack1+bookrack2)
+
+ANS
+===
+How many books you want to add in Books rack-1:1000
+How many books you want to add in Books rack-2:2000
+The Total number of Books in Book rack-1 and Books rack-2= 3000

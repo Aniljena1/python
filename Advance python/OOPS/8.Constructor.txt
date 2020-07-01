@@ -1,0 +1,155 @@
+constructor
+-----------
+->constructor is used to intialize the instance variable.
+->constructor is executed Automaticaley at the time of object creation in python the name of the constructor is __init__  .
+->"init" stands for intialization
+
+
+case1:with out constructor
+class Employee:
+    def Employee_details(self,eid,ename,edept,edesig,esal):
+        self.Employee_id=eid
+        self.Employee_name=ename
+        self.Employee_deparment=edept
+        self.Employee_designation=edesig
+        self.Employee_salarey=esal
+    def Employee_information_display(self):
+        print("EMPLOYEE INFORMATION")
+        print("********************")
+        print(self.__dict__)
+        print("********************")
+e1=Employee()
+e1.Employee_information_display()
+
+output
+-------
+{}-------->Empty object        
+
+
+so compalsoriley we have to call Employee_details method to fill the data into object.
+
+case2:with  constructor
+class Employee:
+    def __init__(self,eid,ename,edept,edesig,esal):
+        self.Employee_id=eid
+        self.Employee_name=ename
+        self.Employee_deparment=edept
+        self.Employee_designation=edesig
+        self.Employee_salarey=esal
+    def Employee_information_display(self):
+        print("EMPLOYEE INFORMATION")
+        print("********************")
+        print(self.__dict__)
+        print("********************")
+e1=Employee('e2324','anil','it','devloper',50000)
+e1.Employee_information_display()
+        
+
+class Employee:
+    def __init__(self,eid,ename,edept,edesig,esal):
+        self.Employee_id=eid
+        self.Employee_name=ename
+        self.Employee_deparment=edept
+        self.Employee_designation=edesig
+        self.Employee_salarey=esal
+    def Employee_information_display(self):
+        print("EMPLOYEE INFORMATION")
+        print("********************")
+        print(self.__dict__)
+        print("********************")
+e1=Employee('e2324','anil','it','devloper',50000)
+e1.Employee_information_display()
+        
+constructor withoit parameter
+------------------------------
+class Proucts:
+    def __init__(self):
+        self.Products_id=input("please enter product id:")
+        self.Products_Name=input("please enter product Name:")
+        self.Products_Price=input("please enter product Price:")
+    def Products_Infomation_Display(self):
+        print("PRODUCTS INFORMATION")
+        print("********************")
+        print(self.__dict__)
+        print("*********************")
+p1=Proucts()
+p1.Products_Infomation_Display()
+
+output
+------
+please enter product id:bjdg65687
+please enter product Name:anil
+please enter product Price:865987
+PRODUCTS INFORMATION
+********************
+{'Products_id': 'bjdg65687', 'Products_Name': 'anil', 'Products_Price': '865987'}
+*********************
+
+------------------------------------------------------------------------------------------------------------------------------------
+       constructor                                  |                                      method                                    |
+--------------------------------------------------------------------------------------------------------------------------------------
+1.Constructor execute automatically at the time                   1.method not execut automatically.we have to call it.
+ of object created.                                               
+                                                                 2.method store the value after object is created
+2. constructor initialize the instance variable.                 3. when user not define employee_details blank object is created 
+                                                                 4.Methods contains the business logic
+3. constructor name is fixed i.e __init__ .                      5.Method name can be anything i.e we can give any name.
+4.a constructor is executed only once at thme object             4.a method can be called and execute for multiple times
+  creation.
+
+5.only one constructor is allowed to initialize all              5.we can write multiple methods based on business logic. 
+  instance variables.
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Ex:
+class Employee:
+    def __init__(self,*a):
+        for i in a:
+            print(i)
+        print("*********")
+e1=Employee(10,20)
+e2=Employee(10,20,30)
+e3=Employee(10,20,30,40)
+e4=Employee(10,20,30)
+e5=Employee(10,20)
+e6=Employee()
+
+output
+------
+10
+20
+*********
+10
+20
+30
+*********
+10
+20
+30
+40
+*********
+10
+20
+30
+*********
+10
+20
+*********
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

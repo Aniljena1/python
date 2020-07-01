@@ -1,0 +1,66 @@
+xml - eXtensible markup language -> to represent the data in the form of tags
+
+<EmployeeRecords>
+<employee title="Employee Record-1">
+ <id>101</id>
+ <name>anil</name>
+ <dept>IT</dept>
+ <desg>SE</desg>
+ <salary>100000</salary>
+</employee>
+<employee title="Employee Record-2">
+ <id>102</id>
+ <name>jitu</name>
+ <dept>IT</dept>
+ <desg>SE</desg>
+ <salary>200000</salary>
+</employee>
+</EmployeeRecords>   
+
+save-->"employee.xml"
+
+puthon program for rocessing XML data
+--------------------------------------
+
+import xml.sax
+class employee(xml.sax.ContentHandler):
+    def _init_(self):
+        self.currentdata=""
+        self.id=""
+        self.name=""
+        self.desg=""
+        self.salary=""
+    def startelement(self,tag,attributes):
+        self.currentData=tag
+        if tag=="employee":
+            print("***employees*")
+            title=attributes["title"]
+            print("title:",title)
+    def endelement(self,tag):
+        self.currentdata=tag
+        if self.currentdata=="id":
+            print("id:",self.id)
+        elif self.currentdata=="name":
+            print("name:",self.name)
+        elif self.currentdata=="desg":
+            print("desg:",self.desg)
+        elif self.currentdata=="salary":
+            print("salary:",self.salary)
+    def character(self,content):
+        if self.currentdata=="id":
+            self.id=content
+        if self.currentdata=="name":
+            self.name=content
+        if self.currentdata=="dept":
+            self.dept=content
+        if self.currentdata=="desg":
+            self.desg=content
+        if self.currentdata=="salary":
+            self.salary=content
+parser=xml.sax.make_parser()
+emp=employees
+parser.setContentHandler(emp)
+parser.parser('Employee.xml')
+
+
+save-->employee.py

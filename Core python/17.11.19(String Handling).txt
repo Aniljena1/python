@@ -1,0 +1,174 @@
+String Handling
+----------------
+
+What is a String?
+Ans: A String is a set of Characters.
+
+Example of String
+------------------
+
+"python"
+"raju@gmail.com"
+
+--> Every String is Enclosed in Quotations.
+
+--> We can use following cQuotations:
+      i. Single Quotations
+      ii. Double Quotations
+      iii. Triple Quotations
+
+Example of Single Quotations
+-----------------------------
+'ravi'
+'TCS;
+
+Example of Double Quotations
+-----------------------------
+"IBm"
+"Wipro"
+
+-> If we want to give multiple lines of text then we have to use '''Triple quotations'''.
+-->Triple Quotations are of two type
+    
+              i. Triple single Quotations
+              ii.Triple Double Quotations
+
+Example:
+
+>>> lang="In it industrey 'PYTHON' is No.1 programming language"
+>>> lang
+"In it industrey 'PYTHON' is No.1 programming language"
+
+//Single quotations" we used for HighLighting one word.
+
+Example 2
+----------
+
+>>> MultipleLines=' ehfo lijhefo
+SyntaxError: EOL while scanning string literal
+>>> MultipleLines=" hsr iohyfo uqy
+SyntaxError: EOL while scanning string literal
+>>> MultipleLines='''lwhj hefq liqwf k fjh
+oiwefhwhnf lijwefij kuhwefb
+wgfoqihfm 
+
+
+/// Triple Quotations we used for print Multiple lines.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+
+String triple-double quotation
+----------------------------------
+
+Example:
+>>> multiple='''''first line of text
+second line of text
+third line of text
+'''''
+>>> type(multiple)
+<class 'str'>
+>>> multiple
+"''first line of text\nsecond line of text\nthird line of text\n"
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Q: What is string Handling>
+Ans: Performing the operation on strings is called "String Handling"
+
+->Python Provides build-in Function (System Define function or pre Define Function) To perform multiple operation on string.
+
+upper():
+--------
+It is used to convert lower case string into Uppercase string.
+
+syntax:   string.upper()
+
+Ex:
+
+>>> EmployeeName="anil"
+>>> EmployeeName.upper()
+'ANIL'
+
+lower():
+-------------
+It is used to convert upper case string into lowercase string.
+
+syntax:  string.lower()
+
+Ex:
+
+>>> EmployeeName="ANIL"
+>>> EmployeeName.lower()
+'anil'
+
+islower():
+-------------
+It is check string is lower case or not, If string is lower it return's true,Ortherwise false comes.
+
+syntax:   string.islower()
+
+Ex:
+>>> EmployeeName="anil"
+>>> EmployeeName.islower()
+True
+
+
+isupper()
+----------
+
+It is check string is lower case or not, If string is lower it return's false,Ortherwise true comes.
+
+syntax:  string.isupper()
+
+Ex:
+>>> EmployeeName="ANIL"
+>>> EmployeeName.isupper()
+True
+
+
+isnumeric()
+------------
+syntax: string.isnumeric()
+
+>>> string1="12345"
+>>> string1.isnumeric
+>>> string1.isnumeric()
+True
+>>> 
+
+
+isalnum():
+-----------
+syntax: string.isalnum()
+
+>>> string2="2apples"
+>>> string2.isalnum()
+True
+
+isspace():
+----------
+syntax: isspace()
+
+>>> string4=" "
+>>> string4.isspace()
+True
+
+len():
+-------
+syntax: len(string)
+>>> string5="2apples"
+>>> len(string5)
+7
+
+istitle():
+----------
+syntax: istitle()
+
+>>> book="A python book"
+>>> book istitle()
+>>> book.istitle()
+False
+>>> book="A Python Book"
+>>> book.istitle()
+True

@@ -1,0 +1,267 @@
+set
+----
+set is a collection of objects.
+-> set is represented with colli brases{} and ',' separated the value.
+
+Example
+-------
+>>> set1={10,20,30}
+>>> type(set1)
+<class 'set'>
+>>> set1
+{10, 20, 30}
+Task
+-----
+1.Accept student names.
+2.Display student name set.
+
+>>> studentName=input("please enter student name")
+please enter student nameanil
+>>> type(studentName)
+<class 'str'>
+>>> studentName=eval(input("Enter Student Name:"))
+Enter Student Name:{'anil','jena'}
+>>> type(studentName)
+<class 'set'>
+
+
+
+TASk
+-----
+1.Accept product details from the user and display product details set.
+
+>>> productDetails=eval(input("Enter product details:"))
+Enter product details:{'apple','iphone11',85000}
+>>> productDetails
+{85000, 'iphone11', 'apple'}  //insertion order is not preserved
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+-> In set insertion order is not preserved
+
+-> In set Sliceing and Indexing are not supported.
+
+>>> EmployeeDetails={'anil','e1122','td',50000}
+>>> EmployeeDetails
+{50000, 'e1122', 'anil', 'td'}
+>>> EmployeeDetails[0]
+Traceback (most recent call last):
+  File "<pyshell#15>", line 1, in <module>
+    EmployeeDetails[0]
+TypeError: 'set' object is not subscriptable
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+
+-> Accept Customer number from the user into set collection
+
+-> Prove that set does not allow duplicate customer number.
+
+>>> customerNumber=eval(input("Enter customer number:"))
+Enter customer number:{1122,3344,5666,5666}
+{3344, 1122, 5666}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+-> Set is a mutable object so changes are allowed
+
+>>> customerNumber=eval(input("Enter customer number:"))
+Enter customer number:{1122,3344,5666,5666}
+{3344, 1122, 5666}
+>>> customerNumber.add(4455)
+>>> customerNumber
+{3344, 1122, 5666, 4455}
+
+TASk
+-----
+1.Accept car prices for the user and store them in a set collection.
+
+2.Apply 20% discount in each collection.
+
+3.Store all discounts in another sets.
+
+CarPrices=eval(input("Enter car prices:"))
+discountset=set()
+for i in CarPrices:
+    discount=i*(20/100)
+    discountset.add(discount)
+print("discount set=",discountset)
+
+output
+-------
+Enter car prices:{10000,20000}
+discount set= {2000.0, 4000.0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+function of set()
+==================
+
+add()
+------
+->Add method add the element to the set.
+
+remove()
+---------
+-> It remove thw element to the set.
+
+set()
+-----
+-> set() function is used to creat the empty set and convert one collection into set collection.
+
+TASk
+----
+1.Accept student details from the student.
+
+2. convert student details list collection into student details set collection.
+
+studentDetails=eval(input("  Enter List of Student Details:"))
+studentDetailsset=set(studentDetails)
+print(type(studentDetailsset))
+print(studentDetailsset)
+
+output
+-------
+  Enter List of Student Details:['anil',2324,'python']
+<class 'set'>
+{'python', 2324, 'anil'}
+
+output
+-----
+  Enter List of Student Details:['anil','anil',10000,10000,'jitu','jitu']
+<class 'set'>
+{10000, 'anil', 'jitu'}
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+TASk
+-----
+1.Accept  all car model from the user by using tuplr collection.
+
+2. convert car models tuple collection into set collection.
+
+carModels=eval(input("  Enter Tuple of Student Details:"))
+carModelsset=set(carModels)
+print(type(carModelsset))
+print(carModelsset)
+
+output
+------
+  Enter Tuple of Student Details:('maruti','ertigas',600000)
+<class 'set'>
+{600000, 'maruti', 'ertigas'}
+
+TASK2
+------
+1.Accept book prices in the for of set.
+
+2.Apply 2% stateGST and 4% CentralGST.
+
+3.Apply 2% Discount.
+
+4. Store The result into another set.
+
+5. Convert That set into list, Tuple.
+
+
+
+BookPrices=eval(input("Accept Book prices from the set:"))
+ResultSet=set()
+for i in BookPrices:
+    StateGST=i*(2/100)
+    CentralGST=i*(4/100)
+    TotalTask=StateGST+CentralGST
+    Discount=i*(2/100)
+    i=(i+TotalTask)-Discount
+    ResultSet.add(i)
+ResultList=list(ResultSet)
+print(type(ResultSet))
+ResultTuple=tuple(ResultSet)
+print(type(ResultSet))
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+copy()
+------
+->it is used to copy one state to another state.
+-> copy() function will repalce the old data to new data.
+
+TASK:
+-----
+1.Accept list of departments  and store them one set.
+
+2. Accept list of address and store them into another set.
+
+3.Copy "list of addresses set " into "list of department set"
+
+
+DepartmentsSet=eval(input("Enter the Department names in the form of set:"))
+AddressSet=eval(input("Enter the Address names in the form of set:"))
+for i in AddressSet:
+    DepartmentsSet.add(i)
+print(DepartmentsSet)
+
+
+output
+------
+Enter the Department names in the form of set:{'it','hr'}
+Enter the Address names in the form of set:{'kukypali','maeerpet'}
+{'hr', 'maeerpet', 'kukypali', 'it'}
+
+===============================================================================
+
+union of sets:
+--------------
+-> Unoin method combine two sets elements.
+
+>>> set1={100,200,300}
+>>> set2={500,600,700}
+>>> set3=set1.union(set2)
+>>> set3
+{700, 100, 500, 200, 600, 300}
+>>> set3=set1|set2
+>>> set3
+{700, 100, 500, 200, 600, 300}
+>>> 
+
+DepartmentsSet=eval(input("Enter the Department names in the form of set:"))
+AddressSet=eval(input("Enter the Address names in the form of set:"))
+print(DepartmentsSet.union(AddressSet))
+
+output
+-------
+Enter the Department names in the form of set:{'it','hr'}
+Enter the Address names in the form of set:{'ctc','bbsr'}
+{'hr', 'bbsr', 'ctc', 'it'}
+
+->THis is only for printing purpose
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Intersection of sets():
+--------------------
+
+-> intersection method will pick common elements from the sets.
+
+>>> set4={100,200,400,500}
+>>> set5={100,200,700,900}
+>>> set7=set4.intersection(set5)
+>>> set7
+{200, 100}
+
+>>> set1={'it','hr'}
+>>> set2={'bbsr','ctc'}
+>>> set1|=set2
+>>> set1
+{'it', 'bbsr', 'ctc', 'hr'}
+
+
+
+
+
+
+
+
+
+
+

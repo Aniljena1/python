@@ -1,0 +1,104 @@
+Inheritance
+------------
+A class gets the fitures of another class is called as Inheritance.
+                      
+                         'or'
+
+A child class gets the properties parent class is called as inheitance.
+
+
+2.Alias names(orther names) of parent class: Base class,Super class
+                              --------------
+3.Alias names(othernames) of child class: Derived cass, sub class
+                            --------------
+
+-> The main Advantage of iheritance is code reusability.
+
+-> Types of inheritance.
+ 
+   1. Single inheritance
+ 
+   2. Multiple inheritance
+
+   3. Multi-level inheritance
+
+   4. multi-path Inheritance
+
+   5. Hierarchical inheritance
+
+   6. Hybrid inheritance
+
+1. Single inheritance
+----------------------
+  From Single parent class,A  single child class is inheriting the features.
+             
+                                     or
+
+  A child class is inheritnig from a single parent class.
+
+Diagram:->10.1
+
+syntax  for single inheritance
+-------------------------------
+
+class product:                                 class person:
+    --                                              --
+    --                                              --
+    --                                              --
+class child(parent):                          class student(person):
+
+Example:
+
+class Person:
+    def __init__(self):
+        self.PersonName=input("please input person name:")
+        self.PersonAddress=input("please input person Address:")
+        self.PersonMobileNumber=input("please input person mobile number:")
+        self.PersonEmailID=input("please input person email id:")
+    def Person_information_display(self):
+        print("*"*30)
+        print("PERSON INFORMATION")
+        print("*"*30)
+        print(self.__dict__)
+class Student(Person):
+    def __init__(self):
+        Person.__init__(self)
+        self.StudentID=input("Please Enter student id:")    
+        self.StudentCourse=input("Please Enter student course:  ")
+        self.StudentInstName=input("Please Enter student instuitue name:")
+        self.StudentCourseFee=float(input("Please Enter student course fee:"))
+    def Student_Information_display(self):
+        print("*"*30)
+        print("STUDENt INFORMATION")
+        print("*"*30)
+        print(self.__dict__)
+        print("*"*30)
+s1=Student()
+s1.Student_Information_display()
+        
+output
+------
+please input person name:anil
+please input person Address:bbsr
+please input person mobile number:87356768
+please input person email id:bbsr.com
+Please Enter student id:as736
+Please Enter student course:  mca
+Please Enter student instuitue name:usbm
+Please Enter student course fee:130000
+******************************
+STUDENt INFORMATION
+******************************
+{'PersonName': 'anil', 'PersonAddress': 'bbsr', 'PersonMobileNumber': '87356768', 'PersonEmailID': 'bbsr.com', 'StudentID': 'as736', 'StudentCourse': 'mca', 'StudentInstName': 'usbm', 'StudentCourseFee': 130000.0}
+******************************
+
+
+
+
+
+
+
+
+
+
+

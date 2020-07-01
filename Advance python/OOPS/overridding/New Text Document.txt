@@ -1,0 +1,76 @@
+Inner classes(nested class)
+============================
+-> A class is defind in another class is called as inner class.
+
+Syntax of inner classes
+-------------------------
+
+class Outer-class
+   <code of Outer-class>
+    class inner-class:
+      <code of inner-class>
+
+
+Examples of inner classes:
+---------------------------
+
+
+class mobile:
+    <Code of Mobile-class>
+  class SIM:
+   <Code of SIM-class>
+
+
+
+**************************
+
+class College:---------------------> Outer class
+  <Code of College-class>
+  class IT-department:---->inner class1
+   <code of IT-department>
+  class CS-department:--> inner class2
+
+*********************************88
+class laptop:----->outer class
+   class HDD:
+    ----------
+     --------
+   class motherBoared:
+           class Ram:----------> inner class of motherboard class.Motherbpard is inner class of laptop class.
+            --------
+            --------
+            class rom:
+              --------
+               -------
+             class processor:
+                  -----------
+                   ---------
+
+class laptop:
+    class Harddisk:
+        def h1(self):
+            print("Harddisk size is 1tb")
+    class MotherBoard:
+        class ram:
+            def r1(self):
+                print("Ram size is 6gb")
+        class rom:
+            def r2(self):
+                print("Rom size is 5mb")
+        class Processor:
+            def r3(self):
+                print("Processor is Intel I7 processor")
+
+
+
+l=laptop()
+h=l.Harddisk()
+h.h1()
+m=l.MotherBoard()
+r=m.ram()
+r.r1()
+r1=m.rom()
+r1.r2()
+r5=m.Processor()
+r5.r3()
+

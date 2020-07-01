@@ -1,0 +1,12 @@
+pickling and unpickling
+-----------------------
+In orther words, The process of writeing state of objects to a file is called pickling.
+The process of reading state of objects to a file is called pickling.
+
+pickle module content dump and load function.
+
+dump()-->all properties of the object dump-->use in pickling
+load()-->load and read data-->use in unpickling
+
+dump(object,file)
+load(file)

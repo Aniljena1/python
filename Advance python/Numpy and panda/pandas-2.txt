@@ -1,0 +1,149 @@
+Read CSV-file
+==============
+import pandas as pd
+import os
+rd=pd.read_csv('D:\\Python\Advance python\Matplotlib\Google-Playstore.csv')
+rd
+print(os.getcwd()) #show which directory save the file
+>>C:\Users\anil kumar jena\Desktop\dataanalysis\panda
+
+nrows -> for showing no. of rows
+
+rd=pd.read_csv('D:\\Python\Advance python\Matplotlib\Google-Playstore.csv',nrows=3)
+rd
+
+usecols -> for display which cols
+
+rd=pd.read_csv('D:\\Python\Advance python\Matplotlib\Google-Playstore.csv',usecols=[1,3,4],nrows=2)
+rd
+
+skiprows -> for skip the rows
+
+rd=pd.read_csv('D:\\Python\Advance python\Matplotlib\Google-Playstore.csv',nrows=3,skiprows=[1,2])
+rd
+
+index_col -> for change index
+
+rd=pd.read_csv('D:\\Python\Advance python\Matplotlib\Google-Playstore.csv',nrows=2,index_col='App Name')
+rd
+
+header -> for changer header
+header=None -> for convert header to dataset
+
+rd=pd.read_csv('D:\\Python\Advance python\Matplotlib\Google-Playstore.csv',nrows=2,header=2)
+rd
+
+prefix -> for set a header string type , heder use default
+
+rd=pd.read_csv('D:\\Python\Advance python\Matplotlib\Google-Playstore.csv',nrows=2,prefix='Data',header=None)
+rd
+
+names -> for new names of all headers
+
+rd=pd.read_csv('D:\\Python\Advance python\Matplotlib\Google-Playstore.csv',nrows=2,names =['id','Name','Industrey'])
+rd
+
+dtype -> convert dataset one type to another type
+
+rd=pd.read_csv('D:\\Python\Advance python\Matplotlib\Google-Playstore.csv',nrows=2,dtype =['id':'float64'])
+rd
+
+true_values, false_values -> for change yes or no to true or false
+
+rd=pd.read_csv('D:\\Python\Advance python\Matplotlib\Google-Playstore.csv',nrows=2,true_values=['yes'],false_values=['No'])
+rd
+
+
+Handle missing values
+=====================
+-> bydefault pands take missing is 'NaN'
+
+na_values -> convert not avaliblae data to NaN
+
+rd=pd.read_csv('D:\\Python\Advance python\Matplotlib\Google-Playstore.csv',nrows=2,na_values=['not available','no values'])
+rd
+
+keep_default_na-> missing value with his format not NaN
+
+rd=pd.read_csv('D:\\Python\Advance python\Matplotlib\Google-Playstore.csv',nrows=2,keep_default_na=False)
+rd
+
+na_filter ->when no missing dataset in yor file, for boost your performance
+
+rd=pd.read_csv('D:\\Python\Advance python\Matplotlib\Google-Playstore.csv',na_filter =False)
+rd
+
+***************************************************************************8*
+rd.head() -> for print 1st 5 row
+rd.head(2) -> print 1st 2 row
+rd.tail() -> for print last 5row
+rd.tail(1) -> print last 1 row
+--
+rd.isnull() -> for finding missing or nulvalues
+rd.isnull().sum() -> for counting how many null values in which column
+rd.isnull().sum().sum() -> for counting total null values
+null -> represented as True
+orther -> represented as False
+--
+rd.notnull()-> for counting  how many not null values 
+rd.notnull().sum() ->for counting how many not null values in which column
+rd.notnull().sum().sum() ->for counting total not null values
+True -> represented as not missing values
+False -> represented as missing values
+--
+rd.dropna() -> for remove the column of missing values
+rd.dropna(axis=1)-> remove the row of missing values
+rd.dropna(thresh = 1) -> only one not null values consider in a row and print
+
+Fill Missing values
+===================
+-> fillina fills the NaN values with given values(input)
+df.fillna(2) -> fill missing values in your provied values like (NaN replace with 2)
+df.fillna({'Name':'none','profit':0}) -> for fill different value in different column like({'column name':value})
+            
+df.fillna(method='ffill or pad ') -> fill the missing values with previous value
+df.fillna(method = 'bfill') -> fill th e missing values with backword value
+
+
+-----
+0 -> rows
+1 -> columns
+df.fillna(method = 'ffill',axis=0)-> fill row with previous data, must specify fill method
+
+Replace values
+===============
+->Values to the dataframe are replaced with orther values aynamically.
+
+rd.replace(to_replace='Peapod',value='whartsapp') -> replace peapod to whartsapp
+
+rd.replace([0,1,2,3,4],0) -> replace multiple values ->use list
+rd.replace({'Category':'SHOPPING'},'MALL') -> replace sipecific value of a column
+rd.replace(0,method='bfill', limit=2) -> only 2 zero replace with backeard dataframe
+rd.replace(0,100,inplace=True) ->replace all o to 100
+
+interpolate()
+==============
+-> Pandas interpolate() function is basically used to fill NaN values in dataframe or series.
+-> Very powerful function
+-> Uses various interpolation techniques like interpolation etc.
+->It fills the NaN values automatically, It guess only numeric values no string values.
+
+import pandas as pd
+rd=pd.read_csv('D:\\Python\Advance python\Book.csv')
+rd
+Date	student id	class	section	study hr	percentage
+0	01-03-2019	101	10	A	4.0	69.0
+1	02-04-2019	102	11	A	5.0	71.0
+2	05-11-2018	103	10	A	5.0	89.0
+3	02-04-2019	104	10	A	NaN	NaN
+4	02-06-2019	105	10	A	3.0	59.0
+5	02-04-2019	106	10	A	5.0	95.0
+
+rd.interpolate()
+Date	student id	class	section	study hr	percentage
+0	01-03-2019	101	10	A	4.0	69.0
+1	02-04-2019	102	11	A	5.0	71.0
+2	05-11-2018	103	10	A	5.0	89.0
+3	02-04-2019	104	10	A	4.0	74.0
+4	02-06-2019	105	10	A	3.0	59.0
+5	02-04-2019	106	10	A	5.0	95.0

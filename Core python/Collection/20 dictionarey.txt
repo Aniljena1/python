@@ -1,0 +1,347 @@
+Dictionary
+----------
+"Dictionary" is a collection of "key.value" pairs.
+
+"key" is used to recohnise the "value".
+
+So, a dictionary is represented with { } with "key.value" pairs.
+
+TASk
+----
+1. Store an Employee record in dictionary.
+
+2.Dispaly the employee record.
+
+>>> EmployeeRecord={'EmployeeUD':1122,'EmployeeName':'raju','EmployeeSalarey':40000}
+>>> type(EmployeeRecord)
+<class 'dict'>
+>>> EmployeeRecord
+{'EmployeeUD': 1122, 'EmployeeName': 'raju', 'EmployeeSalarey': 40000}
+>>> EmployeeRecord.keys()
+dict_keys(['EmployeeUD', 'EmployeeName', 'EmployeeSalarey'])
+>>> EmployeeRecord.values()
+dict_values([1122, 'raju', 40000])
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+H&H allowed
+============
+
+:->Insertion order is preserved
+
+Sliceing and Indexing are not allowed
+-------------------------------------
+>>> EmployeeRecord[0]
+Traceback (most recent call last):
+  File "<pyshell#6>", line 1, in <module>
+    EmployeeRecord[0]
+KeyError: 0
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Duplicate keys are not allowed
+------------------------------
+>>> FruitsDictionary={1122:'Apple',2233:'mango',3344:'chery',1122:'mamgo'}
+>>> FruitsDictionary
+{1122: 'mamgo', 2233: 'mango', 3344: 'chery'}
+
+Duplicate values are allowed
+------------------------------
+>>> FruitsDictionary={1122:'Apple',2233:'mango',3344:'chery',1128:'mango'}
+>>> FruitsDictionary
+{1122: 'Apple', 2233: 'mango', 3344: 'chery', 1128: 'mango'}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+:->Dictionary is mutable object
+
+TASk
+----
+1.Store a product record in a dictionary.
+  (product price:50000.00)
+
+2. Change Product price as 60000.00
+
+3. Dispaly product record before and after changes.
+
+>>> ProductPrice={'ProductID':1122,'ProductName':'samsung','productPrice':50000.0}
+>>> ProductPrice['ProductPrice']=60000.00
+>>> ProductPrice
+{'ProductID': 1122, 'ProductName': 'samsung', 'productPrice': 50000.0, 'ProductPrice': 60000.0}
+
+
+
+
+TASK
+=====
+1. Creat an employee Record as follows.
+{'EmployeeID':1122,'EmployeeName':'anil','EmployeeAddress':'bbsr'}
+
+2.Ask the changed Address and update that changed address to the Employee record.
+
+3.Dispaly Employee record before and after changes.
+
+EmployeeRecord={'EmployeeID':1122,'EmployeeName':'anil','EmployeeAddress':'bbsr'}
+print("EmployeeRecord")
+address=input("please enter new address")
+EmployeeRecord['EmployeeAddress']=address
+print(EmployeeRecord)
+
+output
+------
+
+EmployeeRecord
+please enter new address:ctc
+{'EmployeeID': 1122, 'EmployeeName': 'anil', 'EmployeeAddress': 'ctc'}
+>>> 
+
+
+TASK2
+=======
+1.Accept Student Details from the student.
+
+2.Insert that Student Details into Dictionary
+
+3. Dispay that student dictionary.
+
+a=input("Enter Student IDs:")
+b=input("Enter Student NSAME:")
+c=input("Enter Student course:")
+StudentDetails={'StudentID':a,'StudentNAME':b,'StudentCourse':c}
+print(StudentDetails)
+
+output
+------
+Enter Student IDs:a456
+Enter Student NSAME:anil
+Enter Student course:python
+{'StudentID': 'a456', 'StudentNAME': 'anil', 'StudentCourse': 'python'}
+>>> 
+
+TASK3
+------
+1. Accept a list smartphone modules.
+
+2. Accept a list Smartphone prices 
+
+3. Insert list of Smartphone modules as keys into dictionary
+
+4.Insert list of smartphone prices as values into dictionary.
+
+5.Dispaly dictionary after insertion
+
+
+SmartPhoneModules=eval(input("Enter smart modules in the form of list:"))
+SmartPhonePrice=eval(input("Enter smart phone price in the form of list:"))
+SmartPhoneDictionary={}
+for i in range(0,4):
+    SmartPhoneDictionary[SmartPhoneModules[i]]=SmartPhonePrice[i]
+print("*"*30)
+print(" SMARTPHONE MODULES   SMARTPHONE PRICE ")
+print("*"*30)
+for i in SmartPhoneDictionary:
+    print(i,'                    ',SmartPhoneDictionary[i])
+    
+
+output
+----------
+Enter smart modules in the form of list:['samsung','apple','oneplus','htc']
+Enter smart phone price in the form of list:[100000,90000,60000,50000]
+******************************
+ SMARTPHONE MODULES   SMARTPHONE PRICE 
+******************************
+samsung                      100000
+apple                      90000
+oneplus                      60000
+htc                      50000
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+python Dictionary Methods:
+=============================
+
+keys()
+=======
+-> Returns the keys of dictionary
+
+FruitsDictionary = {1122: 'Apple', 2233: 'mango', 3344: 'chery', 1122: 'mango'}
+FruitsDictionary[3344] = 'Apple'
+print(FruitsDictionary)
+print(FruitsDictionary.keys())
+
+output
+-------
+{1122: 'mango', 2233: 'mango', 3344: 'Apple'}
+dict_keys([1122, 2233, 3344])
+
+
+
+values():
+=========
+->return values of dictionarey
+
+FruitsDictionary = {1122: 'Apple', 2233: 'mango', 3344: 'chery', 1122: 'mango'}
+FruitsDictionary[3344] = 'Apple'
+print(FruitsDictionary)
+print(FruitsDictionary.keys())
+print(FruitsDictionary.values())
+
+output
+-------
+{1122: 'mango', 2233: 'mango', 3344: 'Apple'}
+dict_keys([1122, 2233, 3344])
+dict_values(['mango', 'mango', 'Apple'])
+
+
+
+clear():
+=========
+-> It claear or removes all key value:value pairs on the dictionary.
+
+FruitsDictionary = {1122: 'Apple', 2233: 'mango', 3344: 'chery', 1122: 'mango'}
+FruitsDictionary[3344] = 'Apple'
+print(FruitsDictionary)
+print(FruitsDictionary.keys())
+print(FruitsDictionary.values())
+print(FruitsDictionary.clear())
+
+output
+-------
+{1122: 'mango', 2233: 'mango', 3344: 'Apple'}
+dict_keys([1122, 2233, 3344])
+dict_values(['mango', 'mango', 'Apple'])
+None
+
+
+del()
+=====
+-> To delete the total dictionary: del key word is used to delete the complete dictionary from the memory.
+
+FruitsDictionary = {1122: 'Apple', 2233: 'mango', 3344: 'chery', 1122: 'mango'}
+FruitsDictionary[3344] = 'Apple'
+print(FruitsDictionary)
+print(FruitsDictionary.keys())
+print(FruitsDictionary.values())
+print(FruitsDictionary.clear())
+del FruitsDictionary
+print(FruitsDictionary)
+
+output
+-------
+{1122: 'mango', 2233: 'mango', 3344: 'Apple'}
+dict_keys([1122, 2233, 3344])
+dict_values(['mango', 'mango', 'Apple'])
+None
+Traceback (most recent call last):
+  File "C:/Users/anil kumar jena/PycharmProjects/untitled/new", line 8, in <module>
+    print(FruitsDictionary)
+NameError: name 'FruitsDictionary' is not defined
+
+
+
+
+len()
+=======
+->Returns the number of items in the dictionarey
+
+FruitsDictionary = {1122: 'Apple', 2233: 'mango', 3344: 'chery', 1122: 'mango'}
+FruitsDictionary[3344] = 'Apple'
+print(FruitsDictionary)
+print(len(FruitsDictionary))
+
+
+output
+-------
+{1122: 'mango', 2233: 'mango', 3344: 'Apple'}
+3
+
+
+
+pop()
+=====
+
+-> It removes the entry associated with the specified key.
+FruitsDictionary = {1122: 'Apple', 2233: 'mango', 3344: 'chery', 1127: 'orange'}
+print(FruitsDictionary)
+print(FruitsDictionary.pop(1127))
+print(FruitsDictionary)
+
+output
+------
+
+{1122: 'Apple', 2233: 'mango', 3344: 'chery', 1127: 'orange'}
+orange
+{1122: 'Apple', 2233: 'mango', 3344: 'chery'}
+
+
+list of tuples
+===============
+
+
+
+sorted()
+=========
+
+-> Sorted function is used to  arrange the key value pairs in an assending order to descending to order.
+
+>>> FruitsDictionary = {1122: 'Apple', 2233: 'mango', 3344: 'chery', 1127: 'orange'}
+>>> sorted(FruitsDictionary.items())
+[(1122, 'Apple'), (1127, 'orange'), (2233, 'mango'), (3344, 'chery')]
+
+
+
+list of tuples
+===============
+-> It returns key value pairs in the form list-tuple
+
+>>> FruitsDictionary = {1122: 'Apple', 2233: 'mango', 3344: 'chery', 1127: 'orange'}
+>>> FruitsDictionary.items()
+dict_items([(1122, 'Apple'), (2233, 'mango'), (3344, 'chery'), (1127, 'orange')])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

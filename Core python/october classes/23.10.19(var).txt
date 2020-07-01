@@ -1,0 +1,100 @@
+None Type
+---------- 
+  None Type  Is used to represent "no value ".
+EX:
+>>> AadharCardNumber=1234566788
+>>> AadharCardNumber=None
+>>> 
+>>> AadharCardNumber=1234566788
+>>> AadharCardNumber
+1234566788
+>>> AadharCardNumber=None
+>>> AadharCardNumber=2345648673937
+>>> AadharCardNumber
+2345648673937
+>>> type(AadharCardNumber)
+<class 'int'>
+>>> AadharCardNumber=None
+>>> type(AadharCardNumber)
+<class 'NoneType'>
+
+Dynamic Datatypes
+--------------------
+Based on the Given Data , Data Type is Automaticaley Taken.This type of Data Types Are called as Dynamic Data types.
+-> In python all Data Types are called as Dynamic Data types.
+
+
+Static Data types
+---------------------
+->Based on the given Data Data Types are not Taken Automaticaley.
+->Programmer should mention should mention Data Types Compalsoriley.
+->In C , C++ , JAVA , .net programmer Compalsoriley mention DataTypes orther wise Syntax error comes.
+
+PATH Variables
+---------------
+Variable stores the Data.
+Syntax for Variable:
+    variable name=value
+
+ex:Passport='IND1234'
+Here,passport is a variable and 'IND1122' is the value.
+
+RUles for Variable:
+-----------------------
+
+A variable should start with an Alphabet or UnderScore Symbol, A variable shouldn't start with a number or any special symbol except 
+UnderScore Symbol.
+
+Ex:>>> EmployeeName="Raju"  //valid
+>>> _EmployeeDeparment='IT'  //valid
+>>> 123EmployeeDeparment='IT' //invalid because numbers are used
+
+note-2
+------
+Keyword should not be used for the variable name.
+
+>>> import keyword
+>>> keyword.kwlist
+['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 
+'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+
+>>>false=100 //invalid
+>>>Nne=100  //invalid
+
+Note-3
+--------
+Space shoulsn't be given between the Words of variable name is not given or allow.Insead of space we can give an underscore symbol"(_)"
+
+>>> Employee_Name=1234567  //valid
+>>> Employee Name=1234567  //invalid
+
+Note-4
+---------
+Python is case sensitive progrming language.So UpperCase Variable is not Similar to LowerCase Variable.
+
+>>> TOTAl=10000
+>>> total=12345
+>>> total
+12345
+
+Note-5
+-----------
+->Length of the variable can be anything.that is no restriction on length of the variable.
+
+>>>lhackhfoajidwkbajcabdkajcsihdajpohdbdspjdibkb=10000   //valid
+
+>>> _____=300 //valid
+>>> _____
+300
+>>> sub__total=100  //valid
+>>> sub__total
+100
+>>> total@subtotal=2000
+SyntaxError: can't assign to operator
+>>> 15total=600
+SyntaxError: invalid syntax
+>>> 
+
+
+
+

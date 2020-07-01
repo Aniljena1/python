@@ -1,0 +1,27 @@
+Pass Statement
+----------------
+Pass statement is used to pass the execution control from one block to another block.
+
+Example
+--------
+def power():
+    a=int(input("Enter the first Integer:"))
+    b=int(input("Enter the second Integer:"))
+    print("power",a**b)
+def subtraction():pass  //if pass ststement is not given syntax error comes.
+def function3():
+    i=int(input("Enter product price:"))
+    print("Discount",i*(2/100))
+
+output
+---------
+>>> power()
+Enter the first Integer:90
+Enter the second Integer:9
+power 387420489000000000
+>>> subtraction()
+>>> function3()
+Enter product price:1000
+Discount 20.0
+
+    

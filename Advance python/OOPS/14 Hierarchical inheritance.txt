@@ -1,0 +1,63 @@
+Hierarchical inheritance
+--------------------------
+Multiple child classes are inherited from single parent class.
+
+class Persion:
+    def __init__(self):
+        self.PersionName=input("Please enter persion name:")
+        self.PersionAddress=input("Please enter persion address:")
+        self.PersionMobileNumber=int(input("Please enter persion nmobile number:"))
+class student(Persion):
+    def __init__(self):
+        Persion.__init__(self)
+        self.studentID=input("Please enter student id:")
+        self.studentStream=input("Please enter studenStream:")
+        self.studentCoursefees=float(input("Please enter student Course fees:"))
+    def student_information_disply(self):
+        print("*"*30)
+        print("student ID:",self.studentID)
+        print("studenStream:",self.studentStream)
+        print("Persion Mobile Number:",self.PersionMobileNumber)
+        print("*"*20)
+class faculty(Persion):
+    def __init__(self):
+        Persion.__init__(self)
+        self.facultyUniversityName=input("Please enter faculty university  name:")
+        self.facultySubject=input("Please enter faculty subject:")
+        self.facultyNumberofClasses=float(input("Please enter faculty number of classes:"))
+    def faculty_information_disply(self):
+        print("*"*30)
+        print("faculty University Name:",self.facultyUniversityName)
+        print("faculty Subject:",self.facultySubject)
+        print("faculty Number of Classes:",self.facultyNumberofClasses)
+        print("*"*20)
+class customer(Persion):
+    def __init__(self):
+        Persion.__init__(self)
+        self.customerArea=input("Please enter customer area:")
+        self.customerAge=int(input("Please enter customer age:"))
+    def customer_information_disply(self):
+        print("*"*30)
+        print("customer Area:",self.customerArea)
+        print("customer Age:",self.customerAge)
+        print("*"*20)
+class passenger(Persion):
+    def __init__(self):
+        Persion.__init__(self)
+        self.passengerBusTime=float(input("Please enter customer area:"))
+    def passenger_information_disply(self):
+        print("*"*30)
+        print("customer Area:",self.customerArea)
+        print("customer Age:",self.customerAge)
+        print("*"*20)
+s1=student()
+s1.student_information_disply()
+f1=faculty()
+f1.faculty_information_disply()
+c1.customer()
+c1=customer_information_disply()
+p1=passenger()
+p1.passenger_information_disply()
+    
+    
+    

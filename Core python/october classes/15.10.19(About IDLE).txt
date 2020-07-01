@@ -1,0 +1,50 @@
+IDLE->Integrated Devlopment Environment
+->IDLE is used to write python programing  and execute python programing.
+->Throug IDLE python programs can be executed in two ways.
+         1.Intractive Mode of Execution
+         2.Batch mode of execution
+
+
+  Intractive mode of execution
+------------------------------------------
+
+-> python programing line can be execute it imediatly.
+(Line by Line execution)
+->intractive mode is used for testing line-by-line of program.
+
+  ex:>>> 100+2000     >>> 200-100
+      2100                100
+     
+>>> print("hey i anil")
+hey i anil
+
+    Batch mode of execution
+-----------------------------------------------
+
+->We typed all the lines of programming in a file
+->Save the file
+->Execute the file, So that all line of programing are executed at a time.
+
+STEPS
+------
+1.Open IDLE
+2.select new file option from file menu.
+
+a=100
+b=200
+print("Additon of two numbers=",a+b)
+print("Subtraction of two numbers=",a-b)
+print("Multiplication of two numbers=",a*b)
+print("Divison of two numbers=",a/b)
+
+save the file in python37
+->filename.py
+go to run and select run module or F5
+
+      output
+-----------------------
+Additon of two numbers= 300
+Subtraction of two numbers= -100
+Multiplication of two numbers= 20000
+Divison of two numbers= 0.5
+>>> 

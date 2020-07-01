@@ -1,0 +1,34 @@
+Working with JSON
+-----------------
+
+JSON = java Script object notation
+
+java Script object notation represents in the form of {key:value} pairs.
+
+Steps:
+{
+    "EmployeeID":100022,
+    "EmployeeName":"Anil",
+    "EmployeeDept":"IT",
+    "EmployeeSAl":100000
+}
+
+save-->"employee.json"
+
+import json
+'''In python the "with" keyword is used when working with file streams'''
+with open('employee.json','r')as jsonfile:
+    data=json.load(jsonfile)
+    for i in data.items():
+        print(i)
+jsonfile.close()
+
+ o/p
+======
+('EmployeeID', 10022)
+('EmployeeName', 'anil')
+('EmployeeDept', 'it')
+('EmployeeSal', 50000)
+
+
+

@@ -1,0 +1,31 @@
+datatype
+----------
+datatype is types data.
+
+
+categories of datatypes
+----------------------------
+
+
+    Fundamental datatype                  collection datatype                           orther datatype                                             
+----------------------------         ----------------------------             -----------------------------------
+          |                                      |                                          |
+
+int,float,string,boolean,complex        list ,tuple,set,frozenset,dict          bytes,bytarray,range,NameType
+
+
+   Fundamental datatype
+------------------------------
+
+1.int -> A number without decimal point.          2.float -> A number with decimal point
+ ex:100,300,834,649........                        ex -> 1324.78,675403.98
+
+>>> aadhar_card_number=123456789
+>>> type(aadhar_card_number)
+<class 'int'>
+
+3.string -> 'str' stands for string,Sequence of character is called as string.Combination of alphabet number and symbols also called as string.
+   ex:all names,
+>>> name="anil kumar jena"
+>>> type(name)
+<class 'str'>

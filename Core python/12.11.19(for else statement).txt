@@ -1,0 +1,85 @@
+TASk:
+--------
+1.Accept pin number from the customer.
+
+2. providing 3 chances to entering pin number, if pin number is entered wrongly.
+
+3. once 3 chances are completed then display:"dear customer your card is blocked".
+
+4. if customer enters correct pin number then display "pin valid. Do the transaction".
+
+ans:
+
+for i in range(1,4):
+    pin=int(input("please enter your pin number:"))
+    if pin==1122:
+        print("pin is valid.Do the transcation")
+        break
+    else:
+        print("dear customer ,please enter correct pin number")
+else:
+    print("Dear customer your card is blocked")
+
+
+output1
+---------
+please enter your pin number:1122
+pin is valid.Do the transcation
+
+output2
+--------
+please enter your pin number:7778
+dear customer ,please enter correct pin number
+please enter your pin number:1122
+pin is valid.Do the transcation
+
+output3
+---------
+please enter your pin number:1133
+dear customer ,please enter correct pin number
+please enter your pin number:4445
+dear customer ,please enter correct pin number
+please enter your pin number:6677
+dear customer ,please enter correct pin number
+Dear customer your card is blocked
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+check multiple pin numbers
+--------------------------
+           
+pin_numbers=range(1122,2234)
+for i in range(1,4)
+    pin=int(input("Enter Pin Number:"))
+    if pin in pin_numbers:
+        print("Valid pin number.Do the transaction:")
+        break
+    else:
+        print("please enter valid pin number:")
+    
+else:
+    print("your 3 time chance is over.So your card is blocked:")
+        
+    
+
+output
+-----
+
+Enter Pin Number:1144
+Valid pin number.Do the transaction:
+>>> 
+ RESTART: C:/Python37/python pratice/check multiple pin numbers using for else loop.py 
+Enter Pin Number:7888
+please enter valid pin number:
+Enter Pin Number:990
+please enter valid pin number:
+Enter Pin Number:847
+please enter valid pin number:
+your 3 time chance is over.So your card is blocked:
+>>> 
+        
+
+
+
+

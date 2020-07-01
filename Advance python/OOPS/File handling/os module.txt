@@ -1,0 +1,48 @@
+os module
+=========
+    This module provides a perticular way of using operating system dependent functionality.
+isfile() -->to check a perticular file available or not.
+os.path.isfile()--> if the file avaliable return true if not return false
+sys-->to stop the in the begining only
+
+import os,sys
+fname=input("enter file name:")
+if os.path.isfile(fname):
+    print("file exist",fname)
+    f=open(fname,'r')
+    print("the content of file is")
+    data=f.read()
+    print(data)
+else:
+    print("File not Exist",fname)
+    sys.exit(0)
+
+Q: WAP to print the number of lines, words and characters present in the given file ?
+Ans:
+import os,sys
+file=input("Enter FIle Name:")
+if os.path.isfile(file):
+    print("file exists",file)
+    f=open(file,'r')
+else:
+    print("File doesn't exist",file)
+    sys.exit(0)
+lcount=wcount=ccount=0
+for line in f:
+    lcount=lcount+1
+    ccount=ccount+len(line)
+    words=line.split()
+    wcount=wcount+len(words)
+print("the number of lines",lcount)
+print("the number of words",wcount)
+print("the number of characters",ccount)
+
+o/p
+---
+Enter FIle Name:pra.py
+file exists pra.py
+the number of lines 20
+the number of words 36
+the number of characters 442
+
+

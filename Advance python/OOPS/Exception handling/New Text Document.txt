@@ -1,0 +1,743 @@
+Exception Handling
+==================
+Q: what is exception Handling?
+Ans: An unwanted unexcepted event that distrubs normal flow of the program is called exception
+
+In python, There are two type error:
+
+1. Syntax error
+
+2. Runtime error
+
+1.Syntax Error
+===============
+
+If Given syntax is wrong them "Syntax Error" will be occured.
+If Synatx are rectified then "program" will be executed ortherwise "Program" will be not executed .
+ex: missing paranthysis
+ex:keyword wrong typeing
+
+2.Runtime error
+===============
+
+->Runtime error are called as "EXCEPTIONS"
+
+Q:What is thr RunTime error or What is an Exception?
+
+ANS: The following are the reasons to face runtime errors or exceptions.
+
+                                                                      Exception
+ ----------------------------------------------------------------------------------------------------------------------------------------
+ AttributeError        ArithmeticError         EOFEerror        NameError     LookupError      OSError        TypeError       ValueError
+ --------------       ----------------        -----------      -----------    -----------     -----------    ------------     -----------
+                      ZeroDivisionError                                       IndexError   FileNotFoundError                                   
+                      FloatingPointError                                      KeyError     InterruptedError
+                      OverFlowError                                                        PermissionError
+                                                                                           TimeOutError 
+
+So these runtime errors will be called Exceptions.
+
+
+Exxeption are handelded by using follwing Blocks:
+
+1. try block
+
+2.except block -> Two types
+     
+       2a. Named except block
+       2b. default except block
+
+3.finally block
+
+4.Raise  -> User defined exception
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+Q: What is  "Exception Handling"?
+
+ANS: Hndling the runtime errors are called as exception Handling
+
+
+*************************************************************************************************
+
+Let us see one program without "Exception handling" and with "Exception handling"
+
+# Without Exception Handling
+a=10
+b=0
+print("Division is=",a/b)
+print("Addition is=",a+b)
+print("Subtraction is=",a-b)
+print("Multplication is=",a*b)
+
+
+output
+------
+Traceback (most recent call last):
+  File "C:/Python37/python pratice/oops/withoue exception handling.py", line 4, in <module>
+    print("Division is=",a/b)
+ZeroDivisionError: division by zero
+
+-------------------------------------
+# With Exception Handling
+a=10
+b=0
+try:
+    print("Division is=",a/b)#Exceping causing line
+except ZeroDivisionError:
+    print("A number is not divisible by zero")#Exceping Handling line
+print("Addition is=",a+b)
+print("Subtraction is=",a-b)
+print("Multplication is=",a*b)
+
+
+output
+-------
+A number is not divisible by zero
+Addition is= 10
+Subtraction is= 10
+Multplication is= 0
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ 1. "try" block
+--------------------
+   
+-> try block contents "Exception Causing lines".
+
+->
+
+2. "except" block
+--------------------
+
+-> "Exception Handling code"  is existed in this "except" block.
+
+
+
+TASK
+-----
+1.Accept an Aadhar Card Number from the Customer
+
+2. If Wrong value is enter, then dispaly an appropriate message i.e"please enter a valid inpiut"
+
+3. If valid aadhar card number number is dispaly:"Your valid card nuber is valid"
+
+4.If customer doesn't enter valid Aadhar number then dispaly:"Your Aadhar card number is invalid"
+                   
+
+
+AadharCardNumbers=range(1122334455,5566778899)
+try:
+    AadharCardNumber=int(input("Enter your Aadhar card number:"))
+    if AadharCardNumber in AadharCardNumbers:
+        print("Aadhar number is valid")
+    else:
+        print("Your Adhar card number is invalid")
+except ValueError:------------------------------------------>#named except block
+    print("Please enter only integer value")
+
+
+output-1
+---------
+
+Enter your Aadhar card number:1122334455
+Aadhar number is valid
+
+output-2
+---------
+
+Enter your Aadhar card number112233445
+Your Adhar card number is invalid
+
+output-3
+---------
+
+Enter your Aadhar card number:apple
+Please enter only integer value
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+"except block" are two type:
+            
+     1. Named except block
+
+     2. default except block
+
+
+1. Named except block
+======================
+
+"Named except" will handle that named "exception" only.
+
+Example:
+
+ except ValueError:---> This except block is called as "Named except" block and it handles  "ValueError" exception only.
+
+except ZeroDivisionError  -------> This is also called as "Named except" block and it handels "ZeroDivisionError" exception only.
+
+
+2. default except block
+=========================
+
+-> "default except" block can handle all exceptions.
+
+-> In default except block we write a common error message to all exception.
+
+
+
+Named except block:
+===================
+
+#Named except block
+
+try:
+    a=int(input("Enter first integar:"))
+    b=int(input("Enter second integar"))
+    print("division",a/b)
+
+except ValueError:
+    print("Please enter only integaer value")
+except ZeroDivisionError:
+    print("Division is zero.So, a number is not division by zero")
+
+
+output-1
+---------
+
+Enter first integar:apple
+Please enter only integaer value
+
+output-2
+---------
+
+Enter first integar:10
+Enter second integar0
+Division is zero.So, a number is not division by zero
+
+
+Default except block:
+======================
+
+
+#Default except block
+
+try:
+    a=int(input("Enter first integar:"))
+    b=int(input("Enter second integar"))
+    print("division",a/b)
+
+except:
+    print("please enter valid input")
+
+
+output-1
+--------
+
+Enter first integar:apple
+please enter valid input
+
+output-2
+--------
+
+Enter first integar:10
+Enter second integar0
+please enter valid input
+
+
+
+
+NOTE
+=====
+-> If we want to give specific error messages to the exception then we have to go for "named except block" concept.
+
+-> "named except block" concept is also called as "try block" with "multiple except block".
+
+-> If we want to give common error messages to the exception then we have to go for named "default except block" concept.
+
+-> default except block is also caleed as " 'try' block with one 'except' block"
+
+
+
+
+Invalid syntax
+===============
+
+try:
+    print(10/0)
+try:
+    a=int(input("Enter a integar"))
+
+except:
+    print("not valid input")
+
+output
+------
+
+syntax error
+
+
+
+Invalid syntax2
+===============
+
+try:
+    print(10/0)
+    except:
+    print("not valid input")
+
+output
+--------
+error
+
+Invalid syntaxe
+===============
+
+try:
+    print(10/0)
+
+
+output
+--------
+error
+
+Single except block that can handle multiple exception:
+=======================================================
+try:
+    x=int(input("Enter first number:"))
+    y=int(input("Enter second number"))
+    print(x/y)
+except (ZeroDivisionError,ValueError)as msg:
+    print("plz provied valid numbers only and problem is:",msg)
+
+
+
+Nested try except block
+=========================
+try:
+    print(10/0)
+    try:
+        a=int(input("Enter a integar"))
+    except:
+        print("please enter valid input")
+except ZeroDivisionError:
+     print("Division is zero.So, a number is not division by zero")
+
+output
+------
+Division is zero.So, a number is not division by zero
+
+TASK:
+=====
+try:
+    print(10/2)
+    try:
+        a=int(input("Enter a integar"))
+    except:
+        print("please enter valid input")
+except ZeroDivisionError:
+     print("Division is zero.So, a number is not division by zero")
+
+
+
+output
+-------
+5.0
+Enter a integarapple
+please enter valid input
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+nested exception block
+=======================
+try:
+    print(10/0)
+except ZeroDivisionError:
+    try:
+        a=int(input("Enter a integar"))
+    except:
+        print("please enter valid input")
+
+
+
+output
+-------
+Enter a integar65.0
+Enter a integarapple
+please enter valid input
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ Finally block
+===============
+
+-> "Finally block" block contains "Clean-up code(Resources De-allocation Code)" 
+
+a=b=None
+try:
+    a=float(input("Enter the first float number"))
+    b=float(input("Enter the second float number"))
+    print("division:",a/b)
+    print("multiplicartion:",a+b)
+
+except:
+    print("enter valid number")
+finally:
+    del a,b
+
+
+output
+-------
+
+
+Enter the first float number10.20
+Enter the second float number20.89
+division: 0.4882719004308281
+multiplicartion: 31.09
+>>> a
+Traceback (most recent call last):
+  File "<pyshell#0>", line 1, in <module>
+    a
+NameError: name 'a' is not defined
+
+else block
+==========
+Q:What is the different between else and finalley ?
+Ans:
+else:else block will be executed if there is no exception.
+finalley:finally always be executed
+
+try: 
+  Risky code
+except:
+  will be executed if exception in try
+else:
+ will be executed if no exception in try
+finally:
+   will be executd always whether exception raised or not raised and handle or not handle.
+
+
+various possible combinations of try-except-else-finally blocks
+===============================================================
+1.try without except or finally is always inavalid.
+2. without try except block always invalid.
+3. finally without try is invalid.
+4.We can take multiple except block for the same try but we can't take multiple else and finally blocks.
+5.else without except it always invalid.
+6.try-except-else-finally order  is important.
+
+ex:
+===
+1.try:
+   print("try")
+
+2.try:
+    print("try")
+finally:
+    print("finnaly")
+
+o/p --> invalid
+
+3.try:
+    print("try")
+else:
+    print("finnaly")
+
+o/p --> invalid
+
+4.
+try:
+    print("try")
+else:
+    print("finnaly")
+finally:
+    print("finally")
+
+o/p --> invalid #conclusion:without except block we can't take else block
+
+5.
+try:
+    print("try")
+except:
+    print("except")
+else:
+    print("else")
+else:
+    print("else")
+
+o/p --> invalid #two else block are not allowed
+
+6.
+try:
+    print("try")
+except:
+    print("except")
+try:
+    print("try")
+except:
+    print("except")
+
+o/p --> valid
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Types of exception
+---------------------
+
+1. System define exception
+
+2. User define exception
+
+1. System define exception
+--------------------------
+The exceptions which are raised automatically by python whenever a perticular event occurs.
+
+2. User define exception
+========================
+-> based on the business requirements, programmer defines new exceptions.
+
+
+Example User Define Exception
+==================================
+
+1.InsufficientFundsException
+
+2.InvalidUsername Exception
+
+3.InvalidPassword Exception
+
+4.cheque 
+
+
+
+
+ Requirement to write InsufficientFundsException
+===================================================
+
+1. Accept Withdraw amount from the customer
+
+2. If withdraw amount is less than account balance then perform debit operation.
+
+3. If withdraw amount is morethan account balance then raise InsufficientFundsException.
+
+class InsufficientFundsExceptions(Exception):
+    def __init__(self,argument):
+        self.ExceptionMessage=argument
+        
+Account_Balance=100000
+withdraw_amount=int(input("Enter the Amount to withdraw:"))
+if withdraw_amount>Account_Balance:
+    raise InsufficientFundsExceptions("please maintain sufficient amount in your account")
+else:
+    Account_Balance=Account_Balance-withdraw_amount
+    print("Available account balance=",Account_Balance)
+
+output
+------
+Enter the Amount to withdraw:50000
+Available account balance= 50000
+>>> 
+ RESTART: C:/Python37/python pratice/oops/Bank withdraw amount use exception.py 
+Enter the Amount to withdraw:100005
+Traceback (most recent call last):
+  File "C:/Python37/python pratice/oops/Bank withdraw amount use exception.py", line 8, in <module>
+    raise InsufficientFundsExceptions("please maintain sufficient amount in your account")
+InsufficientFundsExceptions: please maintain sufficient amount in your account
+>>> 
+
+    
+Ex-2:
+=====
+class TooYoungException(Exception):
+    def __init__(self,arg):
+        self.msg=arg
+
+class TooOldException(Exception):
+    def __init__(self,arg):
+        self.msg=arg
+
+age=int(input("Enter Your Age:"))
+if age>=60:
+    raise TooYoungException("Plz wait some more time you will get best match soon")
+elif age<18:
+    raise TooOldException("tou are so old for marrage")
+else:
+    print("thanks for registration")
+
+    
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

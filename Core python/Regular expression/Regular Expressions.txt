@@ -1,0 +1,492 @@
+Regular Expressions
+===============
+
+What is a regular expression?
+Ans: It is a collection of different characters which are used for "Searching" for the required data.
+
+So, "Regular Expressions" concept is used to search the required data very fast with less coding.
+
+So, With "Regular Expressions", the programmer can easily develop the programs for "Searching the required data".
+
+Python is providing a special module namely "re"
+
+"re" module contains so many pre-defined functions to perform "Searching operations"
+
+
+Examples for Simple Character Matches:
+=============================
+Task: Finding the word "TCS" in the given data.
+
+RegularExpression.py
+-----------------------------
+import re
+count=0
+pattern=re.compile("TCS")
+match=pattern.finditer("TCS stands for Tata Consultancy Services. TCS is a top rated software cosultancy company. TCS")
+for i in match:
+    count=count+1
+print("TCS word is existed for ",count," times")
+
+Note:
+====
+compile() function is use to compile the "Regular Expression"
+
+finditer() function will find the "regular expression" iteratively in the given data
+
+
+
+Output:
+======
+TCS word is existed for  3  times
+
+Filename: tcsfile.txt
+==============
+TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS TCS 
+
+program for searching "TCS" from "tcsfile.txt"
+---------------------------------------------------------
+import re
+count=0
+pattern=re.compile("TCS")
+f=open("tcsfile.txt",'r')
+data=f.read()
+match=pattern.finditer(data)
+for i in match:
+    count=count+1
+print("TCS word is existed for ",count," times")
+'''
+output:
+TCS word is existed for  57  times
+'''
+"tcsfile.txt" is existed in F: drive
+--------------------------------------
+import re
+count=0
+pattern=re.compile("TCS")
+f=open("F:\\tcsfile.txt",'r')
+data=f.read()
+match=pattern.finditer(data)
+for i in match:
+    count=count+1
+print("TCS word is existed for ",count," times")
+
+Example-2:
+===========
+import re
+count=0
+data=input("Enter any text:")
+word=input("What word you want to search:")
+pattern=re.compile(word)
+match=pattern.finditer(data)
+for i in match:
+    count=count+1
+print(word," word is existed for ",count," times")
+Output:
+=======
+Enter any text:Sunday Special Class for Regular expressions. Data Scientists are attending this class. These Data Scientists are famous not only in Ameerpet but also in America. Trump personally congratulated these Data Scientists.
+What word you want to search:Data Scientists
+
+Data Scientists  word is existed for  3  times
+
+On Match object we can call the following methods.
+====================================
+1. start()  -->Returns start index of the match
+2. end() --> Returns end+1 index of the match
+3. group() --> Returns the matched string
+
+Task: searching for "WIPRO" and displaying its statring index, ending index.
+Example:
+=======
+import re
+count=0
+pattern=re.compile("WIPRO")
+matcher=pattern.finditer("WIPRO,Facebook,Microsoft,twitter,WIPRO,TCS,Amazon,Flipcart,snapdeal,WIPRO,TechMahendra")
+for match in matcher:
+    count+=1       
+    print(match.start(),"...",match.end(),"...",   
+    match.group())
+print("The number of occurrences: ",count)
+
+Output:
+======
+0 ... 5 ... WIPRO
+33 ... 38 ... WIPRO
+68 ... 73 ... WIPRO
+The number of occurrences:  3
+
+In F: drive,  "tcsfile.txt" is existed. Then execute the following program:
+import re
+count=0
+pattern=re.compile("TCS")
+f=open("F:\\tcsfile.txt",'r')
+data=f.read()
+matcher=pattern.finditer(data)
+for match in matcher:
+    count+=1       
+    print(match.start(),"...",match.end(),"...",    match.group())
+print("The number of occurrences: ",count)
+
+
+Character classes:
+==============
+We can use character classes to search a group of characters
+1. [abc]===>Either a or b or c
+2. [^abc] ===>Except a and b and c
+3. [a-z]==>Any Lower case alphabet 
+4. [A-Z]===>Any upper case alphabet 
+5. [a-zA-Z]==>Any alphabet 
+6. [0-9]  ==>Any digit from 0 to 9
+7. [a-zA-Z0-9]==>Any alphanumeric character
+8. [^a-zA-Z0-9]==>Except alphanumeric characters	(Special Characters)
+
+012 3456
+b7c@k9z
+[abc]
+0 ...... b
+2 ...... c
+
+
+
+012 3456
+b7c@k9z
+
+[^abc]
+1 ...... 7
+3 ...... @
+4 ...... k
+5 ...... 9
+6 ...... z
+
+
+
+012 3456
+b7c@k9z
+
+[a-z]
+0 ...... b
+2 ...... c
+4 ...... k
+6 ...... z
+
+012 3456
+b7c@k9z
+
+[0-9]
+1 ...... 7
+5 ...... 9
+
+012 3456
+b7c@k9z
+
+[a-zA-Z0-9]
+0 ...... b
+1 ...... 7
+2 ...... c
+4 ...... k
+5 ...... 9
+6 ...... z
+
+012 3456
+b7c@k9z
+
+[^a-zA-Z0-9]
+3 ...... @
+
+Programs to print above:
+---------------------------------
+import re
+pattern=re.compile("[abc]")
+match=pattern.finditer("b7c@k9z")
+for i in match:
+    print(i.start(),"...",i.group())
+
+Output:
+======
+0 ... b
+2 ... c
+
+import re
+pattern=re.compile("[^abc]")
+match=pattern.finditer("b7c@k9z")
+for i in match:
+    print(i.start(),"...",i.group())
+
+Output:
+=========
+1 ... 7
+3 ... @
+4 ... k
+5 ... 9
+6 ... z
+
+Pre defined Character classes:
+=======================
+\s	Space character
+\S 	Any character except space character
+\d 	Any digit from 0 to 9
+\D 	Any character except digit
+\w 	Any word character [a-zA-Z0-9]
+\W 	Any character except word character (Special Characters)  [^a-zA-Z0-9]
+
+\s	Space character
+=======================
+RegularExpression.py
+----------------------------
+import re
+pattern=re.compile("\s")
+match=pattern.finditer("b7c@k9z")
+for i in match:
+    print(i.start(),"...",i.group())
+
+Output:
+=========
+No output because there is no space
+
+
+\S	Any character except space character
+==================================
+RegularExpression.py
+------------------------------
+import re
+pattern=re.compile("\S")
+match=pattern.finditer("b7c@k9z")
+for i in match:
+    print(i.start(),"...",i.group())
+
+Output:
+========
+0 ... b
+1 ... 7
+2 ... c
+3 ... @
+4 ... k
+5 ... 9
+6 ... z
+
+\d 	Any digit from 0 to 9
+========================
+RegularExpression.py
+----------------------------
+import re
+pattern=re.compile("\d")
+match=pattern.finditer("b7c@k9z")
+for i in match:
+    print(i.start(),"...",i.group())
+
+Output:
+=========
+1 ... 7
+5 ... 9
+
+Quantifiers:
+============
+We can use quantifiers to specify the number of occurrences to match.
+
+RegularExpression.py
+-----------------------------
+import re
+pattern=re.compile("a")   -->a: Exactly one 'a'
+match=pattern.finditer("apple,banana,cherry")
+for i in match:
+    print(i.start(),"...",i.group())
+
+Output:
+========
+0 ... a
+7 ... a
+9 ... a
+11 ... a
+
+
+RegularExpression.py
+--------------------------------
+import re
+pattern=re.compile("a{2}")  -->a{2} : Exactly 2 a's (side by side)
+match=pattern.finditer("apple,banana,aa")
+for i in match:
+    print(i.start(),"...",i.group())
+
+Output:
+========
+13 ... aa
+
+
+RegularExpression.py
+-----------------------------
+import re
+pattern=re.compile("a{2,3}")   -->a{2,3} : Minimum 2 a's and Maximum 3 a's
+match=pattern.finditer("apple,banana,aa,aaa") 
+for i in match:
+    print(i.start(),"...",i.group())
+
+Output:
+=========
+13 ... aa
+16 ... aaa
+
+Greedy Matches:
+=================
+Performing "Code Search" 
+greedymatch.py
+-----------------------
+import re
+string1= "<html><head><title>Web Page1</title></head><body><ul><li>Item 1</li> <li>Item 2</li> <li>Item 3</li></ul></body></html>"
+regex= re.compile("<li>.*</li>")
+matches= re.findall(regex, string1)
+print(matches)
+
+Output:
+=========
+['<li>Item 1</li> <li>Item 2</li> <li>Item 3</li>']
+
+Store html code in a file namely "webpage1.html". The following is the "html" code:
+<html>
+    <head>
+        <title>Web Page1</title>
+    </head>
+    <body>
+        <ul>
+            <li>Item 1</li>             <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+    </body>
+</html>
+
+Program for searching "<li>" tags in the above "html" code:
+
+import re
+f=open("webpage1.html",'r')
+code=f.read()
+regex= re.compile("<li>.*</li>")
+matches= re.findall(regex, code)
+print(matches)
+
+Output:
+=========
+['<li>Item 1</li> <li>Item 2</li> <li>Item 3</li>']
+
+
+
+
+Important functions of "re" module:
+
+compile()
+finditer()
+findall()
+match()
+fullmatch()
+sub()
+subn()
+search()
+split() 
+
+Note: We have already seen “compile(), findall(), finditer()”  functions
+
+match():
+==========
+ If we want to search a string at the beginning of the paragraph or text then we can prefer this match() function.
+
+import re
+string=input("Enter a pattern to check: ")
+m=re.match(string,"apple is a good fruit")                
+if m!=None:
+    print("Match is available at the beginning of the String")
+else:
+    print("Match is not available at the beginning of the String")
+Output:
+=========
+Enter a pattern to check: apple
+Match is available at the beginning of the String
+
+
+fullmatch()
+===============
+ If exactly entire text should be matched then we can use fullmatch() function (or) If searching pattern is exactly matched with entire data or entire text then we can use fullmatch() function.
+
+test.py
+-------------
+import re
+string=input("Enter a pattern to check: ")
+m=re.fullmatch(string,"apple is a good fruit")
+if m!=None:
+    print("Full Match is available")
+else:
+    print("Full Match is not available")
+
+Output:
+=========
+Enter a pattern to check: apple is a good fruit
+Full Match is available
+
+
+sub():
+====
+sub means substitution or replacement
+Syntax:  re.sub(regex,replacement,targetstring)
+In the target string every matched pattern will be replaced with provided replacement
+
+test.py
+----------
+import re
+string=re.sub("apple","grapes","apple banana cherry apple")
+print(string)
+
+Output:
+=========
+grapes banana cherry grapes
+
+subn():
+=====
+It is exactly same as sub except it can also returns the number of replacements.
+
+This function returns a tuple where first element is result string and second element is number of replacements.
+
+result:    (resultstring, number of replacements)
+
+test.py
+----------
+import re
+text=input("Enter any text:")
+old=input("Enter old string:")
+new=input("Enter new string:")
+string=re.subn(old,new,text)
+print(string)
+Output:
+=======
+Enter any text:apple banana cherry apple
+Enter old string:apple
+Enter new string:grapes
+('grapes banana cherry grapes', 2)
+
+search()
+======
+To search a string which is existed anywhere in the sentence then we can use search() function.
+program:
+=======
+import re
+string=input("Enter a pattern to check: ")
+m=re.search(string,"banana apple cherry")
+if m!=None:
+    print("Match is available")
+else:
+    print("Match is not available")
+output:
+======
+Enter a pattern to check: apple
+Match is available
+
+split():
+======
+A single string is splitted into multiple sub-strings
+(OR)
+A sentence is splitted into words.
+
+test.py
+---------
+import re
+list1=re.split(" ","Apple is a good fruit")
+print(list1)
+
+Output:
+=======
+['Apple', 'is', 'a','good','fruit']

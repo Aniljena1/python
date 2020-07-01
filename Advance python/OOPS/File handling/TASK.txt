@@ -1,0 +1,61 @@
+TASK
+----
+
+1.Ask the user: "Which file you to creat:"
+
+2.Craet user specified in current working directory.
+
+3.Ask the user:"Enter the data"
+
+4.Keep on talking data until user says "no".
+
+5.Write the entire data to a file.
+
+
+file=input("Enter your file name:")
+f=open(file,'a')
+ans="yes"
+while ans=="yes":
+    data=input("Enter data:")
+    f.write(data+'\n')
+    print("Data is written Successfully")
+    ans=input("Do you want to enter one more data(yes/no):")
+f.close()
+
+
+
+output
+--------
+
+Enter your file name:anil.txt
+Enter data:ge5435,tgdef,800
+Data is written Successfully
+Do you want to enter one more data(yes/no):no
+
+
+
+Example-2
+==========
+file=input("Which file name you want to give to student data:")
+f=open(file,'a')
+ans="yes"
+while ans=="yes":
+    StudentId=input("Enteryour Student Id:")
+    StudentName=input("Enteryour Student Name:")
+    StudentMobileNumber=input("Enteryour Student Number:")
+    StudentEmail=input("Enteryour Student Id:")
+    StudentRecord='Student Id:'+StudentId+'\n'+'StudentName:'+StudentName+'\n'+'StudentMobileNumber'+StudentMobileNumber+'/n'+'StudentEmail'+StudentEmail+'\n'+'*'*30+'\n'
+    f.write(StudentRecord)
+    print("Student  Data is written Successfully")
+    ans=input("Do you want to enter one more data(yes/no):")
+f.close()
+
+output
+-------
+Which file name you want to give to student data:studentid
+Enteryour Student Id:87498497
+Enteryour Student Name:jsfdjkfs
+Enteryour Student Number:8974
+Enteryour Student Id:8998
+Student  Data is written Successfully
+Do you want to enter one more data(yes/no):yes

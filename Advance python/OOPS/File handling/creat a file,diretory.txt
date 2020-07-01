@@ -1,0 +1,266 @@
+File handling
+---------------
+
+Q: What is a file?
+ANs: File stores the data permanetley.
+
+Types of File:
+===============
+
+1. Text files
+
+2.Binarey files
+
+Text files Stores:
+           1.Alphabets(A_Z/a-z)
+          
+           2.Numbers(0-9)
+
+           3.Symbols(~ ! @ # $ % etc..............)
+
+4.Audio files,video files,executable files,image files come under binarey files.
+
+
+File Modes
+===========
+
+Mode means an operation.
+
+-> The file modes specfy what operations we are performing n a file.
+
+-> The following are "file Modes"
+
+1. r   read mode
+
+2. w   write mode   -----------------------------------------------> for text file
+
+3. a   append mode
+
+4. r+  read and write mode
+
+5. w+ write and read mode
+
+6. a+ append and read mode
+---------------------------------------------------
+7. rb read mode on binarey file
+
+8.  wb write mode on binarey file
+
+9. ab append mode binarey file
+
+10. r+b read and write mode binarey file          ---------------------------------> for binarey file
+
+11. w+b write and read mode on binarey file
+
+12. a+b append and read mode on binarey file   
+
+
+
+
+
+TASk
+------
+
+1. Creat a employee.txt file
+
+2.Write an employee record to "Employee.txt" file.
+
+f=open("akj.txt",'w')
+f.write('E122,mr.anil,python,1000')
+f.close()
+
+output
+------
+akj.txt file created
+
+
+f=open("rkj.txt",'r')
+data=f.read(10)
+print(data)
+f.close()
+
+
+Example2
+---------
+f=open("productDetails.txt",'a')
+ans="yes"
+while ans=="yes":
+    ProductCompaneyName=input("Enter product Companey  Name:")
+    ProductName=input("Enter product Name:")
+    ProductPrice=float(input("Enter product Price:"))
+    ProductIpNumber=int(input("Enter product Number:"))
+    MobileDetails=ProductCompaneyName+','+ProductName+','+str(ProductPrice)+'+'+str(ProductIpNumber)+'\n'
+    f.write(MobileDetails)
+    print("Mobile phone record is successful written")
+    ans=input("Do you want to record one or more product enter(yes/no)")
+f.close()
+
+Example-3
+=========
+try:
+    file=input("ENter file name:")
+    f=open(file,'r')
+    data=f.read()
+    print(data)
+    f.colse()
+except:
+    print("specfied file not found")
+
+output
+------
+ENter file name:read data.py
+try:
+    file=input("ENter file name:")
+    f=open(file,'r')
+    data=f.read()
+    print(data)
+    f.colse()
+except:
+    print("specfied file not found")
+
+specfied file not found
+
+
+example2
+--------
+ans="yes"
+while ans=="yes":
+    try:
+        file=input("ENter file name:")
+        f=open(file,'r')
+        data=f.read()
+        print(data)
+        f.colse()
+    except:
+        print("specfied file not found")
+    ans=input("Do you want to read one or more file(yes/no)")
+
+output
+======
+ENter file name:read data.py
+try:
+    file=input("ENter file name:")
+    f=open(file,'r')
+    data=f.read()
+    print(data)
+    f.colse()
+except:
+    print("specfied file not found")
+
+specfied file not found
+Do you want to read one or more file(yes/no)
+
+os module
+=========
+isfile() -->to check a perticular file available or not.
+os.path.isfile()--> if the file avaliable return true if not return false
+
+        Creating Drive
+        ===============
+
+os.getcwd()-->return current working directory
+os.mkdir()-->creating a directory
+os.rmdir()-->remove a directory-->os.rmdir(anil/videos)
+os.removedirs()-->remove all directory-->os.rmdir(sub1/sub2/sub3/sub4)
+os.rename()-->rename the file -->os.rename("situ","anil")
+os.listdir()-->to know contents of directory -->os.listdir("anil") #anil is dir name
+os.walk()-->complete dirctory--> it contens so many parameter
+os.walk(path,topdown=True,onerror=None,followlinks=False)
+path--> which path we have to go
+topdown-->top to down
+onerror-->if faceing any error don't do anything
+
+Ex:
+---
+import os
+cwd=os.getcwd()
+print("Current working directory:",cwd)
+
+o/p
+---
+Current working directory: C:\Users\anil kumar jena\Desktop
+
+Ex-2
+-----
+import os
+drive=input("In which DRIVE you want creat a directory(C: D: E: F)")
+print("Under",drive)  
+directory=input("Which file you want to creat a directory")
+os.mkdir(drive+directory)
+print("under",drive,directory,"is created successful")
+
+output
+------
+In which DRIVE you want creat a directory(C: D: E: F)F
+Under F
+Which file you want to creat a directoryanill
+under F anill is created successful
+
+
+TASK
+----
+1.Ask the user:"In which drive you want to creat a directory"
+
+2.Ask the user: "Which directory you want to creat"
+
+3.Ask the user: "Which file you want to creat"
+
+4.Ask the user:"What data you want to store into a file:"
+
+5.Untill User says 'no', keep on adding adding the data toa file.
+
+6.Stop the progra. when user says 'no'.
+
+7. Dispaly the file.
+
+
+import os
+drive=input("In which drive you want creat a directory(c:d):")
+print("under",drive)
+directory=input("Which directory you want to creat:")
+os.mkdir(drive+directory)
+print("Under",drive,directory,"is created successfully")
+print("Under",drive,directory)
+file=input("Which file you want to creat:")
+f=open(drive+directory+file,'a')
+user=input("What data you want to store into a file:")
+ans="yes"
+while yes=="yes":
+    data=input("enter the data:")
+    f.write(data+'\n')
+    print("data is written successfully")
+    ans=input("do you want to add more data(yes/no):")
+    f.close()
+
+output
+------
+
+                             Handling Binary Data
+                            =======================
+read and write images
+------------------
+f1=open("9695.jpg",'rb')
+f2=open("birds.jpg",'wb')
+bytes=f1.read()
+f2.write(bytes)
+print("New image is available with name:birds.jpg")
+
+
+-->It is nothing but copy and paste
+
+
+video file
+-----------
+f1=open("inputvideo.mp4",'rb')
+f2=open("outputvideo.mp4",'wb')
+bytes=f1.read()
+f2.write(bytes)
+print("New image is available with name:birds.jpg")
+
+
+
+
+
+
+
+

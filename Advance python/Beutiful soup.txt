@@ -1,0 +1,102 @@
+crummy.com -> for learning BeutifulSoup
+=========================================
+->In this tutorial, we will show you, how to perform web scraping in Python using Beautiful Soup 4
+ for getting data out of HTML, XML and other markup languages. In this we will try to scrap webpage
+ from various different websites (including IMDB). We will cover beautiful soup 4, python basic tools
+ for efficiently and clearly navigating, searching and parsing HTML web page.
+
+1. What is web-scraping ?
+    Scraping is simply a process of extracting (from various means), copying and screening of data.
+    When we do scraping or extracting data or feeds from the web (like from web-pages or websites),
+    it is termed as web-scraping.
+
+-> pip install requests - It is a module used to grab content any web side
+-> pip install html5lib - 
+-> pip install bs4(beutiful soup) 
+   
+  . In order to work with the HTML, We will have to get the 
+    HTMl as a string
+  . We be to parse the HTML content and  give it a tree like structure so that 
+    It can be traversed.
+
+html.parser - It will used to parse HTML files, the rendering engine will start parsing the HTML document
+              and convert elements to DOM nodes in a tree.
+
+.contents - A tag's children are available as a  list
+.children - A tag's children are available as a generator
+
+#Commonly used types of objects:
+ 1. Tag
+ 2. NavigableString
+ 3. BeautifulSoup
+ 4. Comment
+
+title = soup.title
+print(type(soup))  # tag
+print(type(title)) # NavigableString
+print(type(title.string)) # BeautifulSoup
+
+main .py
+--------
+# If u want to scrap a website
+# 1. Use the API
+# 2. HTML Web Scraping using some tool like bs4
+
+import requests
+from bs4 import BeutifulSoup
+url = "https://www.nareshit.com"
+
+# Step 1 : Get the HTML
+r = requests.get(url)
+htmlContent = r.content
+#print(htmlContent)
+
+# Step 2 : Parse the HTML
+soup = BeutifulSoup(htmlContent,'html.parser')
+# print(soup.prettify)
+
+# Step 3 : HTML tree traversal
+
+# Get the title of the Html page
+title=soup.title
+
+# Get all the paragraphs from the page
+paras = soup.find_all('p')
+#print(paras)
+
+# Get all the anchor from the page
+anchor = soup.find_all('a')
+#print(anchor)
+
+# Get first element from the HTML page
+print(soup.find('p'))
+
+# Get classes of any element from the HTML page
+print(soup.find('p')['class'])
+
+# find all the elements with class lead
+print(soup.find_all("p",class_="lead"))
+
+# Get the text from the tags/soup
+print(soup.find('p').get_text())
+print(soup.get_text())
+
+# Get all the links on the page
+anchor = soup.find_all('a')
+all_links = set()
+for link in anchor:
+    if(link.get('href') != '#'):
+        linkText = "https://www.nareshit.com"
+        all_links.add(link)
+        print(linkText)
+
+# Get commet
+markup = "<p><!-- this is a comment --></p>"
+soup2= BeutifulSoup(markup)
+print(type(soup2.p.string))
+
+navbarSupportedContent = soup.find(id='navbarSupportedContent')
+for elem in navbarSupportedContent.contents:
+    print(elem)
+exit()  
+

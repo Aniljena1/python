@@ -1,0 +1,21 @@
+Identity Operator(is , is not)
+-----------------
+->In python, every object is having Identity number .
+->An Identity number is an unique number.
+->An Identity number of an object is used to recognise it fast in the memory.
+-> To know the identity no.of an object we have to use id function.[id()]
+
+
+>>> id(a)// a is variable name 100 is data
+140724363361632//id number
+
+-> Identity Operator are used to check whether identity numbers of the objects are same or not.if they are same true is return,
+   ortherwise false is return.
+
+>>> i=j=200
+>>> id(i)
+140724363364832
+>>> id(j)
+140724363364832
+
+-> if data is same ids identity number will be same

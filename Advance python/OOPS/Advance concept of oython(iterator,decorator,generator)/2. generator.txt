@@ -1,0 +1,164 @@
+python Generator
+================
+
+Generator is a fumction which is responsible to generate a sequence of values.
+
+-> Let us see an example without "Python Generator" concept.
+
+without generator
+------------------
+def decrement(n):
+ list1=[]
+ for i in range(n,0,-1):
+     list1.append(i)
+     return list1
+values=decrement(10)
+for i in values:
+  print(i)
+
+
+print(i,end="   ")
+
+
+
+How to create a generator in Python?
+====================================
+-> It is fairly simple to create a generator in Python.
+   It is as easy as defining a normal function with yield statement instead of a return statement.
+
+-> If a function contains at least one yield statement (it may contain other yield or return statements), 
+  it becomes a generator function. Both yield and return will return some value from a function.
+
+-> The difference is that, while a return statement terminates a function entirely, 
+   Unlike the return statement yield gives the next object.
+
+Differences between Generator function and a Normal function
+=============================================================
+
+Here is how a generator function differs from a normal function.
+
+-> Generator function contains one or more yield statement.
+-> When called, it returns an object (iterator) but does not start execution immediately.
+-> Methods like __iter__() and __next__() are implemented automatically. So we can iterate through the items using next().
+-> Once the function yields, the function is paused and the control is transferred to the caller.
+-> Local variables and their states are remembered between successive calls.
+
+Advantages
+===========
+1.Very easy to use
+2.memory utilization improved
+3.performance will be improved
+4.Best suitable for readi g data from large number of files.
+5.web scraping and crawling concept 
+
+
+with generator Program
+-----------------------
+def decrement(n):
+    while n>0:
+        yield n  -------------> This is python generator
+        n=n-1
+        
+values=decrement(10)
+for i in values:
+    print(i)
+
+-> yield will yield the values or generating the values
+
+
+output
+------
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+>>> values=decrement(10)
+>>> values
+<generator object decrement at 0x0000022014A9F148>
+>>> for i in values:
+	print(i,end=" ")
+
+	
+10 9 8 7 6 5 4 3 2 1
+>>> type(values)
+<class 'generator'>
+
+task-2
+=======
+# A simple generator function
+def my_gen():
+    n = 1
+    print('This is printed first')
+    # Generator function contains yield statements
+    yield n
+
+    n += 1
+    print('This is printed second')
+    yield n
+
+    n += 1
+    print('This is printed at last')
+    yield n
+
+# Using for loop
+for item in my_gen():
+    print(item)  
+
+o/p
+---
+This is printed first
+1
+this is printed second
+2
+this is print at last
+3
+
+
+task-3
+======
+def rev_str(my_str):
+    length=len(my_str)
+    for i in range(length -1,-1,-1):
+        yield my_str[i]
+
+for char in rev_str("hello"):
+    print(char)
+
+o/p
+---
+o
+l
+l
+e
+h
+
+task-3
+======
+def gen(n):
+    for i in range(n):
+        yield i
+
+
+#obj=gen(4)
+#print(next(obj))
+#print(next(obj))
+#print(next(obj))
+#print(next(obj))
+#print(next(obj))
+
+o/p
+---
+0
+1
+2
+3
+Traceback (most recent call last):
+  File "C:\Users\anil kumar jena\Desktop\pra.py", line 11, in <module>
+    print(next(obj))
+StopIteration

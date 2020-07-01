@@ -1,0 +1,218 @@
+Tk() - visit tool kit 
+GUI - is a interface for Tk()
+root=Tk() #creat basic gui
+root.mainloop() #event loop
+Label()=user not interact 
+pack()-> for display Label
+ex-1
+====
+from tkinter import *
+root= Tk()
+
+# width , height
+root.geometry("455x244")
+root.minsize(200,100)
+root.maxsize(1200,900)
+anil=Label(text="Hii now i am learning GUI")
+anil.pack()
+
+root.mainloop()
+
+Dispaly images
+---------------
+- install pillow module for support 'jpg' images because gui doesn't support jpg format
+from tkinter import *
+from PIL import Image,ImageTk
+root= Tk()
+
+# width , height
+root.geometry("455x244")
+
+#for jpg images
+image=Image.open("1.jpg")
+photo=ImageTk.PhotoImage(image)
+
+
+anil_label=Label(image=photo)
+anil_label.pack()
+
+root.mainloop()
+
+Attributes of Label
+===================
+Label Options
+-------------
+ text - adds the text
+ bd- background
+ fg - foreground
+ font - sets the font
+ padx - x pading
+ pady - y padding
+ relief - border styling - SUNKEN, RAISED,GROOVE,RIDGE
+
+pack options
+------------
+anchor = nw
+side = top,bottom,left,right
+fill
+padx,pady
+
+Ex-
+---
+from tkinter import *
+
+root= Tk()
+title_label = Label(text = ''' lkfkwl kvmelf ekrml ekmfgpem ekmgpem kmgekm kemgekm kemgk
+                               \n kernklq grn3o erko ergmo rgko gkomq komqgom ''',bg="blue",fg="white",
+                                padx=10,pady=10,font="comicsansms 19 bold", borderwidth=3,relief=SUNKEN)
+
+
+                            
+title_label.pack(side=LEFT)
+
+root.mainloop()
+
+ Frame
+=======
+from tkinter import *
+root=Tk()
+root.geometry("600x333")
+
+f1=Frame(root,bg="grey",borderwidth=6,relief=SUNKEN)
+f1.pack(side=LEFT,fill="y")
+
+f2=Frame(root,bg="grey",borderwidth=8,relief=SUNKEN)
+f2.pack(side=TOP,fill="x")
+
+l= Label(f1,text="project Tkinter")
+l.pack(pady=142)
+
+l= Label(f2,text="Wel come to kinter",bg="red",pady=22)
+l.pack()
+
+root.mainloop()
+
+Buttons
+========
+from tkinter import *
+root=Tk()
+root.geometry("655x333")
+def hello():
+    print("Hello tkinter buttons")
+
+frame= Frame(root,borderwidth=6,bg="grey",relief=SUNKEN)
+frame.pack(side=LEFT,anchor="nw")
+
+b1=Button(frame, fg="red",text="print now",command=hello)
+b1.pack()
+root.mainloop()
+
+Entry widget
+============
+
+from tkinter import *
+root=Tk()
+root.geometry("655x655")
+
+def getvals():
+    print(f"The value of username is {uservalue.get()}")
+    print(f"The value of password is {passvalue.get()}")
+
+user=Label(root,text="Username")
+password=Label(root,text="password")
+user.grid()
+password.grid(row=1)
+
+#Variable classes in tkinter
+# BooleanVar, DoubleVar, IntVar, StringVar
+
+uservalue = StringVar()
+passvalue = StringVar()
+
+userentry = Entry(root, textvariable = uservalue)
+passentry = Entry(root, textvariable = passvalue)
+userentry.grid(row=0, column=1)
+passentry.grid(row=1, column=1)
+
+Button(text="Submit",command=getvals).grid()
+
+root.mainloop()
+
+creat a small form
+===================
+from tkinter import *
+root=Tk()
+
+def getvals():
+    print("its work")
+
+#Heading
+Label(root,text="Welcome to Harry Travels", font="comicsansms 13 bold", pady=15).grid(row=0,column=3)
+
+#Text for our form
+name=Label(root,text="Name")
+Phone=Label(root,text="Phone")
+gender=Label(root,text="gender")
+emergency=Label(root,text="emergency")
+paymemtmode=Label(root,text="paymemtmode")
+
+#Pack text for our form
+name.grid(row=1, column=2)
+Phone.grid(row=2, column=2)
+gender.grid(row=3, column=2)
+emergency.grid(row=4, column=2)
+paymemtmode.grid(row=5, column=2)
+
+#Tkinter variable for entries
+namevalue=StringVar()
+phonevalue=StringVar()
+gendervalue=StringVar()
+emergencyvalue=StringVar()
+paymentmodevalue=StringVar()
+foodservicevalue=IntVar()
+
+#Entries for our form
+nameentry=Entry(root,textvariable=namevalue)
+phoneentry=Entry(root,textvariable=phonevalue)
+genderentry=Entry(root,textvariable=gendervalue)
+emergencyentry=Entry(root,textvariable=emergencyvalue)
+paymentmodeentry=Entry(root,textvariable=paymentmodevalue)
+
+nameentry.grid(row=1, column=3)
+phoneentry.grid(row=2, column=3)
+genderentry.grid(row=3, column=3)
+emergencyentry.grid(row=4, column=3)
+paymentmodeentry.grid(row=5, column=3)
+
+#Checkbox
+foodservice= Checkbutton(text="Want to prebook your meal?",variable =foodservicevalue)
+foodservice.grid(row=6, column=3)
+
+#Button & packing and asigning it a command
+Button(text="Submit to Harry Travels", command=getvals).grid(rows=7,column=3)
+
+root.mainloop()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,85 @@
+Constructor overriding
+======================
+-> if child class overrides the constructor of parent class it is called as constructor overriding.
+
+class parent:
+    def __init__(self):
+        self.a=10
+        self.b=20
+    def display(self):
+        print("a=",self.a,"b=",self.b)
+class child(parent):
+    def __init__(self):
+        self.c=40
+        self.d=50
+    def display(self):
+        print("c=",self.c,"d=",self.d)   
+c=child()
+c.display()
+
+output
+-------
+c= 40 d= 50
+>>> 
+
+
+-> comment the code of child class then we see situation that is withot constructor overriding.
+
+
+
+with parameter
+===============
+
+class parent:
+    def __init__(self,i,j):
+        self.a=i
+        self.b=j
+    def display(self):
+        print("a=",self.a,"b=",self.b)
+class child(parent):
+    def __init__(self,k,l):
+        self.c=k
+        self.d=l
+    def display(self):
+        print("c=",self.c,"d=",self.d)   
+c=child(100,200)
+c.display()
+
+output
+-------
+c= 100 d= 200
+>>>
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+super()
+========
+super method is used to call to parent class construct or parent class method into child class.
+
+class parent:
+    def __init__(self):
+        self.a=int(input("enter first number"))
+        self.b=int(input("enter first number"))
+    def dispaly(self):
+        print("a=",self.a,"b=",self.b)
+class child(parent):
+    def __init__(self):
+        super().__init__()
+        self.c=int(input("enter third number"))
+        self.d=int(input("enter fourth number"))
+    def dispaly(self):
+        print(self.__dict__)
+c=child()
+c.dispaly()
+
+
+output
+------
+enter first number10
+enter first number20
+enter third number30
+enter fourth number40
+{'a': 10, 'b': 20, 'c': 30, 'd': 40}
+>>> 

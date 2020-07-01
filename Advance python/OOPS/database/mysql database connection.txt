@@ -1,0 +1,248 @@
+mysql commands
+--------------
+-> show databases;
+
+->create database testdb;
+
+-> use testdb;
+
+-> create table employee(id int,name varchar(20),email varchar(20));
+
+->  show tables;
+
+-> insert into employee values(12345,"anil","a44@gmail.com");
+
+-> select * from employee;
+
+-> drop database testdb;
+
+-> drop table employee;
+
+
+Database Access or Database programming in python:
+================================
+What is a database?
+Ans: Database stores data permenantly in the form of tables.
+Examples of Databases:
+SQLServer database, MySQL database, MongoDB Database, oracle Database, DB2............
+
+What is table?
+Ans: A table is a collection of rows and columns
+
+SQL Stands for Structured Query Language. It is used for creating Databases. Within the Database, we create tables. Within Tables we insert rows
+
+The following softwares are required to do "Database programming in Python":
+1) Database
+2) Python
+3) Python Connector for the database 
+
+
+Steps:
+=========
+1) Import mysql connector:
+	import mysql.connector
+
+2) Establish Connection between Python Program and database:
+	con=mysql.connector.connect(host='localhost',user='root',password='root')	
+
+3) Execute sql queries:
+	cursor=con.cursor() 
+	cursor.execute("show databases")
+
+4) Fetch(get) the result from the Cursor object
+	databases=cursor.fetchall()
+
+5)Display the fetched results:
+	for i in databases:
+	        print(i)
+
+6) Close the database connection (or) close the database objects (or) Closing mysql database connections
+	cursor.close()
+	con.close()
+
+Task-1: 
+=======
+i) Establish connection to mysql database
+ii) Display the list of databases
+iii) Close the database connection
+
+
+#connect mysql database
+import mysql.connector
+try:
+    con=mysql.connector.connect(host='localhost',user='root',password='kumaranil')
+    cursor=con.cursor()
+    cursor.execute("show databases")
+    databases=cursor.fetchall()
+    for i in databases:
+        print(i)
+except mysql.connector.DatabaseError as e:
+    print(e)
+finally:
+    cursor.close()
+    con.close()
+    print("Database connection is disconnected successful")
+
+output
+------
+('information_schema',)
+('mysql',)
+('performance_schema',)
+('sakila',)
+('sys',)
+('world',)
+Database connection is disconnected successful
+
+
+#creat employee dayabase
+import mysql.connector
+try:
+    con=mysql.connector.connect(host='localhost',user='root',password='kumaranil')
+    cursor=con.cursor()
+    cursor.execute("create database employees1")
+    print("employees1 database is created successfully")
+    print("LIST OF DATABASES:")
+    cursor.execute("show databases")
+    databases=cursor.fetchall()
+    for i in databases:
+        print(i)
+except mysql.connector.DatabaseError as e:
+    print(e)
+finally:
+    cursor.close()
+    con.close()
+    print("Database connection is disconnected successfully")
+
+
+output
+------
+employees1 database is created successfully
+LIST OF DATABASES:
+('employees1',)
+('information_schema',)
+('mysql',)
+('performance_schema',)
+('sakila',)
+('sys',)
+('testdb',)
+('world',)
+Database connection is disconnected successfully
+
+Output-2:
+=======
+The following exception comes when executed again
+1007 (HY000): Can't create database 'employees'; database exists
+Database connection is disconnected successfully
+
+
+Task:3
+======
+1. Establish the connection to mysql database
+2. Create “emp” table under “employees” database with the following columns:ID, name, department, designation, salary
+3. Once “emp” table is created then give a message that “emp table is created”
+4. Display the list of tables from “employees” database
+5. If already “emp” table is existed under “employees” database then give an error message
+
+#create a table under database
+import mysql.connector
+try:
+    con=mysql.connector.connect(host='localhost',user='root',password='kumaranil')
+    cursor=con.cursor()
+    cursor.execute("use employees1")
+    print("Present Database is employees1")
+    cursor.execute("create table emp(ID int,name varchar(20),department char(20),designation varchar(10),salary int)")
+    print("emp table is created successfully")
+    cursor.execute("show tables")
+    tables=cursor.fetchall()
+    for i in tables:
+        print(i)
+except mysql.connector.DatabaseError as e:
+    print(e)
+finally:
+    cursor.close()
+    con.close()
+    print("Database connection is disconnected successfully")
+
+output
+=======
+Present Database is employees1
+emp table is created successfully
+('emp',)
+Database connection is disconnected successfully
+
+The following exception comes when executed again
+==================================================
+Present Database is employees
+1050 (42S01): Table 'emp' already exists
+Database connection is disconnected successfully
+
+
+TASK 4
+======
+1. Establish the connection to MySQL rdbms
+2. Use employees database
+3. Insert the records into “emp” tables
+4. After insertion of records, display a message that “records are inserted successfully”
+5. Display the employees records
+6. Close the database connection
+
+import mysql.connector
+try:
+    con=mysql.connector.connect(host='localhost',user='root',password='kumaranil')
+    cursor=con.cursor()
+    cursor.execute("use employees1")
+    print("Present Database is employees1")
+    cursor.execute("insert into emp values(1001,'Raju','IT','SE',100000)")
+    cursor.execute("insert into emp values(1002,'Roja','IT','SE',150000)")
+    con.commit()
+    print("Records are inserted successfully...")
+    print("EMPLOYEE1 RECORDS")
+    cursor.execute("select * from emp") 
+    employees_records=cursor.fetchall()
+    for i in employees_records:
+        print(i)
+except mysql.connector.DatabaseError as e:
+    print(e)
+finally:
+    cursor.close()
+    con.close()
+    print("Database connection is disconnected successfully")
+
+output
+======
+Present Database is employees1
+Records are inserted successfully...
+EMPLOYEE1 RECORDS
+(1001, 'Raju', 'IT', 'SE', 100000)
+(1002, 'Roja', 'IT', 'SE', 150000)
+(1001, 'Raju', 'IT', 'SE', 100000)
+(1002, 'Roja', 'IT', 'SE', 150000)
+Database connection is disconnected successfully
+
+
+TASK5
+=====
+Task:
+1)Establish the connection to MySQL database
+2)Go to “Employees” Database
+3)Ask the user to enter the following employee details:
+     1.Employee ID
+     2.Employee Name
+     3.Department Name
+     4.Designation
+     5.Salary
+4)After entering a record, display a message that: “Record is inserted Successfully”
+5)Next, ask the user that “Do you want to enter one more record(yes/no)”
+6)If user says “yes” then repeat 3, 4, and 5 steps
+7)If user says “no” then display all employees records
+8)Finally close database connection
+
+
+
+
+
+
+
+
+
+

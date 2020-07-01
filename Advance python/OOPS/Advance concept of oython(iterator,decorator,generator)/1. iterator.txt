@@ -1,0 +1,75 @@
+Python Iterator
+================
+-> Iterator is an object in python, which is implement two methods ,iter and next method
+   we can iterate over it by using for loop.
+
+Note: Each character is again a string in python.
+
+Program:
+========
+string=input("Enter a string:")
+iterator1=iter(string)
+print(type(iterator1))
+print(list(iterator1))
+
+
+output
+======
+Enter a string:It Is very intresting subject
+<class 'str_iterator'>
+['I', 't', ' ', 'I', 's', ' ', 'v', 'e', 'r', 'y', ' ', 'i', 'n', 't', 'r', 'e', 's', 't', 'i', 'n', 'g', ' ', 's', 'u', 'b', 'j', 'e', 'c', 't']
+
+->Iterble is an object,which one can iterate over..iterator is an object,which we used to iterate over an iterable object using __next__() or next()method,which return the next item of the object.
+obj="anil"
+iter1=iter(obj)
+print(next(iter1))
+print(next(iter1))
+print(next(iter1))
+
+
+EmployeeID --> variable
+
+100 --> Integer Value (Integer Literal)
+
+200.56 ---> Float value( Float literal)
+
+"Python Programming" -->String value(String Literal)
+
+True/False --> Bollean Literal
+
+1+2j -->Complex Literal
+
++-*%/**// --->Operator
+
+Pie Value ---> constant
+
+**********************************
+
+Variables(Identifier)
+
+In Python every name is called an Identifier.
+
+Identifier are: variables, functions, classes, modules, Packages.
+
+Literals (value)
+
+Constants
+
+Operators
+
+Tockens --> are used to devlop the program.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

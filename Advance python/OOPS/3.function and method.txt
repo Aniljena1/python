@@ -1,0 +1,75 @@
+
+
+--------------------------------------------------------------------------------------------
+                Function                       |               Method    
+--------------------------------------------------------------------------------------------
+ 1. Function is written out side of the class. | 1. Method is written inside  of the class.
+
+ 2. Function is called Directley.              | 2. Method is called through the object.
+----------------------------------------------------------------------------------------------
+
+Note:Similarty between function and method is both are form performing the operation.
+
+Ex:
+
+  class Employee:
+    def Employee_details(self):
+        self.Employee_ID=input("please enter Employee ID:")
+        self.Employee_Name=input("please enter Employee Name:")
+        self.Employee_Department=input("please enter Employee Department:")
+        self.Employee_designation=input("please enter Employee designation:")
+        self.Employee_salary=float(input("please enter Employee salary:"))
+    def Employee_information_display(self):
+        print("EMPLOYEE INFORMATION")
+        print("*******************")
+        print("EMPLOYEE INFORMATION:",self.Employee_ID)
+        print("EMPLOYEE INFORMATION:",self.Employee_Name)
+        print("EMPLOYEE INFORMATION:",self.Employee_Department)
+        print("EMPLOYEE INFORMATION:",self.Employee_designation)
+        print("EMPLOYEE INFORMATION:",self.Employee_salary)
+        print("*******************")
+     
+e1=Employee()
+e1.Employee_details()
+e1.Employee_information_display()
+            
+ note
+-------
+ Class
+-------
+Class is a collection of variable.   
+ex: Employee class is collection of Employee variable and Employee method.
+
+           Employee_details(self):
+                  |           |         
+               method       object
+
+Q:What is a Variable?
+Ans: Variable Stores the Data.
+->Employee_id is a variable which stores the Employee_id data.
+  EmployeeID='anil'
+     |         |
+ (Variable) (Value)        
+
+Q:what is a method?
+Ans:Method perform operation on data.
+Ex:Employee details method accepting or taking employees data from the user.
+
+self
+-----
+self is a system defined refference variable to point to current object.
+Ex:self=e1
+   self=e2
+employee1=employee
+(object)   (class)
+
+
+def
+-----
+def is short for "define". It's a keyword that you need to define a function (aka method). 
+All the code that you put between the def function_name(parameters) and end will be executed every time you call the function_name later.
+A function name to uniquely identify it.
+
+
+  
+  

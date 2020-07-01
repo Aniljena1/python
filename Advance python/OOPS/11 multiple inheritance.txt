@@ -1,0 +1,44 @@
+multiple inheritance
+---------------------
+
+A class is inherited from multiple parent classes .
+
+Ex:
+class Persion:
+    def __init__(self):
+        self.PersionName=input("Please enter persion name:")
+        self.PersionAddress=input("Please enter persion address:")
+        self.PersionMobileNumber=input("Please enter persion nmobile number:")
+class Employee:
+    def __init__(self):
+        self.EmployeeID=input("Please enter Employee id:")
+        self.EmployeeDepartment=input("Please enter Employee department:")
+        self.EmployeeSalarey=float(input("Please enter Employee salarey:"))
+class Teacher(Persion,Employee):
+    def __init__(self):
+        Persion.__init__(self)
+        Employee.__init__(self)
+        self.TeacherSchoolName=input("Please enter Teacher school name:")
+        self.TeacherSubject=input("Please enter Teacher asubject:")
+        self.TeacherNumberofClasses=float(input("Please enter Teacher number of classes:"))
+    def Teacher_Information_Display(self):
+        print("*"*30)
+        print("TEACHER INFORMATION DISPALY")
+        print(self.__dict__)
+        print("*"*30)
+t1=Teacher()
+t1.Teacher_Information_Display()
+
+OUTPUT:
+Please enter persion address:bbsr
+Please enter persion nmobile number:84759878
+Please enter Employee id:u847
+Please enter Employee department:mca
+Please enter Employee salarey:4987.98
+Please enter Teacher school name:bnbp
+Please enter Teacher asubject:python
+Please enter Teacher number of classes:2
+******************************
+TEACHER INFORMATION DISPALY
+{'PersionName': 'anil', 'PersionAddress': 'bbsr', 'PersionMobileNumber': '84759878', 'EmployeeID': 'u847', 'EmployeeDepartment': 'mca', 'EmployeeSalarey': 4987.98, 'TeacherSchoolName': 'bnbp', 'TeacherSubject': 'python', 'TeacherNumberofClasses': 2.0}
+******************************

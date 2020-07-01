@@ -1,0 +1,112 @@
+                           
+                                                    controls Statement
+                            ------------------------------------------------------------------------- 
+                            |                 |               |                   |                 |
+                           if               if else   multiple if statement  if..elif..else    nested if    
+
+condition statement are used check the conditions
+
+if statement
+------------
+syntax:
+  
+     if condition:
+                   "if" blockstsement
+ here, if the condition is true .there if block ststement is executed.
+
+
+Task: 1.Accept bank a/c number from the customer.
+2.If the bank account number match to "hdfc 11223344"
+  then display message:
+"your bank account number is valid"
+3.if  the bank account number is not matched then display a mesage:
+         "please enter valid bank account number"
+ANs:
+
+BankAccountnumber=input("please enter your account number:")
+if BankAccountnumber=="HDFC11223344":
+    print("bank account number is valid")
+else:
+    print("bank account number is invalid")
+
+output
+-----------
+please enter your account number:hdfc675476
+bank account number is invalid
+
+
+if..else statement
+-------------------
+  syntax:
+  
+     if condition:
+                   "if" blockstsement"
+     else:
+                 "else blockststement"
+ here, if the condition is true .there if block ststement is executed.  
+
+task4
+----------
+4.Accept student course and id number, if student course is python and student id is "lo96" then display a message
+ "student details is valid"
+ortherwise display student course details are invalid
+Ans:
+Student_course=input("please enter student course:")
+Student_Id=input("please enter student id:")
+if Student_course=='python' and Student_Id=='12345':
+    print("student details is valid")
+else:
+    print("student details is invalid")
+
+output
+--------
+please enter student course:python
+please enter student id:12345
+student details is valid
+
+
+Multiple if ststement along with there else ststement
+-----------------------------------------------------------
+
+  syntax:
+  
+     if condition1:
+                   "if" blockstsement"
+     else:
+                 "else blockststement"
+     if condition2:
+                   "if" blockstsement"
+     else:
+                 "else blockststement"
+
+Task5
+-------
+1.Accept aadhar card number from the user
+2.if aadhar card number is 112233445566 
+   then display:valid aadhar number 
+  else 
+    display: Invalid aadhar card number
+3.simpli accept pancard number 
+   if pancard number is:667788990
+  else:
+   display:invalid pan card number
+
+Ans:
+Aadhar_number=input("please enter Aadhar card number:")
+if Aadhar_number=='112233445566':
+    print("Aadhar number is valid")
+else:
+    print("Aadhar number is invalid")
+Pan_card=input("please enter Aadhar card number:")
+if Pan_card=='667788990':
+     print("Pan number is valid")
+else:
+    print("Pan number is invalid")
+
+else
+----
+please enter Aadhar card number:112233445566
+Aadhar number is valid
+please enter Aadhar card number:667788990
+Pan number is valid
+  

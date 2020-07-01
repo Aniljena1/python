@@ -1,0 +1,264 @@
+Polymorphism
+-------------
+Ability to have multiple forms is called "polymorphism"
+
+  poly= Many
+  Morphy= Forms
+
+
+Ex:(diagram)
+
+Mr. ravi is a human being and showing many forms.
+
+
+-> Polymorphisem is done in two ways.
+    1.Overloading
+
+    2. OverRiding
+
+1.Overloading
+--------------
+  1.1 Method overloading
+  1.2 Constructor overloading              
+  1.3 Operator overloading
+
+
+
+->When number of operation are increasing on same method or same constructor or same operator, Then it is called as overloading.
+
+Examples:-
+
+          If one method is doing multiple operations like cash deposit, check deposit, dd dpeposit, online deposit, Gold deposit, then 
+  deposit method is called as overloaded method.
+
+1.1 Method overloading
+---------------------------
+-> Method name is same but parameters are different is called as method overloading.
+
+diagram:polymorphise diagram 16.3
+
+-> Method name is deposit.
+-> Parameters are cash, check,dd, online gold
+
+
+Task:
+------
+1. Accept Bank details from the customer:
+               i. Bank Account Number
+               ii. Account Type
+               iii. Cash
+               iv.IFSc code
+
+2.If Customer enters cash then cash deposit should be done.
+
+3. if customers enters "cheque" then cheque deposit should be done.
+
+4. If customer enters "DD" then DD deposit should be done.
+
+5. If customer enters "GOld" the gold deposit should be done.
+
+Here, Method is same i.e deposit() method but paprameters are Different.
+Parameters are : cash, cheque, DD, Gold
+
+For cash deposit: Parameters are:
+          1. Bank Account number 
+          2. Account Type
+          3. Cheque Number
+          4. Cheque Amount
+          5. IFSc code
+
+For DD(Demanf Draft)deposit, Parameters are:
+          1.Bank Account Number
+          2. Account Type
+          3. DD number
+          4. DD amount
+          5. IFSC code
+
+For Gold deposit, Parameters are:
+          1.Bank Account Number
+          2. Account Type
+          3. Gold
+          4. IFSC code
+
+
+
+class Bank:
+    def __init__(self):
+        self.AccountBalance=50000
+        self.Gold=500.0
+    def deposit(self,AccountNumber=None,AccountType=None,IFSC=None,cash=None,ChequeNumber=None,ChequeAmount=None,DDNumber=None,DDAmount=None,G=None):
+        if AccountNumber!=None and AccountType!=None and IFSC!=None and cash!=None:
+            self.AccountBalance+=cash
+            print("After cash deposit Account Balance=",self.AccountBalance)
+        elif AccountNumber!=None and AccountType!=None and IFSC!=None and ChequeNumber!=None and ChequeAmount!=None:
+            self.AccountBalance+=ChequeAmount
+            print("After ccheque deposit Account Balance=",self.AccountBalance)
+        elif AccountNumber!=None and AccountType!=None and IFSC!=None and DDNumber!=None and DDAmount!=None:
+            self.AccountBalance+=DDAmount
+            print("After DD deposit Account Balance=",self.AccountBalance)
+        elif AccountNumber!=None and AccountType!=None and IFSC!=None and G!=None:
+            self.Gold+=G
+            print("After Gold deposit,Total Gold is =",self.Gold)
+b=Bank()
+print("*"*30)
+print("CASH DEPOSIT")
+print("*"*30)
+p1=int(input("Dear Customer Please Enter Your Account Number:"))
+p2=input("Dear Customer Please Enter Your Account Type:")
+p3=input("Dear Customer Please Enter Your IFSC Code:")
+p4=float(input("Dear Customer Please Enter How Cash You Are Deposit:"))
+b.deposit(p1,p2,p3,p4,None,None,None,None,None)
+print("*"*30)
+print("CHEQUE DEPOSIT")
+print("*"*30)
+p1=int(input("Dear Customer Please Enter Your Account Number:"))
+p2=input("Dear Customer Please Enter Your Account Type:")
+p3=input("Dear Customer Please Enter Your IFSC Code:")
+p4=input("Dear Customer Please Enter your Cheque Number:")
+p5=float(input("Dear Customer Please Enter your Cheque Amount:"))
+b.deposit(p1,p2,p3,None,p4,p5,None,None,None)
+print("*"*30)
+print("DD DEPOSIT")
+print("*"*30)
+p1=int(input("Dear Customer Please Enter Your Account Number:"))
+p2=input("Dear Customer Please Enter Your Account Type:")
+p3=input("Dear Customer Please Enter Your IFSC Code:")
+p4=input("Dear Customer Please Enter your DD Number:")
+p5=float(input("Dear Customer Please Enter your DD Amount:"))
+b.deposit(p1,p2,p3,None,None,None,p4,p5,None)
+print("*"*30)
+print("GOLD DEPOSIT")
+print("*"*30)
+p1=int(input("Dear Customer Please Enter Your Account Number:"))
+p2=input("Dear Customer Please Enter Your Account Type:")
+p3=input("Dear Customer Please Enter Your IFSC Code:")
+p4=float(input("Dear Customer, How much gold  you are Gold deposit:"))
+b.deposit(p1,p2,p3,None,None,None,None,None,p4)
+    
+   
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Minimizing the code
+---------------------
+class Bank:
+    def __init__(self):
+        self.AccountBalance=50000
+        self.Gold=500.0
+    def deposit(self,AccountNumber,AccountType,IFSC,cash,ChequeNumber,ChequeAmount,DDNumber,DDAmount,G):
+        if AccountNumber!=None and AccountType!=None and IFSC!=None and cash!=None:
+            self.AccountBalance+=cash
+            print("After cash deposit Account Balance=",self.AccountBalance)
+        elif AccountNumber!=None and AccountType!=None and IFSC!=None and ChequeNumber!=None and ChequeAmount!=None:
+            self.AccountBalance+=ChequeAmount
+            print("After ccheque deposit Account Balance=",self.AccountBalance)
+        elif AccountNumber!=None and AccountType!=None and IFSC!=None and DDNumber!=None and DDAmount!=None:
+            self.AccountBalance+=DDAmount
+            print("After DD deposit Account Balance=",self.AccountBalance)
+        elif AccountNumber!=None and AccountType!=None and IFSC!=None and G!=None:
+            self.Gold+=G
+            print("After Gold deposit,Total Gold is =",self.Gold)
+b=Bank()
+print("*"*30)
+print("CASH DEPOSIT")
+print("*"*30)
+p1=int(input("Dear Customer Please Enter Your Account Number:"))
+p2=input("Dear Customer Please Enter Your Account Type:")
+p3=input("Dear Customer Please Enter Your IFSC Code:")
+p4=float(input("Dear Customer Please Enter How Cash You Are Deposit:"))
+b.deposit(p1,p2,p3,p4,None,None,None,None,None)
+print("*"*30)
+print("CHEQUE DEPOSIT")
+print("*"*30)
+p4=input("Dear Customer Please Enter your Cheque Number:")
+p5=float(input("Dear Customer Please Enter your Cheque Amount:"))
+b.deposit(p1,p2,p3,None,p4,p5,None,None,None)
+print("*"*30)
+print("DD DEPOSIT")
+print("*"*30)
+p4=input("Dear Customer Please Enter your DD Number:")
+p5=float(input("Dear Customer Please Enter your DD Amount:"))
+b.deposit(p1,p2,p3,None,None,None,p4,p5,None)
+print("*"*30)
+print("GOLD DEPOSIT")
+print("*"*30)
+p4=float(input("Dear Customer, How much gold  you are Gold deposit:"))
+b.deposit(p1,p2,p3,None,None,None,None,None,p4)
+    
+******************************************************************************
+#using call function and validation
+class Bank:
+    def __init__(self):
+        self.AccountBalance=50000
+        self.Gold=500.0
+        self.accountnumbers=range(1122334455,5566778899)
+    def deposit(self,AccountNumber,AccountType,IFSC,cash,ChequeNumber,ChequeAmount,DDNumber,DDAmount,G):
+        if AccountNumber in self.accountnumbers and AccountType=='saving' and IFSC=='HDFC1122' and cash!=None:
+            self.AccountBalance+=cash
+            print("After cash deposit Account Balance=",self.AccountBalance)
+        elif AccountNumber in self.accountnumbers and AccountType=='saving' and IFSC=='HDFC1122' and ChequeNumber!=None and ChequeAmount!=None:
+            self.AccountBalance+=ChequeAmount
+            print("After ccheque deposit Account Balance=",self.AccountBalance)
+        elif AccountNumber in self.accountnumbers and AccountType=='saving' and IFSC=='HDFC1122' and DDNumber!=None and DDAmount!=None:
+            self.AccountBalance+=DDAmount
+            print("After DD deposit Account Balance=",self.AccountBalance)
+        elif AccountNumber in self.accountnumbers and AccountType=='saving' and IFSC=='HDFC1122' and G!=None:
+            self.Gold+=G
+            print("After Gold deposit,Total Gold is =",self.Gold)
+        else:
+            print("Please enter  valid Details")
+b=Bank()
+def call1():
+    print("*"*30)
+    print("CASH DEPOSIT")
+    print("*"*30)
+    p1=int(input("Dear Customer Please Enter Your Account Number:"))
+    p2=input("Dear Customer Please Enter Your Account Type:")
+    p3=input("Dear Customer Please Enter Your IFSC Code:")
+    p4=float(input("Dear Customer Please Enter How Cash You Are Deposit:"))
+    b.deposit(p1,p2,p3,p4,None,None,None,None,None)
+    print("*"*30)
+def call2():
+    print("CHEQUE DEPOSIT")
+    print("*"*30)
+    p4=input("Dear Customer Please Enter your Cheque Number:")
+    p5=float(input("Dear Customer Please Enter your Cheque Amount:"))
+    b.deposit(p1,p2,p3,None,p4,p5,None,None,None)
+    print("*"*30)
+def call3():
+    print("DD DEPOSIT")
+    print("*"*30)
+    p4=input("Dear Customer Please Enter your DD Number:")
+    p5=float(input("Dear Customer Please Enter your DD Amount:"))
+    b.deposit(p1,p2,p3,None,None,None,p4,p5,None)
+    print("*"*30)
+def call4():  
+    print("GOLD DEPOSIT")
+    print("*"*30)
+    p4=float(input("Dear Customer, How much gold  you are Gold deposit:"))
+    b.deposit(p1,p2,p3,None,None,None,None,None,p4)
+
+
+output
+========
+>>> call1()
+******************************
+CASH DEPOSIT
+******************************
+Dear Customer Please Enter Your Account Number:1122334455
+Dear Customer Please Enter Your Account Type:saving
+Dear Customer Please Enter Your IFSC Code:HDFC1122
+Dear Customer Please Enter How Cash You Are Deposit:40000
+After cash deposit Account Balance= 90000.0
+******************************
+
+
+
+
+
+
+
+
+
+
+
+
+

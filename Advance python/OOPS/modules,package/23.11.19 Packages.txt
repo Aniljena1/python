@@ -1,0 +1,41 @@
+Package
+=======
+
+-> Package is a collection of Modules and its subpackages.
+
+-> __init__.py not manditory only python 3.3 previous version are manditory.
+
+-> Steps to creat a package
+
+1. Creat a package Directort
+
+2. Creat the modules and paste that in Package Directory
+
+import package.ArithmeticModule as a
+import package.StringModule as b
+i=input("Enter First integer:")
+j=input("Enter Decond Integer:")
+print("Addition:",a.addition(i,j))
+print("*"*30)
+string=input("Enter a String:")
+print("string length:",b.StringLength(string))
+print("string Reverse:",b.StringReverse(string))
+
+output
+------
+Enter First integer:10
+Enter Decond Integer:2
+Addition: 102
+******************************
+Enter a String:python
+string length: 6
+string Reverse: nohtyp
+
+
+Sub-packages
+=============
+
+-> One package is existed in another package
+
+
+

@@ -1,0 +1,25 @@
+Membership Operator
+-------------------
+Membership operators are used to check whether a member is existed or not in a group of Members.
+If member is existed then true is returned,Ortherwise false is Return.
+
+                                   Memebership Operators in Python
+                               -----------------------------------------
+                               |                                        |
+                              in                                      not in
+
+
+Ex:
+>>> a=100
+>>> b=200
+>>> c=300
+>>> d=400
+>>> not (a>b or a!=b or b<c)
+False
+>>> Employee_IDs=[232,434,454,466]
+>>> 232 in Employee_IDs
+True
+>>> 555 in Employee_IDs
+False
+>>> 888 not in Employee_IDs
+True

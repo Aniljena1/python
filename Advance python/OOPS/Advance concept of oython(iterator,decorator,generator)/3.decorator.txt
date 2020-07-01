@@ -1,0 +1,90 @@
+Decorator
+=========
+-> A decorator is a desigen a pattern in python that allows a user to add new functionality to
+   an existing object object without modifying its structure.
+->Decorator are usually call before the defination of a function you want to decorate.
+-> So python decorator is a special function to be applied on the existed function.
+
+>>> def wishes(personName):
+	print(personName,"Good Morning")
+
+	
+>>> wishes("anil")
+anil Good Morning
+>>> 
+
+------------------------------------------------------------------
+#  decorator function
+def blessed_day_decorator(function):
+    def inner(name):
+        if name=="judio Van Rossum":
+            print("Father of Python,have a blessed day")
+        else:
+            function(name)
+    return inner
+-------------------------------------------------------------------
+output
+------
+>>> def wishes(personName):
+	print(personName,"Good Morning")  ----------->main function
+
+	
+>>> @blessed_day_decorator ------------>call decorator function
+def wishes(personName):
+	print(personName,"Good Morning")
+
+>>> wishes("kumar")  --------------------> add some new value in the function without change the main function
+Father of Python,have a blessed day
+>>> wishes("anil")
+anil Good Morning  -------------------> Main function
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+EXAMPLE-2
+---------
+def product_Offer(productName,productprice,festival):
+    discount=productprice*10/100
+    productprice-=discount
+    print(productprice)
+-------------------------
+def diwali_Offer(function):
+    def inner(productName,productprice,festival):
+        if festival=='Diwali':
+            discount=productprice*50/100
+            productprice-=discount
+        else:
+            function(productName,productprice,festival)
+    return inner
+            
+>>> product_Offer('Samsung',50000,None)
+5000.0
+>>> 
+============== RESTART: C:\Users\anil kumar jena\Desktop\pra.py ==============
+>>> @diwali_Offer
+def product_Offer(productName,productprice,festival):
+	discount=productprice*10/100
+	productprice-=discount
+	print(productprice)
+
+	
+>>> product_Offer('Samsung',50000,'Divali')
+5000.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+multi level inheritance
+------------------------
+-> A class is inherited from sub class that sub class is inherited from super class.
+
+class vehicle:
+    vehicleModel=input("please enter model name:")
+    vehicleManufactureCname=input("please enter manufacture companey  name:")
+    vehiclHeight=float(input("please enter vehicle height:"))
+class Registeredvehicle(vehicle):
+    RegistrationDate=input("please enter registration date:")
+    RegistrationArea=input("please enter registration area:")
+class car(Registeredvehicle):
+    carPrice=input("please enter car price:")
+    carSettingCapacity=int(input("Enter car setting capacity:"))
+    def Carinformation_display():
+        print("*"*30)
+        print("car information")
+        print("CAR MODEL",car.vehicleModel)
+        print("vehicle companey name",car.vehicleManufactureCname)
+        print("car height",car.vehiclHeight)
+        print("car registration date",car.RegistrationDate)
+        print("car registration area",car.RegistrationArea)
+        print("car price",car.carPrice)
+        print("car setting capacity",car.carSettingCapacity)
+car.Carinformation_display()
+    
+    

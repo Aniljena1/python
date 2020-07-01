@@ -1,0 +1,15 @@
+Overriding
+===========
+
+-> If child class override the method of parent class then it is called as "method overriding".
+
+-> If child class overrides the constructor of parent class the it is called as "Constructor Overriding".
+
+Q: Why child class is overriding the method of parent class?
+
+ANS: When the inherited method is not suitable according to the requirements of child class, Then child class will override 
+     the method of parent class.
+
+Q: What is the meaning of "child class" is overriding the method of parent class?
+
+ANS: The child class is redefineing method of parent class.

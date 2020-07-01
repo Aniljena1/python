@@ -1,0 +1,59 @@
+Hybrid Inheritance Type
+--------------------------
+Combination of multiple Inheritace Type
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+#multilevel inheritance with static variable
+class vehicle:
+    vehicleModel=input("please enter model name:")
+    vehicleManufactureCname=input("please enter manufacture companey  name:")
+    vehiclHeight=float(input("please enter vehicle height:"))
+class Registeredvehicle(vehicle):
+    RegistrationDate=input("please enter registration date:")
+    RegistrationArea=input("please enter registration area:")
+class car(Registeredvehicle):
+    carPrice=input("please enter car price:")
+    carSettingCapacity=int(input("Enter car setting capacity:"))
+    def Carinformation_display():
+        print("*"*30)
+        print("car information")
+        print("CAR MODEL",car.vehicleModel)
+        print("vehicle companey name",car.vehicleManufactureCname)
+        print("car height",car.vehiclHeight)
+        print("car registration date",car.RegistrationDate)
+        print("car registration area",car.RegistrationArea)
+        print("car price",car.carPrice)
+        print("car setting capacity",car.carSettingCapacity)
+car.Carinformation_display()
+    
+    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+#multi-path inheritance 
+class Persion:
+    def __init__(self):
+        self.PersionName=input("Please enter persion name:")
+        self.PersionAddress=input("Please enter persion address:")
+        self.PersionMobileNumber=input("Please enter persion nmobile number:")
+class Bolwer(Persion):
+    def __init__(self):
+        self.BolwerStyle=input("Please enter Bolwer Style:")
+        self.BowlingSpeed=float(input("Please enter Bowling Speed:"))
+        self.BolwerStrikeRate=float(input("Please enter Bolwer StrikeRate:"))
+class Batsman(Persion):
+    def __init__(self):
+        self.BatsmanStyle=input("Please enter Batsman Style:")
+        self.BatsmanAverageStrikeRate=float(input("Please enter Batsman Average StrikeRate:"))
+class Cricketer(Bolwer,Batsman):
+    def __init__(self):
+        Persion.__init__(self)
+        Bolwer.__init__(self)
+        Batsman.__init__(self)
+        self.CricketerCountrey=input("Please enter Cricketer Countrey:")
+        self.Numberofmatches=int(input("Please enter Number of matches:"))
+    def Cricketer_Information_Display(self):
+        print("*"*30)
+        print("Cricketer INFORMATION DISPALY")
+        print(self.__dict__)
+        print("*"*30)
+C1=Cricketer()
+C1.Cricketer_Information_Display()

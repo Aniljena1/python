@@ -1,0 +1,137 @@
+Operators
+---------
+Operators are used to perform the operation on data.
+Ex:
+      100+200=300(result)
+       | |       
+    data operator
+
+the followeing of the different operators on python
+------------------------------------------------------
+1.Assignment Operators(=) ->Assign value to the operator
+
+2.Arithmetic Operators(+, -, *, /, //, %, **)
+
+3.Arithmetic Assignment Operators( +=, -=, *=, /=, //=, %=, **=)
+
+4.Relational Operators(>  <   <=  >=  ==  !=)
+
+5.Logical Operators( and, or, not )
+
+6.Membership Operators(in, notin)
+
+7.Identity Operators(is, isnot)
+
+8.Bitwise Operators(& | ^ >> <<  ~)
+
+9.Bitwise Assignment Operators(&=  |=  ^=  >>=  <<=  ~=)
+
+10.Conditional Operator(v3=v1  v2>v2   else v2)
+
+NOTE:Arithmetic Assignment Operators andBitwise Assignment Operators are called short hand assignment operator.
+-----
+     
+
+Assignment Operators(=)
+---------------------
+Assignment Operators assigns a value to a variable.
+Ex: A=100
+    B=200
+
+Arithmetic Operators
+----------------------
+Arithmetic Operators are used to perform mathmetical operation or Arithmetic operation on numbers.
+The folling or the list of Arithmetic Operators.
+
+
+  operators                        operation                            example
+------------                    -------------------                  --------------
+    +                               Addition                             a+b
+  
+    -                               Subtraction                          a-b
+ 
+    *                               Multiplication                       a*b
+    
+    /(gives the result)             Divison                              a/b
+ 
+    %(gives integar result)         Modulation                           a%b
+
+   //(gives  reminder)              Floor Division                       a//b
+   
+   **                               Power                                a**b
+
+Example
+----------
+>>> a=10
+>>> b=2
+>>> a+b
+12
+>>> a-b
+8
+>>> a*b
+20
+>>> a/b
+5.0
+>>> a//b
+5
+>>> a%b
+0
+>>> a**b
+100
+
+Task:Accept two integars from user.
+
+
+Task:perform all airmetic operation on given two integars and display their results.
+                                       
+Ans:please enter the first number=10
+please enter the second number=2
+addition= 12
+subtion= 8
+multiplication= 20
+division= 5.0
+floor divison= 5
+modulation= 0
+power 100
+
+Task:
+      Acceept two integar numbers from the user.
+      Perform all airthmetic operation on given two integars.
+Ans:
+    a=int(input("please enter first number:"))
+b=int(input("please enter second number:"))
+a+=b
+print("Addiition is:",a)
+a-=b
+print("subtraction is:",a)
+a*=b
+print("multiplication  is:",a)
+a/=b
+print("Division is:",a)
+a//=b
+print("Floor Division is:",a)
+a%=b
+print("Modulation is:",a)
+a**=b
+print("Power is:",a)
+
+  output
+---------
+please enter first number:10
+please enter second number:2
+Addiition is: 12
+subtraction is: 10
+multiplication is: 20
+Division is: 10.0
+floor division is: 5.0
+modulation is: 1.0
+power is: 1.0
+
+description
+-----------
+a+=b, a=a+b, 10=10+2, a=12
+a-=b, a=a-b, 10=12-2, a=10
+a*=b, a=a*b, 10=10*2, a=20
+a/=b, a=a/b, 10=20/2, a=10.0
+a//=b, a=a//b, 10=10.0//2, a=5.0(because float number return float number)
+a%=b, a=a%b, 10=5.0%2, a=1.0

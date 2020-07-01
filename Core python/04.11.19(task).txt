@@ -1,0 +1,60 @@
+task1-store your data and display it.
+
+        Student_id=input("please enter student id=")
+        Student_name=input("please enter student name=")
+        Student_branch=input("please enter student branch=")
+        Student_section=input("please enter student section=")
+        print("TOTAL INFORMATION",Student_id)
+        print("TOTAL INFORMATION",Student_id)
+        print("TOTAL INFORMATION",Student_id)
+        print("TOTAL INFORMATION",Student_id)
+
+
+Task2-
+
+Accept mobile model mobile,price .
+1. calculet state gst on mobile price 2%
+2. calculet cetral gst on mobile price 4%
+3.Add ststegst and Central gst to mobile price
+4.display total price
+Ans:
+Mobile_model=input("please enter mobile model=")
+Mobile_price=float(input("please enter mobile price="))
+stateGSt=Mobile_price*(2/100)
+cetralGst=Mobile_price*(4/100)
+Mobile_price+=stateGSt+cetralGst          
+print("TOTAL INFORMATION",Mobile_price)
+
+task3-
+!.Employee_Id
+!.Employee_Name
+!.Employee_Department
+!.Employee_Designation
+!.Employee_Salaery
+
+2.add is rs.10000 as increment to salrey
+3.deduct 3% profesntional task from salery
+4.add ta:2500 to salery
+5.display total salery
+
+
+Employee_Id=input("please enter Employee Id=")
+Employee_Name=input("please enter Employee name=")
+Employee_Department=input("please enter Employee department=")
+Employee_Designation=input("please enter Employee designation=")
+Employee_Salaery=float(input("please enter Employee salery="))
+Employee_Salaery+=1000
+pTax=Employee_Salaery*(3/100)
+Employee_Salaery-=pTax
+Employee_Salaery+=2500          
+print("TOTAL SALARY",Employee_Salaery)
+
+output
+------
+please enter Employee Id=dkjbf
+please enter Employee name=kajfb
+please enter Employee department=kajdnf
+please enter Employee designation=jkdbka
+please enter Employee salery=100000
+TOTAL SALARY 100470.0
+

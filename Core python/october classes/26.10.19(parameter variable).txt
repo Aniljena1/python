@@ -1,0 +1,15 @@
+PARAMETER VARIABLE
+------------------
+parameter is passed the data to a function.
+Ex:
+def addition(a,b,c,d):
+    print("Addition of 4 intiger is=",a+b+c+d)
+def subtraction(a,b,c,d,e):
+    print("Subtraction of 4 intiger is=",a-b-c-d-e)
+
+output
+------
+>>> addition(10,20,30,40)
+Addition of 4 intiger is= 100
+>>> subtraction(100,20,30,20,10)
+Subtraction of 4 intiger is= 20

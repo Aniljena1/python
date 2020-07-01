@@ -1,0 +1,18 @@
+      DOWNLOAD PYTHON 
+..........................
+go to -> python.org -> downloads -> windows -> select latest python release -> download window x86-64 executable instaler
+
+INSTALATION
+--------------
+Run -> select add python 3.7 to path
+Caustomize Instalation
+
+
+1.>>>employeeid=['101','102','103']
+  >>>'101' in employeeid
+  >>>true(output)
+  >>>'105' in employeeid
+  >>>false(output)
+
+
+        

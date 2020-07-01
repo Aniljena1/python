@@ -1,0 +1,42 @@
+TASk:
+--------
+1.Accept pin number from the customer.
+
+2. providing 3 chances to entering pin number, if pin number is entered wrongly.
+
+3. once 3 chances are completed then display:"dear customer your card is blocked".
+
+4. if customer enters correct pin number then display "pin valid. Do the transaction".
+
+ans:
+
+count=1
+while count<=3:
+    pin=int(input("Enter Pin Number:"))
+    if pin==1122:
+        print("Valid pin number.Do the transaction:")
+        break
+    else:
+        print("please enter valid pin number:")
+    count+=1
+else:
+    print("your 3 time chance is over.So your card is blocked:")
+
+output2
+--------
+please enter your pin number:7778
+dear customer ,please enter correct pin number
+please enter your pin number:1122
+pin is valid.Do the transcation
+
+output3
+---------
+please enter your pin number:1133
+dear customer ,please enter correct pin number
+please enter your pin number:4445
+dear customer ,please enter correct pin number
+please enter your pin number:6677
+dear customer ,please enter correct pin number
+Dear customer your card is blocked
+
+    

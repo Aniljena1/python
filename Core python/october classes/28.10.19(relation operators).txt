@@ -1,0 +1,70 @@
+Relational Operators
+--------------------
+Relational Operators  are used to check the condition.
+>>> a=100
+>>> b=200
+>>> b>a---------->Relational Operators
+True
+Relational Operators return boolean value.  i.e either true or false .
+
+
+     operator                             operation                                 Example
+---------------------             --------------------------      --------------------------------------
+        >                                 Greater than                                a>b
+        <                                 Less than                                   a<b
+        >=                                Greater than Equalto                        a>=b
+        >=                                Lessthan or Equal to                        a<=b
+        ==                                Equalto  or  Equalto                        a==b
+        !=                                Not Equalto                                 a!=b
+
+Ex:
+>>> a=100
+>>> b=200
+>>> a>=b
+False
+>>> a<=b
+True
+Note: Greater than is check only one operation Greater than Equalto check two operation.
+
+Task:Acceept two float number from the user.Apply all relational operator on given two float numbers.
+Ans:
+a=float(input("please enter first number:"))
+b=float(input("please enter second number:"))
+print("greater than(a>b):",a>b)
+print("less than(a<b):",a<b)
+print("greater than equalto(a>=b):",a>=b)
+print("less than equal to(a<=b):",a<=b)
+print("equal to equal to(a==b):",a==b)
+print("not equal to(a!=b):",a!=b)
+print("************************")
+print(a,">",b,":",a>b)
+print(a,"<",b,":",a<b)
+print(a,">=",b,":",a>=b)
+print(a,"<=",b,":",a<=b)
+print(a,"==",b,":",a==b)
+print(a,"!=",b,":",a!=b)
+print("************************")
+
+output
+-------
+please enter first number:20.50
+please enter second number:10.50
+greater than(a>b): True
+less than(a<b): False
+greater than equalto(a>=b): True
+less than equal to(a<=b): False
+equal to equal to(a==b): False
+not equal to(a!=b): True
+************************
+20.5 > 10.5 : True
+20.5 < 10.5 : False
+20.5 >= 10.5 : True
+20.5 <= 10.5 : False
+20.5 == 10.5 : False
+20.5 != 10.5 : True
+************************
+= -> Assignment operator -> Assign the value
+== ->Relational operator -> Check the value
+
+
+ 

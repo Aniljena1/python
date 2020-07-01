@@ -1,0 +1,18 @@
+bitwise assignment operator
+----------------------------
+bitwise assignment operator performs two operations.
+1.bitwise operator
+2.assignment operator
+the following or the bitwise assignment operator |= ^=  >>=  <<= 
+>>>a=10
+>>>b=20
+>>>a &= b   //a=a&b => 10&20 =0
+>>>a
+0
+
+2.
+>>>a=10
+>>>b=20
+>>>a |= b   //a=a|b => 10|20 =0
+>>>a
+30

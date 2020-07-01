@@ -1,0 +1,61 @@
+
+OBJECT ORIENTED PROGRAMMING SYSTEMS(OOPS)
+-----------------------------------------
+1. Why OOPS ?
+  ans: OOPs is used for distributed Applications.
+
+2. What is distributed Application ?
+  ans: An application which is installed on server is called a "Distributed Application".
+
+3. What is Server ?
+  ans: Server is a centralized system, which provied services to the clients.
+
+4.What is OOPS ?
+  ans: object oriented programing system.
+     -> It is content 4 princepal
+      1.Abstraction
+      2.Encapsulation
+      3.Inheritance
+      4.Ploymorphisem
+
+ Abstraction                                                                                     Example
+---------------                                                                              ----------------
+-> Presenting essential information and hidding unessential information.               case1                    case2
+                                                                                      DOCTOR                     BANK
+                         "or"                                                     Health Information         Finacial information
+                                                                             hide finacial information      hide health information
+-> Gathering require data leaving unnessary data
+
+Ex: let us apply abstaraction princepal on employee of the companey
+
+Essential details of the Employee of the Companey                                          Hideing
+----------------------------------------------------                                   ----------------
+1. EMP Name - 'anil'                                                                     Familey details
+2.  EMP Id - '101'                                                                       Finaceal Details
+3. EMP desig - 'Maneger'                                                                 Properties Details
+4. EMP jd - '23-3-95'
+5. EMP add - 'bbsr'
+
+->On the Data we perform the Operation .
+->To perform operation we need methods.
+->Method we used perform the operation on data.
+->Class is collection variables and Methods.
+
+Encapsulations
+-----------------
+        
+  Combineing or Binding variables and methods into a class is called as encapsulation.
+
+ Class
+--------
+->Class is a collection of variables and Methods.
+
+Q:what is a Variable?
+Ans: Variable stores the Data.
+Ex: employeeIDs='E101'
+      |            |
+   (variable)    (value)
+
+Q: What is a Object?
+Ans:Method on perform operation on data.
+

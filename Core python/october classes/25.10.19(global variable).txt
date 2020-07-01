@@ -1,0 +1,38 @@
+Global Variable
+----------------
+A global variable is declaired out side of all function.So the scope of variable is : 
+->It is accessed all function.
+
+Ex:
+g=100
+def function():
+    print("in function g is=:",g)
+def function1():
+    global g
+    g=g+400
+    print("in function1 g value is=",g)
+output
+------
+>>> function()
+in function g is=: 100
+>>> 
+=========== RESTART: C:/Python37/python pratice/global variable.py ===========
+>>> function1()
+in function1 g value is= 500
+
+Global keyword
+--------------
+      Global keyword is used in the function so that the function will recognise the variable as a global variable.
+It can perform operation on global variable.
+
+Difference between local variable and global variable
+----------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------------------------
+                 LOCAL VARIABLE                              |                   GLOBAL VARIABLE
+--------------------------------------------------------------------------------------------------------------------------------
+
+1. It declaired inside of the function                             1. It declared outside of the function.
+2. LOCAL VARIABLE is accessed only witnin the function.            2. GLOBAL VARIABLE is accessed in all the function.
+   where it is declared.
+

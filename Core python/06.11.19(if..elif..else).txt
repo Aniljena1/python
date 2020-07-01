@@ -1,0 +1,75 @@
+
+ if..elif..else
+---------------
+syntax:
+
+if condition1:
+    condition1 related statement
+elif condition2:
+    condition2 related ststement"
+elif conditionn:
+    "condition3 related statement"
+else:
+   "else block ststement"
+
+1.If condition one is true , then condition one related ststement are executed and controls comes out.
+2..If condition1 one is false , then condition two is checked ,ifcondition two  is true,then
+condition two related ststement are executed and controls comes out.
+3.if no one condition is true then else block is executed.
+
+Task:
+----
+1.Accept marks in python subject from the student.
+
+2. If marks are morethan 100 then display a message:
+"please enter marks less than or equal to 100 because MAX.MARKS:100"
+
+3.If marks are exactly equal 100 then display "A+ grade".
+
+4.If marks are between  90-99 then display "A grade".
+
+5.If marks are between  80-99 then display "B+ grade".
+
+6.If marks are between  70-79 then display "B grade".
+
+7.If marks are between  60-69 then display "c+ grade".
+
+8.If marks are between  50-59 then display "c grade".
+
+9.If marks are between  40-49 then display "just pass".
+
+10.if marks are below 40 then display "fail".
+
+Ans:
+marks=int(input("Enter marks in python subject:"))
+if marks>100:
+    print("please enter marks less than 100")
+elif marks==100:
+    print("Grade: A+")
+elif marks>90:
+    print("Grade: A")
+elif marks>80:
+    print("Grade: B+")
+elif marks>70:
+    print("Grade: B")
+elif marks>60:
+    print("Grade: C+")
+elif marks>50:
+    print("Grade: C")
+elif marks>40:
+    print("just pass")
+else:
+    print("fail")
+
+
+
+Task2:
+-----
+1,Accept mobile model
+2.Accept mobile price , if mobile price greater than 100000 then offer 10% discount
+3.if mobile price is between 90,000 to 99,999 then offer 9% is discount.
+4.if mobile price is between 80,000 to 89,999 then offer 8% is discount.
+5.if mobile price is between 70,000 to 79,999 then offer 7% is discount.
+6.if mobile price is between 60,000 to 69,999 then offer 6% is discount.
+7.if mobile price is below 50,000 then offer A comlimetray Gift so, display a message,"please collect your complimentary gift"
+

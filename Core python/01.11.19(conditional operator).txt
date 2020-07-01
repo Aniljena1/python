@@ -1,0 +1,14 @@
+Conditional Operator
+--------------------
+Conditional Operator is used to check the condition, based on the result value will be assigned.
+Ex:
+>>> a=100
+>>> b=200
+>>> c=a if a<b else b
+>>> c
+100
+>>> c=a if a>b else b
+>>> c
+200
+ assign "a" to "c" if "a<b" is true
+ ortherwise assign "b"nto "c"

@@ -1,0 +1,29 @@
+Python Closure
+===============
+Q. When do we have a python closure?
+
+Ans:
+1. We must have a nested function(a  function is existed inside of another function).
+
+2. The Nested function(inner function) must reffer to a value defined in the enclosing function(outer function).
+
+3. The enclosing function(Outer function) must return the nested function(inner function).
+
+
+def enclosure_function(n):#outer function
+    def nested_function(x):#Inner function
+        return x*n
+    return nested_function
+
+times3=enclosure_function(3) #n=3
+
+times5=enclosure_function(5) #n=5
+
+print(times3(9)) #x=9 Output:27 i.e. x*n -> 9*3=27
+
+print(times5(3)) #x=3 Output:15 i.e. x*n -> 3*5=15
+
+output
+------
+27
+15

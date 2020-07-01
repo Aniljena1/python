@@ -1,0 +1,627 @@
+
+List collecton
+---------------
+
+-> when we want to store multiple values we use  collection.
+-> List allows both Homogeneous and Heterogenous elements.
+
+Homogeneous: Similar type of elements.
+
+Examples of Homogeneous elements:
+
+100
+200
+300
+ 
+These are all integer elements. Means similar type of elements. So similar types of elements are called Homogeneous elements.
+
+Heterogenous:
+
+100 int
+200.35 float
+'mr ramesh' str
+True bool
+(1+2j) complex
+
+So these are Heterogenous elements because each element is different type.
+
+List collection
+---------------
+1.List is a collection of objects.
+
+2.List is represented with [] brackets and with comma separeted values.
+
+ex:
+>>> EmployeeNames="mr.anil"
+>>> EmployeeNames='mr.anil'
+>>> EmployeeNames=['jitu','deba','sity']
+>>> type(EmployeeNames)
+<class 'list'>
+>>> EmployeeNames
+['jitu', 'deba', 'sity']
+###################################################################################################################
+Task:
+----
+
+1.Store mobile names in list colection
+
+2.Display its type
+
+3.Dispaly mobile names
+
+Ans:> MobileNames=['samsung','apple','one plus']
+>>> type(MobileNames)
+<class 'list'>
+>>> MobileNames
+['samsung', 'apple', 'one plus']
+#####################################################################################################################
+TASk-2
+--------
+1.Accept Customer name from the operators.
+
+2. Dispaly all customer names.
+
+without list function
+----------------------
+>>> CustomerNames=input("please enter customer names")
+please enter customer names['litana','lipu','chintu']
+>>> type(CustomerNames)
+<class 'str'>
+
+#############################################################################################
+TASk-4
+-------
+
+1.Accept student courses
+
+2.Student courses
+
+with list function
+---------------------
+>>> StudentCourses=list(input("enter student courses"))
+enter student courses['ui','angular','python','django']
+>>> type(StudentCourses)
+<class 'list'>
+>>> StudentCourses
+['[', "'", 'u', 'i', "'", ',', "'", 'a', 'n', 'g', 'u', 'l', 'a', 'r', "'", ',', "'", 'p', 'y',
+ 't', 'h', 'o', 'n', "'", ',', "'", 'd', 'j', 'a', 'n', 'g', 'o', "'", ']']
+
+##################################################################################################
+
+example2
+---------
+
+>>> a=100
+>>> b=200
+>>> list1=[a,b]
+>>> list1
+[100, 200]
+>>> string1='anil'
+>>> string2='jitu'
+>>> list2=[string1,string2]
+>>> list2
+['anil', 'jitu']
+
+Task 6
+--------
+
+1. Acceptcompaney names in separate variables.
+
+2. store all those variable ina list collection.
+
+3. Dispaly that list collection.
+
+ComapnyName1=input("enter companey name:")
+ComapnyName2=input("enter companey name:")
+ComapnyName3=input("enter companey name:")
+CompaniesList=['ComapnyName1','ComapnyName2','ComapnyName3']
+print("Companies list=",CompaniesList)
+
+output
+-------
+enter companey name:tcs
+enter companey name:infosys
+enter companey name:tech mahindra
+Companies list= ['ComapnyName1', 'ComapnyName2', 'ComapnyName3']
+
+Task8
+-----
+
+1. Accept Customer Details:
+        1.1 Customer Number
+        1.2 Customer name
+        1.3 Customer  Address
+        1.4 Customer Mobile number
+        1.5 Customer amount of  orders
+2.Store all these details in a list collection (List collection name is: CustomerDetails)
+
+3.Dispaly list collection
+
+Ans:
+CoustermerNumber=int(input("enter Coustermer Number:"))
+CoustermerName=input("enter Coustermer Name:")
+CoustermerAddress=input("enter Coustermer Address:")
+CoustermerMobileNumber=int(input("enter CoustermerMobile Number:"))
+CoustermerAmountofOrders=float(input("enter Coustermer Amount of Orders:"))
+CoustermerDetails=[CoustermerNumber,CoustermerName,CoustermerAddress,CoustermerMobileNumber,CoustermerAmountofOrders]
+print("Coustmer Details=",CoustermerDetails)
+
+output
+------
+enter Coustermer Number:7478
+enter Coustermer Name:jf
+enter Coustermer Address:jk
+enter CoustermerMobile Number:98475
+enter Coustermer Amount of Orders:78.9
+Coustmer Details= [7478, 'jf', 'jk', 98475, 78.9]
+
+
+
+Q.What is the meaning of "insertion order"?
+
+Ans:The order in which we inserted the elements then the same order is preserverd or maintained.
+
+-> In list collection, Insertion order is preserved.
+
+Examples
+---------
+>>> StudentIDs=[1122,3344,5566,4455]
+>>> StudentIDs
+[1122, 3344, 5566, 4455]
+>>> Numbers=[1001,500,4,1000,7]
+>>> Numbers
+[1001, 500, 4, 1000, 7]
+
+
+Q: What is a slice?
+
+Ans: A slice means a part or an element.
+
+Q: What is an Index?
+
+Ans: Every Slice is Accessed with its index number.
+
+-> So List collection, Slicing and indexing are allowed.
+
+Examples:
+----------
+
+>>> CustomerNumber=[1122,33,446,6678]
+>>> CustomerNumber[0]
+1122
+
+TASk
+----
+1. Accept Mobile Networks.
+
+2.Display the indexes of all Mobile Networks one by one.
+
+3.Display the indexes of all Mobile Networks in a single line(at a time).
+
+>>> MObileNetworks=['jio','airtel','idea','vodafone','bsnl']
+>>> MObileNetworks[3]
+'vodafone'
+>>> MObileNetworks[2]
+'idea'
+>>> MObileNetworks
+['jio', 'airtel', 'idea', 'vodafone', 'bsnl']
+
+TASk2
+------
+1.Generate StudentIDs from 1122 to 2233(by using range type)
+
+2.Convert that studentIDs range into list.
+
+3.Dispaly the studentIDs  from 10 to 15.
+
+4.Dispaly the studentIDs  from 15 to last.
+
+5.Dispaly the studentIDs  from 11 to 16
+ 
+>>> StudentIDs=list(range(10,21))
+>>> type(StudentIDs)
+<class 'list'>
+>>> StudentIDs
+[10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+>>> StudentIDsList[3:]
+[13, 14, 15, 16, 17, 18, 19, 20]
+>>> StudentIDsList[0:6]
+[10, 11, 12, 13, 14, 15]
+>>> StudentIDsList[6:12]
+[16, 17, 18, 19, 20]
+>>> StudentIDsList[1:7]
+[11, 12, 13, 14, 15, 16]
+
+---------------------------------------
+                                           or
+                                             -------------------------------------------------------------------
+
+>>> StudentIDs=range(10,21)
+>>> StudentIDs
+range(10, 21)
+>>> StudentIDsList=list(StudentIDs)
+>>> type(StudentIDsList)
+<class 'list'>
+>>> StudentIDsList
+[10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+>>> StudentIDsList[3:]                         //(positive indexing means backward direction)
+[13, 14, 15, 16, 17, 18, 19, 20]
+>>> StudentIDsList[0:6]
+[10, 11, 12, 13, 14, 15]
+>>> StudentIDsList[6:12]
+[16, 17, 18, 19, 20]
+>>> StudentIDsList[1:7]
+[11, 12, 13, 14, 15, 16]
+
+-> for skip one element 
+
+>>> StudentIDs[0:11:2]
+[10, 12, 14, 16, 18, 20]
+
+-> for skip two element 
+
+>>> StudentIDs[0:11:3]
+[10, 13, 16, 19]
+
+-> dispalyonly 10 or 20
+
+>>> StudentIDs[0:11:10]
+[10, 20]
+
+-> dispaly only 14 or 15
+>>> StudentIDs[4:6]
+[14, 15]
+
+   (nagetive indexing means backward direction)
+
+->Dispaly reverse order
+>>> StudentIDs[::-1]
+[20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10]
+
+>>> StudentIDs[-1:-12:-1]
+[20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10]
+
+-> Dispaly 20 to 15
+
+>>> StudentIDs[-1:-7:-1]
+[20, 19, 18, 17, 16, 15]
+
+
+
+()-> In List Duplicate elements are allowed. 
+
+Q: What is a Duplicate Element?
+Ans:Same element is repeated for numbers of times.
+
+->list(float(input(""))) are not allowed.
+
+->list(int(input(""))) are not allowed.
+
+->int('10','20') are not allowed
+
+-->int('10 20')  space are not allowed, because you give space python think they are two numbers.
+
+->int('10') are allowed because int conversion only one values
+
+"eval()" function
+---------------
+
+-> eval comes from evaluations.
+
+-> eval function evaluets the given input into list and the data into approprite type.
+or
+-> It is used convert input data to list function and also convert list data into approprite function.
+
+example: Multiple Smart phones prices are taken as input.
+        -> Here eval() function is converting Smartphone prices into list collection and float type.
+
+TASk:
+------
+1. Accept Prices of smart Phones
+
+2. Dispaly prices
+
+>>> Numbers=list(input("Enter the integers"))
+Enter the integers[1000,10979,85783,99384]
+>>> type(Numbers)
+<class 'list'>
+>>> Numbers
+['[', '1', '0', '0', '0', ',', '1', '0', '9', '7', '9', ',', '8', '5', '7', '8', '3', ',', '9', '9', '3', '8', '4', ']']
+>>> SmartPhonePrice=eval(input("enter smart phones prices:"))
+enter smart phones prices:[100.00,2000,762728.98,92892.76]
+>>> type(SmartPhonePrice)
+<class 'list'>
+>>> SmartPhonePrice
+[100.0, 2000, 762728.98, 92892.76]
+>>> SmartPhonePrice[0]
+100.0
+>>> SmartPhonePrice[3]
+92892.76
+>>> type(SmartPhonePrice[3])
+<class 'float'>
+>>> 
+>>> SmartPhonePrice[1]
+2000
+>>> type(SmartPhonePrice[1])
+<class 'int'>
+
+##############################################################################################
+Task2
+-----
+
+1.Accept Tv prices into the list collection
+
+2.Apply 10% on on every TV's price.
+
+Tvprices=eval(input("Enter tv prices:"))
+print("all tv prices=",Tvprices)
+for i in Tvprices:
+    Discount=i*(10/100)
+    print("Tv price=",i-Discount)
+
+output
+------
+Enter tv prices:[10000,20000,90000]
+all tv prices= [10000, 20000, 90000]
+Tv price= 9000.0
+Tv price= 18000.0
+Tv price= 81000.0
+
+
+->()->
+
+Q: What is a mutable object?
+Ans: A mutable object can be changed.
+
+so, List is a mutable collection , So we can add new elements or  we can modify existed elements or we can delete un-necessary elements.
+
+->append method: append adding the element at the end of the list.
+---------------
+->insert method: Insert method insert an element at our specified index.
+----------------
+Ex:EmployeDepartment.insert(1,'customer support')
+->Index:To find the index number of a given element.
+--------
+###########################################################################
+Task:
+------
+
+1.Create Employee Departments list collection.
+
+2. Dispaly the Departments list collection.
+
+3. Add one more department to "Department list"  collection.
+
+4.After Adding dispaly "Department list" collection one more time.
+
+5.Insert 'customer support' deparment between it and hr  depatment.
+
+
+1.
+EmployeeDepartment=eval(input("Enter employee departmets:"))
+print("*"*30)
+print("employee departmets",EmployeeDepartment)
+dept=input("Enter employee departmets:")
+print("*"*30)
+print("which department you want to add:")
+EmployeeDepartment.append(dept)
+print("*"*30)
+print("employee departmets",EmployeeDepartment)
+print("*"*30) 
+
+output
+------
+
+Enter employee departmets:['hr','it']
+******************************
+employee departmets ['hr', 'it']
+Enter employee departmets:testing
+******************************
+which department you want to add:
+******************************
+employee departmets ['hr', 'it', 'testing']
+******************************
+
+2.
+
+EmployeeDepartments=['it','hr','marketiung','R&D','HR','Finance','Auditing','telecommunication']
+print("Employee Departments=",EmployeeDepartments)
+ExistedDept=input("after which dept you want to insert:")
+i=EmployeeDepartments.index(ExistedDept)
+print("index=",i)
+NEWdept=input("Enter new departmets:")
+EmployeeDepartments.insert(i+1,NEWdept)
+print("*"*30)
+print("EmployeeDepartments",EmployeeDepartments)
+print("*"*30)
+
+output:
+Employee Departments= ['it', 'hr', 'marketiung', 'R&D', 'HR', 'Finance', 'Auditing', 'telecommunication']
+after which dept you want to insert:it
+index= 0
+Enter new departmets:testing
+******************************
+EmployeeDepartments ['it', 'testing', 'hr', 'marketiung', 'R&D', 'HR', 'Finance', 'Auditing', 'telecommunication']
+******************************
+###################################################################################################################
+##################################################################################################################
+TASK
+-----
+1.Accept companey names from the user and store into the list collection.
+
+2. Ask the user:do you want to insert any new companeyname(yes/no)
+
+3.if user says yes then ask the user: "after which companey name you want to insert".
+
+4.ask the user: "enter new companew name" and insert that companey name into the list.
+
+5.display the companey names.
+
+6.again ask the user that : "do you want to insert any new companey names (yes/no):".
+
+7.if user says "yes" repet 1-6 steps.
+
+8.if user says "no" then stop the program.
+
+
+CompaneyNames=eval(input("enter companey names"))
+ans="yes"
+while ans=="yes":
+  ExistedCompaney=input("after which dept you want to insert:")
+  i=CompaneyNames.index(ExistedCompaney)
+  NEWcompaney=input("Enter new departmets:")
+  CompaneyNames.insert(i+1,NEWcompaney)
+  print("*"*30)
+  print("EmployeeDepartments",CompaneyNames)
+  print("*"*30)
+  ans=input("Do you want to insert any new comany name(yes/no):")
+
+output
+------
+enter companey names['tcs','mindtree','infosys','tech mahondra']
+after which dept you want to insert:tcs
+Enter new departmets:google
+******************************
+EmployeeDepartments ['tcs', 'google', 'mindtree', 'infosys', 'tech mahondra']
+******************************
+Do you want to insert any new comany name(yes/no):yes
+after which dept you want to insert:google
+Enter new departmets:facebook
+******************************
+EmployeeDepartments ['tcs', 'google', 'facebook', 'mindtree', 'infosys', 'tech mahondra']
+******************************
+Do you want to insert any new comany name(yes/no):no
+
+##############################################################################################################
+
+Sliceing And indexing
+-----------------------
+
+>>> s1='python programming'
+>>> s1
+'python programming'
+>>> s1[::-1]
+'gnimmargorp nohtyp'
+>>> s1[:15:]
+'python programm'
+>>> s1[::2]
+'pto rgamn'
+>>> s1[::4]
+'poran'
+>>> s1[:12:3]
+'ph o'
+>>> s1[0:18:2]
+'pto rgamn'
+>>> 
+
+
+-> Deleting an element from a list by specifying an index.
+
+    Ex: 11.pop(1)
+
+-> Deleting multiple element from a list by specifying an index.
+
+   Ex: del 11[1:5]
+
+-> Deleting multiple elements in a list from specified  index.
+
+   Ex: del 11[4:]
+
+-> Deleting all element from the list.
+  Ex: 11.clear()
+
+->List idoces:
+      Syntax:list.index(element)
+
+List Operation are done with List method
+-----------------------------------------
+-> Accept the element from the user intoma list:
+ 
+           Ex: 11=eval(input("Enter the elements into the list:"))
+
+-> Inserting an element into a list at the last position.
+ 
+          Ex: 11.append(60)
+
+-> Inserting an element into a list at the required position.
+
+          Ex: 11.insert(2,21)
+
+-> Insertion of multiple elements at a time at the end of the list.
+         Ex: 11.extend([70,80,90,100])
+
+
+-> Insertion of multiple elements into the list at our required position.
+       Ex: 11=[10,20,30,40,50,60,70,80,90,100]
+           11[4:4]=range(31,36)
+
+-> Deleting an element in a list by specfying element
+       Ex:11.remove(20)
+
+-> Deleting an element from a list by specfying an index.
+        Ex: 11.pop(1)
+
+-> Deleting an multiple elements from a list by specfyinf an index.
+        Ex: del11[1:5]
+
+-> Deleting multiple lements from a list by specfyied  index to last.
+        Ex: del11[4:]
+
+-> Deleting all eliments from the list  
+       Ex:11.clear()
+
+->Deleting total list
+      Ex:del11
+
+->Reversing the elements of a list
+     Ex:11.reverse()
+
+->Sorting a list
+    Ex:11.sort()
+
+->Copying a list
+     Ex:12=11.copy()
+
+-> Concatenation of list:
+     Ex:list3=list1+list2
+
+->Comparison of lists:
+      Ex: for this in mylist:
+             for that in mylist:
+                  compare(this,that)
+
+
+
+-> Comparision of list:
+       Ex: list1==list2
+
+-> Creation of Nested lists
+      Ex: list1=[100,200,300,400[500,600,700]]
+
+-> Intersection: Intersection  of two list means we need to take all those elements which are common two both of the initial list's 
+                  And Store them in another list.
+
+
+    def intersection(lst1,lst2):
+    return set(lst1).intersection(lst2)
+lst1=[2,3,4,5,6,11,2,12]
+lst2=[3,4,5,11,78,89]
+print(intersection(lst1,lst2))
+
+o/p
+===
+{1, 3, 4, 5}      
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,62 @@
+PATH Variable
+-----------------
+PATH is an Environment variable.
+
+Q: What is an environment Variable?
+
+ Ans -> environment Variable is used to execute python programs on python softwear in all Environments.
+
+Ex: 
+
+1.C drive envirolment
+2.D drive envirolment
+3.E drive envirolment
+
+Steps to see PATH Variable :
+1. write clickon comuter
+2. Select properties option
+3. Click on Advance sysyem setting
+4. Click on Environment variable button
+
+checkin whether python is executing where all environment work or not.
+1.Go to start menu type CMD(commnand prompt)
+
+                                               other Datatypes
+                                          ----------------------------
+Range  datatype
+------------------ 
+Range datatype is ued to generate the range of numbers.
+
+Ex: 1 - 100 Here  Begening range is 1 or Endnig is 100.
+
+ex1:Generating StudentIDs from1 to 100
+   >>> StudentIDs=range(1,1001)
+>>> type(StudentIDs)
+<class 'range'>
+>>> for i in StudentIDs:
+	print(i)
+(press two time Enter)
+
+Q:Generate the product numbers from one lakh to one lakh one hundred.
+
+Q:Generate the mobilw IDs from 1000 to 10,000 with the difference of 500
+Ans:>>> mobileIDs=range(1000,10000,500)
+>>> for i in mobileIDs:
+	print(i)
+
+Q:Generate car number 5000 to 50,000 with the gap of 1200.
+Ans:>>> carNOs=range(5000,50000,1200)
+>>> for i in carNOs:
+	print(i)
+-> Upto this we have sine ascending order of ranges.
+-> Now we are going to descending number of changes.
+
+Example for disending order of range
+
+Q: Generate Customer number 100000 to 10000  difference to 1000.
+Ans:>>> customerNos=range(100000,9999,-1000)
+>>> for i in customerNos:
+	print(i)
+
+
+

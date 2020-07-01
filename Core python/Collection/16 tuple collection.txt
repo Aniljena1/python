@@ -1,0 +1,152 @@
+Tuple()  Collection
+------------------
+tuple is also a collection of objects.
+
+->it is represented with() paranthesis and with comma separated values.
+
+->() are optional
+
+eval function
+-------------
+eval function is used to evaluet the given into appropreat collection typr and data into appropriate type.
+
+count function
+-------------
+count function is used to count the number of duplicate given elements.
+
+immutable
+----------
+tuple is immutable, So we can't do changes in tuple.
+
+len()-> length
+-------
+it gives number of elements in tuole.
+
+>>> Employee_Fetails=['anil',98734982,'bbsr']
+>>> len(Employee_Fetails)
+3
+
+count()
+-------
+returns number of occurancs given number of duplicate in the tuple element.
+
+example:
+
+>>> EmployeeNames=('anil','rima','jitu','mama','litan')
+>>> type(EmployeeNames)
+<class 'tuple'>
+>>> EmployeeNames
+('anil', 'rima', 'jitu', 'mama', 'litan')
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Task:
+
+1.Accept Student Details
+  1.1 StudentIDs -int
+  1.2 StudentName -str
+  1.3 StudentAddress -str
+  1.5 StudentMobileNumber -int
+  1.6 StudentCourse -str
+  1.7 StudentCourseFees -float
+
+2. Dispaly the student details
+
+>>> StudentDetails=eval(input("Enter student details:"))
+Enter student details:(1122,'anil','bbsr',43636,'python',4000.80)
+>>> StudentDetails=eval(input("Enter student details:"))
+Enter student details:(1122,'anil','bbsr',43636,'python',4000.80)
+>>> tuple1=(100,1,500,1000,4)
+>>> type(tuple1)
+<class 'tuple'>
+>>> tuple1
+(100, 1, 500, 1000, 4)
+>>> 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Task:
+
+1.1.Accept Product id from the user and store into the tuple collection.
+
+2. apply Slicing And Indexing 
+
+>>> ProductIDs=eval(input("enter product id:"))
+enter product id:(1122,2233,3344,4455,5566,6677,7788,8899,9900)
+>>> ProductIDs[1:8:6]
+(2233, 8899)
+>>> ProductIDs[::2]
+(1122, 3344, 5566, 7788, 9900)
+>>> ProductIDs[:5:]
+(1122, 2233, 3344, 4455, 5566)
+>>> ProductIDs[3::]
+(4455, 5566, 6677, 7788, 8899, 9900)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+count function is used to count the number of duplicate given elements.
+Task:
+
+1.Accept Smartphone prices and store into collection.
+
+2,Dispaly it.
+
+>>> SmartphonePrices=eval(input("enter smart phone prices"))
+enter smart phone prices(100000,100000,200000,200000)
+>>> SmartphonePrices.count(100000)
+2
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+immutable example
+-------------------
+tuple()
+---------
+>>> ComapaneyNames=('google','tcs')
+>>> ComapaneyNames[0]
+'google'
+>>> ComapaneyNames[0]='ibm'     //it can't change
+Traceback (most recent call last):
+  File "<pyshell#11>", line 1, in <module>
+    ComapaneyNames[0]='ibm'
+TypeError: 'tuple' object does not support item assignment
+
+list(mutable)
+--------------
+>>> ComapaneyNames=['google','tcs']
+>>> ComapaneyNames=[0]
+>>> ComapaneyNames[0]='ibm'  //it can change
+>>> ComapaneyNames
+['ibm']
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# Converting list to tuple 
+-----------------------------
+>>> Employee_Fetails=['anil',98734982,'bbsr']
+>>> type(Employee_Fetails)
+<class 'list'>
+>>> Employee_Fetails
+['anil', 98734982, 'bbsr']
+>>> Employee_Fetails_tuple=tuple(Employee_Fetails)
+>>> type(Employee_Fetails)
+<class 'list'>
+>>> type(Employee_Fetails_tuple)
+<class 'tuple'>
+>>> Employee_Fetails_tuple
+('anil', 98734982, 'bbsr')
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+>>> list1=(1001) //must two value are required for tuple values
+>>> type(list1)
+<class 'int'>
+>>> list1=(101,102)
+>>> type(list1)
+<class 'tuple'>

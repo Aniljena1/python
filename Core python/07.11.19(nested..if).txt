@@ -1,0 +1,56 @@
+Nested if
+---------
+Syntax:
+-------
+If coond-1:
+  "cond-1" related statement
+ if cond-2:
+  "cond-2" related statements
+   . 
+    
+     .  
+       if cond-n:
+         "cond-n" related Statements
+else:
+if cond-1 is false then this else block is executed.
+
+note:
+1. If condition one is true then condition one related ststement is executed, then checked condition two like this.
+
+2. if condition one related ststement is false it don't checked condition two related ststement, Directley else block related statement will be executed.
+
+TASk:
+Accept passport number from passenger.
+2.If given passport number is valid then  ask VISA number frm the passenger.
+3.If given visa number is valid, then display"Happy Jiurney".
+4.If given VISA number is invalid, Then dispaly "please enter valid visa number".
+5.If given passport number is invalid then display "please enter valid passport number".
+
+ANS:
+passport_number=input("Enter your passport number:")
+if passport_number=='IND12345':
+    print("Your passport number is valid")
+    VISA_Number=input("Enter your VISA number:")
+    if VISA_Number=='VISA3344':
+       print("Your visa number is valid.Happy journey")
+    else:
+       print("Your visa number is invalid")
+else:
+    print("please enter valid passport number")
+
+output
+-------
+Enter your passport number:IND12345
+Your passport number is valid
+Enter your VISA number:VISA3344
+Your visa number is valid.Happy journey
+
+
+TASk:
+1.ask student to enter "examination center"
+2.if examination cener is"InTocampus" then ask for "hall tiket number".
+3.If hallticket number is "KLC 1122" then display : All the best for your examination
+4.If hall tocket number is invalid then dispaly: Please enter valid hall ticket number.
+5. If invalid examination center is enter then display: Please enter valid examination center.
+
+ 

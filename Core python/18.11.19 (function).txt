@@ -1,0 +1,377 @@
+Function()
+-----------
+Q: What is a function?
+
+ANS:
+->Function is set of statement to perform an operation.
+
+A Function can be written in four ways
+=========================================
+
+1. Function with parameters(s) and with return value(s).
+
+2. Function with parameters(s) and without return value(s).
+
+3. Function without parameters(s) and with return value(s).
+
+4. Function without parameters(s) and without return value(s).
+
+
+1. Function with parameters(s) and with return value(s)
+========================================================
+-> In this way, A function takes parameter(s) and perform the operation and returns the value(s)
+
+Q:What is Parameter?
+
+-> Parameters are used to pass the data/input to the function.
+
+For Example:
+def addition(a,b):
+    c=a+b
+    return c
+def subtraction(a,b):
+    c=a-b
+    return c
+def multiplication(a,b):
+    c=a*b
+    return c
+def division(a,b):
+    c=a/b
+    return c
+
+TASK1
+-----
+AccountNumbers=range(112233445566,991122334445566)
+AccountTypes=['saving account','current account','fixed account']
+def deposit(AccountNumber,AccountType,DepositAmount):
+    AccountBalance=500000
+    if AccountNumber in AccountNumbers and AccountType in AccountTypes:
+        AccountBalance+=DepositAmount
+        return AccountBalance
+    else:
+        print("please enter valid account details")
+        
+AccountNumbers=range(112233445566,991122334445566)
+AccountTypes=['saving account','current account','fixed account']
+def withdraw(AccountNumber,AccountType,WithdrawAmount):
+    AccountBalance=500000
+    if AccountNumber in AccountNumbers and AccountType in AccountTypes:
+        AccountBalance-=WithdrawAmount
+        return AccountBalance
+    else:
+        print("please enter valid account details")
+
+
+        
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+2. Function with parameters(s) and without return value(s).
+==========================================================
+
+-> In this way the function takes parameter to perform the process and doesn't return values.
+def deposit(AccountNumber,AccountType,DepositAmount):
+    AccountBalance=50000
+    AccountBalance+=DepositAmount
+    print("Account Balance after deposit operation=",AccountBalance)
+
+output
+======
+>>> deposit(13353452,'hafjla',50000)
+Account Balance after deposit operation= 100000
+
+
+Q: Difference between returning the value and not returning the value.
+==
+
+ANS: 
+
+returning the value
+---------------------
+
+def deposit(AccountNumber,AccountType,DepositAmount):
+    AccountBalance=50000
+    AccountBalance+=DepositAmount
+    return AccountBalance
+
+
+output
+------
+>>> a=deposit(8734687,'saving',8000)
+>>> a
+58000
+
+NOTE-> user can use the returns value
+-----
+
+
+not returning the value
+---------------------
+def deposit(AccountNumber,AccountType,DepositAmount):
+    AccountBalance=50000
+    AccountBalance+=DepositAmount
+    print("Account Balance after deposit operation=",AccountBalance)
+
+output
+------
+>>> a=deposits(253456,'saving',10000)
+Account Balance after deposit operation= 60000
+>>> a
+>>>
+
+
+NoTE -> It contens nothing, If we dispaly typr a , It is None Type.
+
+
+Q: When we return the value?
+
+ANS: If the user requires return value.
+
+Q: When we doesn't return the value?
+
+ANS: When the user does not require value.
+
+
+
+#########################################################################################3
+
+
+
+3. Function without parameters(s) and with return value(s)
+===========================================================
+
+-> In this way,  the function does not take parameter(s) 
+
+-> Data is taken directley with in the function and perform the operation on the data & finalley return the value.
+
+def deposi():
+    AccountNumber=int(input("Enter Account number:"))
+    AccountType=input("Enter Account Type:")
+    DepositAmount=float(input("Enter Deposit Amount:"))
+    AccountBalance=50000
+    AccountBalance+=DepositAmount
+    return AccountBalance
+
+output
+-------
+>>> deposi()
+Enter Account number:938764839
+Enter Account Type:saving
+Enter Deposit Amount:10000
+60000.0
+
+output2
+-------
+>>> a=deposi()
+Enter Account number:72649287
+Enter Account Type:saving
+Enter Deposit Amount:50000
+>>> a
+100000.0
+
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+4.Function without parameters(s) and without return value(s).
+===============================================================
+
+def deposit():
+    AccountNumber=int(input("Enter Account number:"))
+    AccountType=input("Enter Account Type:")
+    DepositAmount=float(input("Enter Deposit Amount:"))
+    AccountBalance=50000
+    AccountBalance+=DepositAmount
+    print("After Deposit transaction your account balance =",AccountBalance)
+
+
+
+
+#############################################################################################
+
+Types of Parameters
+====================
+
+
+                                                           Parameters
+     -----------------------------------------------------------------------------------------------------------------
+     |               |            |             |             |               |              |                    |
+   formal         actual      positional    keyword       Non-Keyword      Default      Non-Default            Arbitrary     
+  Parameters     Parameters   Parameters   Parameters     Parameters       Parameters    Parameters            Parameters
+
+
+-> Parameters are also called as arguments.
+
+1.Formal Parameters
+--------------------
+-> These parameter are used at the time of formation of function or defination of a function.
+
+
+def deposit(AccountNumbers,Acounttype,DepositAmount)
+      ................. ----------------------------              
+                                             |
+      ...............                   Formal parameters
+          |
+      Formation of deposit() function 
+                 or
+       defination of deposit() function
+
+
+2.actual Parameters
+===================
+-> The parameters which are passed at the time of " function calling" are called as actual parameters.
+
+def deposit(AccountNumber,AccountType,DepositAmount):
+    AccountBalance=50000
+    AccountBalance+=DepositAmount
+    print("Account Balance after deposit operation=",AccountBalance)
+
+output
+------
+>>> a=deposits(253456,'saving',10000)
+                -------------------- 
+                      |
+                 Actual parameters
+Account Balance after deposit operation= 60000
+>>> a
+>>>
+
+3.Positional parameters
+========================
+-> When we are passing actual parameters at the time of calling the function, We have to follow the positions of the formal parameters.
+
+ def deposit(AccountNumber,AccountType,DepositAmount):
+                    |         |         |
+     >>> a=deposits(253456,'saving',10000)
+
+-> If we change the positions unpexted results will come.
+
+>>> a=deposits('saving',1234645,10000)
+AccountNumber=saving-----> this is unexpected result
+after deposit transction, Your Account balance=9000
+
+
+4.keyword parameters 
+=====================
+
+-> key word parameters are used to pass the values to a function in our desired order.
+
+-> So we can pass parameters in any order by using parameters names as keywords.
+
+
+
+def deposit(AccountNumber,AccountType,DepositAmount):
+    AccountBalance=50000
+    AccountBalance+=DepositAmount
+    print("Account Balance after deposit operation=",AccountBalance)
+
+
+output
+-------
+
+deposit('saving',1234645,10000)
+AccountNumber=saving-----> this is unexpected result
+---
+deposit(DepositAmount=10000,AccountType='saving',AccountNumber=2143243567)- Using key word parameters.
+
+Account Balance after deposit operation=150000.
+---
+
+deposit(DepositAmount=10000,AccountType='saving',2143243567)
+                 |              |                      |
+         keyword parameters  keyword parameters   Nonkeyword parameters                                            
+
+
+
+Default  Parameters
+====================
+
+-> programmer can give default values to the parameters.
+
+-> If parameter contents default value then the parameter is called as default parameter.
+
+-> if user doesn't pass parameter value then default values will be use.
+
+Example
+-------
+def addition(a=10,b=20,c=30):
+   return a+b+c ---------------------> return single values
+   return a,b,c ---------------------> return 3 values
+
+output
+-------
+>>>addition()
+60
+>>addition(100)
+150
+>>>addition(100,200)
+330
+>>>addition(100,200,300)
+600
+
+Example-2
+-----------
+def addition(a,b=20,c=30):------> Now a is non-default parameter
+   return a+b+c
+
+
+Q: What is non-default parameter?
+
+Ans-> The parameter which is not haveing defult values, this is called non-default parameter
+    -> to non-default parameter user has to pass values compulsorley.
+
+
+output
+-------
+>>>addition(100)
+150
+
+>>>addition()
+typeerror: addition() is missing 1 required arguments.
+
+
+
+ Arbitrary parameters(variable length parameters):
+====================================================
+
+-> An arbitrary can hold 'n' number of values, So user can pass 'n' number of values.
+
+def addition(*n):
+    sum=0
+    for i in n:
+        sum=sum+i
+    return sum
+
+output
+--------
+>>> addition(1000,2000,3000,4000)
+10000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

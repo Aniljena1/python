@@ -1,0 +1,38 @@
+Q:taked a data outside of a class,display 
+  1.Fixed data
+  2.Data Fro User
+
+Ex:
+class Employee:
+    def Employee_Details(self,empid,empname,empdesig,empsal):
+        self.Employee_Id=empid
+        self.Employee_name=empname
+        self.Employee_desination=empdesig
+        self.Employee_sallery=empsal
+    def Employee_Information_Display(self):
+        print("TOTAL INFORMATION")
+        print("*****************")
+        print("TOTAL INFORMATION=",self.Employee_Id)
+        print("TOTAL INFORMATION=",self.Employee_name)
+        print("TOTAL INFORMATION=",self.Employee_desination)
+        print("TOTAL INFORMATION=",self.Employee_sallery)
+e1=Employee()
+a=input("please enter the employee id:")
+b=input("please enter the employee name:")
+c=input("please enter the employee designation:")
+d=float(input("please enter the employee sallery:"))
+e1.Employee_Details(a,b,c,d)
+e1.Employee_Information_Display()
+
+output
+------
+please enter the employee id:f78785654
+please enter the employee name:jitu
+please enter the employee designation:businessman
+please enter the employee sallery:500000
+TOTAL INFORMATION
+*****************
+TOTAL INFORMATION= f78785654
+TOTAL INFORMATION= jitu
+TOTAL INFORMATION= businessman
+TOTAL INFORMATION= 500000.0

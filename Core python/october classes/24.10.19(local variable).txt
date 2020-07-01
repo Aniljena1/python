@@ -1,0 +1,45 @@
+Types of Variable
+-------------------
+1:local variable
+2.global variable
+3.parameter variable
+4.Instance variable
+5.static variable
+6.Class variable
+
+1.local variable
+----------------
+->Local variable is declared inside of a function.
+
+function : function perform the operation on data.
+........
+
+->the scope of local variables is they are access with in the function only.
+->out side of the function we can't access local variables.
+Ex:
+ def addition():
+     a=100 #'a' is local variable
+     b=200 #'b' is local variable
+     print("Addition of two numbers=",a+b)
+
+call the function
+-----------------
+addition()
+
+EX:
+def addition():
+     a=int(input("please  enter first integar:")) # 'a' is local variable
+     b=int(input("please  enter second integar:")) # 'b' is local variable
+     print("Addition of two numbers=",a+b)  
+output
+-------
+>>> addition()
+please  enter first integar:10
+please  enter second integar:10
+Addition of two numbers= 20
+
+input:takes the value in string format.
+
+int:convert the data string to int.
+
+

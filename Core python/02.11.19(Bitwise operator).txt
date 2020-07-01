@@ -1,0 +1,126 @@
+Bitwise Operator
+------------------
+Bitwise Operator are used to perform the operation on beats.
+
+                                                     Bitwise Operator
+           ------------------------------------------------------------------------------------
+           |           |        |        |                 |                      |
+           &(and)      |(or)    ^(xor)   >>(Right shift)   >>(light shift)        ~(complement)
+
+
+and(&) bitwise operator
+-----------------------
+and bitwise operator are used to perform the operation in bits.             0=f
+->The following formula of and bitwise operator                             1=t
+   
+0 & 0 0
+0 & 1 0    10 = 0 0 0 0 1 0 1 0 
+1 & 0 0    20 = 0 0 0 1 0 1 0 0
+1 & 1 1   -------------------------
+            0 = 0 0 0 0 0 0 0 0
+                 <--------------              
+
+
+ or(|) bitwise operator
+-----------------------
+or bitwise operator are used to perform the operation in bits.
+->The following formula of or bitwise operator
+   
+0 | 0 0
+0 | 1 1    10 = 0 0 0 0 1 0 1 0 
+1 | 0 1    20 = 0 0 0 1 0 1 0 0
+1 | 1 1   -------------------------
+           30 = 0 0 0 1 1 1 1 0
+                 <--------------              
+     4     3    2     1     0            
+    (2*1)+(2*1)+(2*1)+(2*1)+(2*0) =0+2+4+8+16=30
+
+xor(ex or) or bitwise operator :- (^)
+-----------------------
+xor bitwise operator performs on beats.
+-> formula of xor bitwise operator:
+
+0 ^ 0 0
+0 ^ 1 1    10 = 0 0 0 0 1 0 1 0 
+1 ^ 0 1    20 = 0 0 0 1 0 1 0 0
+1 ^ 1 0   -------------------------
+           30 = 0 0 0 1 1 1 1 0
+                 <--------------              
+     4     3    2     1     0            
+    (2*1)+(2*1)+(2*1)+(2*1)+(2*0) =0+2+4+8+16=30
+
+Riht Shift bitwise operator(>>)
+----------------------------
+-> Shiftin the bits towards riht side.
+1o>>2 shiftin the bits towards the riht side
+ 
+       10 = 0 0 0 0 1 0 1 0 
+       20 = 0 0 0 1 0 1 0 0
+                        ----
+       ----------------
+           
+       <--------------     
+
+Left Shift bitwise operator(<<)
+----------------------------
+-> Shiftin the bits towards riht side.
+1o>>2 shiftin the bits towards the riht side
+ 
+       10 = 0 0 0 0 1 0 1 0 
+       20 = 0 0 0 1 0 1 0 0
+           ----
+               ----------------
+           
+               <--------------          
+
+One's complement bitwise operator(~ -> til)
+---------------------------------
+Adding 1(one)  bit as a complementary bit to the iven bits.
+
+     10 -> 0 0 0 0 1 0 1 0 
+                         1
+   --------------------------
+           0 0 0 0 1 0 1 1
+
+ans: -11
+
+-> if last bit is 0 -(minus) symbol will be added.
+
+
+
+    
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+

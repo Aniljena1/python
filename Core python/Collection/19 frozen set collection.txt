@@ -1,0 +1,69 @@
+frozenset collection
+--------------------
+-> Frozenset is also a collection of object.
+
+-> The fundamental difference between set and frozenset is:
+
+-> set is mutable object where as frozenset is an immutable object.
+
+TASK
+-----
+1.Acept companey name from the user and store them in a frozenset.
+
+2.Dispaly that frozenset.
+
+>>> CompaneyNames=eval(input("Enter the companey names in the form of frozwnset:"))
+Enter the companey names in the form of frozwnset:frozenset({'tcs','google'})
+>>> type(CompaneyNames)
+<class 'frozenset'>
+>>> CompaneyNames
+frozenset({'tcs', 'google'})
+
+*****************************************************************************
+TASk
+-----
+
+1.Accept subject names and frozenset and dispaly them
+
+>>> SubjectNames=eval(input("Enter subject name along with yhere codes in the form frozenset:"))
+Enter subject name along with yhere codes in the form frozenset:frozenset({1122,'python',2233,'java'})
+>>> type(SubjectNames)
+<class 'frozenset'>
+>>> SubjectNames
+frozenset({'java', 2233, 1122, 'python'})
+
+**********************************************************************************
+sliceing and indexing not allowed
+---------------------------------
+>>> list2=({100,101,103})
+>>> list2[0]
+Traceback (most recent call last):
+  File "<pyshell#14>", line 1, in <module>
+    list2[0]
+TypeError: 'set' object is not subscriptable
+
+======================================================================================
+duplicaet not allowed
+---------------------
+>>> list1=({100,100,200,200})
+>>> list1
+{200, 100}
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+immutable
+----------
+>>> list1=frozenset({100,100,200,200})
+>>> list1.add(50)
+Traceback (most recent call last):
+  File "<pyshell#21>", line 1, in <module>
+    list1.add(50)
+AttributeError: 'frozenset' object has no attribute 'add'
+>>> list1
+frozenset({200, 100})
+>>> li2=frozenset({400,500})
+>>> list1|=li2
+>>> list1
+frozenset({200, 500, 100, 400})
+
+Q: Why frozenset is aloowed union type but not allowed add or remove type?
+Ans: old frozenset is repalced with  new frozen set, Union not repalced it add a new set so union type allowed.
+

@@ -1,0 +1,54 @@
+Transfer Statement
+--------------------
+
+1. break
+
+2. continue
+
+3. pass
+
+->We have seen break statement in for else and while else
+
+Continue Statement
+-----------------
+-> "Continue" Statement is used to skip the current loop and continue the next loop.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+TASK:
+------
+1.Accept an integer from the user
+
+2. An enter integer should be more than 0 and less than 100.
+
+3. Untill user enters correct number, Ask continuously
+
+4. If user enter correct number Calculetnits "power" and dispaly it.
+
+5. Sk the user:" do you want to enter one more number to calculet its power(yes/no):"
+
+6. If user says "yes" then repet 1-5 steps.
+
+7. If user says "no" stop the program.  
+
+ans="yes"
+while ans=="yes":
+    a=int(input("Enter the number more than 0 to less than 100:"))
+    if a>0 and a<100:
+        print("power=",a**a)
+        break
+    else:
+        continue
+    ans=("Do you want to enter onr more number to calculet its power(yes/no):")
+
+
+
+
+Enter the number more than 0 to less than 100:2
+power= 4
+>>> 
+========= RESTART: C:/Python37/python pratice/continue statement.py =========
+Enter the number more than 0 to less than 100:112
+Enter the number more than 0 to less than 100:100
+Enter the number more than 0 to less than 100:10
+power= 10000000000

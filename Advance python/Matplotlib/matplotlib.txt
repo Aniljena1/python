@@ -1,0 +1,1 @@
+matplotlib -> This library used to draw different types of graph.

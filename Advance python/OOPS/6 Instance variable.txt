@@ -1,0 +1,16 @@
+                                                   Types of variables in OOPs          
+                                                  -----------------------------
+1.Local Variable 2.Global Variable 3.Parameter Variable  4.Instance Variable 5.Class Variable 6.Static  Variable
+
+Instance Variable
+-----------------
+When the data is changing from one Instance to another Instance then we have to use Instance Variables.
+
+diagram:
+
+2.self is a system defined reference variable to point to current object.
+3.When object is created when only instance variables are created.
+4.Number of objects = Number of copies of instance variables.
+
+The above programs content Instance Variable's. All those Variables are prefixed with self.
+self.Employee_ID,self.Employee_Name,self.Employee_Price, etc.

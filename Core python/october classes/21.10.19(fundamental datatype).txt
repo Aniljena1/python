@@ -1,0 +1,100 @@
+
+"bool" Data type
+--------------------
+-> it is used to represent true/false boolean values.
+-> True mean 1 or false means 0.
+ex:>>> bl=True
+>>> type(bl)
+<class 'bool'>
+>>> True+True
+2
+>>> b2=False
+>>> type(b2)
+<class 'bool'>
+>>> false+false
+True
+>>> 50>100
+False
+>>> 
+
+"Complex" datatype
+-----------------------
+Q:What is Complex Datatype ?
+Ans:Complex Datatype  is used to represent "Complex number" in Scientific application.                     
+                                                                                                          
+Q:What is Complex Number ?                                                                                 
+Ans:Complex Number is the form of "a+bi".
+
+-> In python complex number represented as follows a+bj  
+ex:>>> c1=1+2j
+>>> type(c1)
+<class 'complex'>
+>>> c2=2+3j
+SyntaxError: can't assign to literal
+>>> c2=2+3j
+>>> c3=c1+c2
+>>> c3
+(3+5j)
+
+                                                    orther datatypes
+                                                    -----------------     
+                                                            |
+                                 ------------------------------------------------------
+                                 |                 |             |                   |
+                               bytes            binarey        range             
+
+
+bytes
+-------
+bytes datatype is used to convert given data into "bytes" format.
+
+Q:What is bytes Format?
+Ans: Machine Understatable format or stream of bytes.   
+Ex:>>> a=[10,20,30,40]
+>>> a
+[10, 20, 30, 40]
+>>> b1=bytes(a)
+>>> type(b1)
+<class 'bytes'>
+>>> b1
+b'\n\x14\x1e('   
+
+->Byte object is an immutable object.
+->In Python we have Two type of object                               object
+                                                                   -------------------
+                                                                  |                   |
+                                                               mutable object    immutable object
+
+
+Ex:>>> a=[10,20,30,40]
+>>> a
+[10, 20, 30, 40]
+>>> b1=bytes(a)
+>>> type(b1)
+<class 'bytes'>
+>>> b1
+b'\n\x14\x1e('  
+>>>b1[1]
+20
+>>>b1[0]=100
+typeError:'bytes object does not support item assigenment
+->So,bytes object i.e b1 can't be change,because of this reson bytesarray datatype is invanted.
+
+bytearray Datatype
+-------------------
+-> It is also used for converting data into bytes format.
+>>> a=[10,20,30,40]
+>>> b2=bytearray(a)
+>>> type(b2)
+<class 'bytearray'>
+>>> b2
+bytearray(b'\n\x14\x1e(')
+>>> b2[0]
+10
+>>> b2[0]=100
+>>> b2[0]
+100
+So "bytearray" Object can be changed.
+
+
+                                      

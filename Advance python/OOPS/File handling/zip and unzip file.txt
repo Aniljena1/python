@@ -1,0 +1,8 @@
+Zipping and Unzipping files:
+----------------------------
+1.memory utilization will be improved 
+2.Transport time required
+3.Improved performance
+
+To creat a zipfile:
+-------------------
